@@ -147,7 +147,7 @@ url|	string|	null: false
 
 ## Asociation
 
-* belongs_to :products
+* belongs_to :product
 
 ***
 
