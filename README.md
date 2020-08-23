@@ -96,7 +96,7 @@ condition_id|	references|	foreign_key: true
 sending-day_id| references| foreign_key: true
 postage_id|	references|	foreign_key: true
 prefecture_code|	integer|	null: false
-sending-type_id| references| foreign_iey: true
+sending-type_id| references| foreign_key: true
 seller_id|	references|	null: false, foreign_key: true
 buyer_id|	references|	foreign_key: true
 deal_closed_day|	timestamp	
@@ -156,8 +156,8 @@ url|	string|	null: false
 
 |Column|Type|Options|
 |:---|:---|:---|
-user|	references|	 foreign_key: true
-product|	references|	 foreign_key: true
+user_id|	references|	 foreign_key: true
+product_id|	references|	 foreign_key: true
 
 
 ## Asociation
@@ -175,7 +175,7 @@ product|	references|	 foreign_key: true
 comment|	text|	null: false
 user_id|	references|	 foreign_key: true
 product_id|	references|	 foreign_key: true
-created_at|	timestamp|	null: false
+created_at|	timestamp|
 
 
 ## Asociation
