@@ -47,7 +47,7 @@ user_id|	references|	foreign_key: true|
 |Column|Type|Options|
 |:---|:---|:---|
 first-name|	string|	null: false
-family-name|	string	null: false
+family-name|	string|	null: false
 first-name-kana|	string|	null: false
 family-name-kana|	string|	null: false
 post-code|	integer(7)|	null:false
