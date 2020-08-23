@@ -197,5 +197,3 @@ ancestry|	string|	null:false
 ## Asociation
 
 * has_many :products
-
-***
