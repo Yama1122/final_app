@@ -65,14 +65,12 @@ user_id|	references|	 foreign_key: true
 
 ***
 
-## credit_cards table
+## credit_cards(Pay.jp) table
 
 |Column|Type|Options|
 |:---|:---|:---|
-card-number|	integer|	null:false, unique: true
-period-year|	integer|	null:false
-period-month|	integer|	null:false
-security-code|	integer| null:false
+customer_id|	string|	null:false
+card_id|	string|	null:false
 user_id|	references|	 foreign_key: true
 
 ## Asociation
