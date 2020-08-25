@@ -79,3 +79,8 @@ end
 gem 'haml-rails'
 gem "jquery-rails"
 gem 'font-awesome-sass'
+gem 'ancestry'
+gem 'active_hash'
+gem 'jp_prefecture'
+gem 'payjp'
+gem 'devise'
