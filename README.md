@@ -2,29 +2,9 @@
 
 |Column|Type|Options|
 |:---|:---|:---|
-|nickname|string|null:false|
-|email|string|null:false, unique: true|
-|password|string|null:false|
-
-
-## Association
-
-* has_many :comments
-* has_many :favorites
-* has_many :products ,through: :comments, dependent: destroy
-* has_many :products, through: :favorites, dependent: :destroy
-* has_one :profile, dependent: :destroy
-* has_one :sending-adress, dependent: :destroy
-* has_one :credit-card, dependent: :destroy
-* has_many :seller_products, foreign_key:"seller_id" ,class_name:"products"
-* has_many :buyer_products, foreign_key:"buyer_id" ,class_name: "products"
-
-***
-
-## Profiles
-
-|Column|Type|Options|
-|:---|:---|:---|
+nickname|string|null:false|
+email|string|null:false, unique: true|
+password|string|null:false|
 first-name|string|null:false|
 family-name|	string|	null:false|
 first-name-kana|	string|	null:false|
@@ -34,11 +14,19 @@ birth-month|	date|	null:false|
 birth-day|	date|	null:false|
 image|	string|	
 introduction|	text|	
-user_id|	references|	foreign_key: true|
 
-## Asociation
 
-* belongs_to :user
+## Association
+
+* has_many :comments
+* has_many :favorites
+* has_many :products ,through: :comments, dependent: destroy
+* has_many :products, through: :favorites, dependent: :destroy
+* has_one :sending-adress, dependent: :destroy
+* has_one :credit-card, dependent: :destroy
+* has_many :seller_products, foreign_key:"seller_id" ,class_name:"products"
+* has_many :buyer_products, foreign_key:"buyer_id" ,class_name: "products"
+
 
 ***
 
