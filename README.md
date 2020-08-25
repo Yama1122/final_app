@@ -158,7 +158,7 @@ product_id|	references|	 foreign_key: true
 
 |Column|Type|Options|
 |:---|:---|:---|
-comment|	text|	null: false
+body|	text|	null: false
 user_id|	references|	 foreign_key: true
 product_id|	references|	 foreign_key: true
 created_at|	timestamp|
