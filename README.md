@@ -74,7 +74,6 @@ user_id|	references|	 foreign_key: true
 name|	string|	null: false
 profile|	text|	null: false
 price|	integer|	null: false
-product-image_id|	references|	 foreign_key: true
 category_id|	references|	 foreign_key: true
 brand_id|	references|	foreign_key: true
 size_id|	references|	 foreign_key: true
