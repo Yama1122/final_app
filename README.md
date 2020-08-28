@@ -5,13 +5,13 @@
 nickname|string|null:false|
 email|string|null:false, unique: true|
 password|string|null:false|
-first-name|string|null:false|
-family-name|	string|	null:false|
-first-name-kana|	string|	null:false|
-family-name-kana|	string|	null:false|
-birth-year|	date|	null:false|
-birth-month|	date|	null:false|
-birth-day|	date|	null:false|
+first_name|string|null:false|
+family_name|	string|	null:false|
+first_name_kana|	string|	null:false|
+family_name_kana|	string|	null:false|
+birth_year|	date|	null:false|
+birth_month|	date|	null:false|
+birth_day|	date|	null:false|
 image|	string|	
 introduction|	text|	
 
@@ -22,28 +22,28 @@ introduction|	text|
 * has_many :favorites
 * has_many :products ,through: :comments, dependent: destroy
 * has_many :products, through: :favorites, dependent: :destroy
-* has_one :sending-adress, dependent: :destroy
-* has_one :credit-card, dependent: :destroy
+* has_one :sending_adress, dependent: :destroy
+* has_one :credit_card, dependent: :destroy
 * has_many :seller_products, foreign_key:"seller_id" ,class_name:"products"
 * has_many :buyer_products, foreign_key:"buyer_id" ,class_name: "products"
 
 
 ***
 
-## sending-adress
+## sending_adress
 
 |Column|Type|Options|
 |:---|:---|:---|
-first-name|	string|	null: false
-family-name|	string|	null: false
-first-name-kana|	string|	null: false
-family-name-kana|	string|	null: false
-post-code|	integer(7)|	null:false
-prefecture-code|	integer|	null:false
+first_name|	string|	null: false
+family_name|	string|	null: false
+first_name_kana|	string|	null: false
+family_name_kana|	string|	null: false
+post_code|	integer(7)|	null:false
+prefecture_code|	integer|	null:false
 city|	string|	null:false
-house-number|	string|	null:false
-building-name|	string	
-phone-number|	integer|	unique: true
+house_number|	string|	null:false
+building_name|	string	
+phone_number|	integer|	unique: true
 user_id|	references|	 foreign_key: true
 
 ## Asociation
@@ -78,10 +78,10 @@ category_id|	references|	 foreign_key: true
 brand_id|	references|	foreign_key: true
 size_id|	references|	 foreign_key: true
 condition_id|	references|	foreign_key: true
-sending-day_id| references| foreign_key: true
+sending_day_id| references| foreign_key: true
 postage_id|	references|	foreign_key: true
 prefecture_code|	integer|	null: false
-sending-type_id| references| foreign_key: true
+sending_type_id| references| foreign_key: true
 seller_id|	references|	null: false, foreign_key: true
 buyer_id|	references|	foreign_key: true
 deal_closed_day|	timestamp	
@@ -90,7 +90,7 @@ deal_closed_day|	timestamp
 ## Asociation
 
 * has_many :comments, dependent: :destroy
-* has_many :product-images, dependent: :destroy
+* has_many :product_images, dependent: :destroy
 * has_many :favorites
 * has_many :users,through: :comments,dependent: :destroy
 * has_many :users,through: :favorites,dependent: :destroy
@@ -98,7 +98,7 @@ deal_closed_day|	timestamp
 * belongs_to :category
 * belongs_to_active_hash :size
 * belongs_to_active_hash :condition
-* belongs_to_active_hash :sending-day
+* belongs_to_active_hash :sending_day
 * belongs_to_active_hash :postage
 * belongs_to_active_hash :sending_type
 * belongs_to :seller, class_name: "User"
@@ -122,7 +122,7 @@ name|	string
 ***
 
 
-## product-images table
+## product_images table
 
 |Column|Type|Options|
 |:---|:---|:---|
