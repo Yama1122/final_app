@@ -20,8 +20,7 @@ introduction|	text|
 
 * has_many :comments
 * has_many :favorites
-* has_many :products ,through: :comments, dependent: destroy
-* has_many :products, through: :favorites, dependent: :destroy
+* has_many :products, dependent: destroy
 * has_one :sending_adress, dependent: :destroy
 * has_one :credit_card, dependent: :destroy
 * has_many :seller_products, foreign_key:"seller_id" ,class_name:"products"
