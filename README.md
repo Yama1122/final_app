@@ -112,7 +112,7 @@ deal_closed_day|	timestamp
 
 |Column|Type|Options|
 |:---|:---|:---|
-name|	string
+name|	string | null: false
 
 ## Asociation
 
@@ -125,7 +125,7 @@ name|	string
 
 |Column|Type|Options|
 |:---|:---|:---|
-product_id|	references|	foreign_key: true
+product_id|	references|	null: false, foreign_key: true
 url|	string|	null: false
 
 
@@ -140,8 +140,8 @@ url|	string|	null: false
 
 |Column|Type|Options|
 |:---|:---|:---|
-user_id|	references|	 foreign_key: true
-product_id|	references|	 foreign_key: true
+user_id|	references|	 null: false, foreign_key: true
+product_id|	references|	 null: false, foreign_key: true
 
 
 ## Asociation
@@ -157,8 +157,8 @@ product_id|	references|	 foreign_key: true
 |Column|Type|Options|
 |:---|:---|:---|
 body|	text|	null: false
-user_id|	references|	 foreign_key: true
-product_id|	references|	 foreign_key: true
+user_id|	references|	 null: false, foreign_key: true
+product_id|	references|	 null: false, foreign_key: true
 created_at|	timestamp|
 
 
