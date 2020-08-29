@@ -1,36 +1,11 @@
 = render "main_header"
 
--# %header.pcHeader
--#   .pcHeader__headerInner
--#     .pcHeader__headerInner__mainHeader
--#       %h1.icon
--#         = link_to ("#") do
--#           = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
--#       .pcHeader__headerInner__mainHeader--searchbox
-
--#     .pcHeader__headerInner__nav
--#       %ul.listsLeft
--#         %li.listsLeft__item.listsLeft__item--first
--#           = link_to "#",id:"catBtn" do
--#             カテゴリー
--#         %li.listsLeft__item
--#           = link_to "#",id:"brandBtn" do
--#             ブランド
--#       %ul.listsRight
--#         %li.listsRight__item.listsRight__item--login
--#           = link_to "#" do
--#             ログイン
--#         %li.listsRight__item.listsRight__item--new
--#           = link_to "#" do
--#             新規会員登録
-
 .breadCrumbs
 
-
-.main
-  .main__showMain
-    .main__showMain__content
-      .main__showMain__content__topContent
+.showMain
+  .showMain__container
+    .showMain__container__content
+      .showMain__container__content__topContent
         .itemBox
           %h2.itemBox__name
             product
@@ -44,7 +19,7 @@
                 %li
                   = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png"
                 %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png"
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png" 
           .itemBox__price
             ¥30000
             .itemBox__price--detail
@@ -74,12 +49,10 @@
                   %th
                     ブランド
                   %td
-
                 %tr
                   %th
                     商品のサイズ
                   %td
-
                 %tr
                   %th
                     商品の状態
@@ -113,13 +86,12 @@
                   0
 
             = link_to "#" do   
-              .itemBox__optionalArea--alart
-                .itemBox__optionalArea--alart--logo
+              .itemBox__optionalArea--alert
+                .itemBox__optionalArea--alert--logo
                   = icon("fas","flag")
-                .itemBox__optionalArea--alart--content
+                .itemBox__optionalArea--alert--content
                   %p
                     不適切な商品の通報
-
 
       .commentBox
         %form
@@ -133,7 +105,6 @@
                 = icon("fas","comment")
                 %p
                   コメントする
-
 
       .links
         =link_to "#" do
@@ -207,11 +178,6 @@
                   = icon("fas","star")
                   .relatedItems__list__item__detail__right--count
                     0
-
-
-
-
-
 
 = render "appBanner" 
 

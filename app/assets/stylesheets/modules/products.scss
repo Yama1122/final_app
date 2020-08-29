@@ -6,7 +6,7 @@ body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
-
+// ヘッダー部分
 .header {
   padding: 0 60px;
   .headerInner{
@@ -31,7 +31,7 @@ body{
       .searchbox{
         margin-left: auto;
         width: 100%;
-        .search-form {
+        .search-form{
           width: 100%;
           display: flex;
           margin-bottom: 5px;
@@ -63,7 +63,6 @@ body{
       }
     }
   }
-
 
   .nav {
     font-size: 14px;
@@ -154,6 +153,7 @@ body{
   }
 } 
 
+//パンくずリスト
 .breadCrumbs{
   border-top:1px solid #EEEEEE;
   margin-top:15px;
@@ -162,13 +162,14 @@ body{
   position:relative;
 }
 
-.main{
+// 商品詳細メイン
+.showMain{
   background-color: #F8F8F8;
   width:100%;
   height:2300px;
   margin:0 auto;
   padding-top:30px;
-  &__showMain{
+  &__container{
     width:50%;
     margin: 0 auto;
     &__content{
@@ -179,7 +180,6 @@ body{
         height:1380px;
       }
       }
-      
   }
 }
 
@@ -213,9 +213,7 @@ body{
       margin:0 auto;
       width:65%;
       ul{
-        // padding:0 20px;
         margin:0 auto;
-        // width: 50%;
         display: flex;
         justify-content: space-around;
         li{
@@ -281,8 +279,7 @@ body{
               }
             }
           }
-        }
-        
+        }   
       }
     }
   }
@@ -292,12 +289,11 @@ body{
     padding:30px 0;
     width:85%;
     margin:0 auto;
-    
     a{
       text-decoration: none;
       color:black;
     }
-    &--alart{
+    &--alert{
       display: flex;
       border:solid 1px black;
       border-radius: 4px;
@@ -497,6 +493,7 @@ body{
   }
 }
 
+// アプリバーナー部分
 .appBanner {
   background-image: url("http://furima.tokyo/assets/bg-appBanner-pict-ce684a4c4d5fa2da43c30a3839923591af75a642a3a906ad975065771ef3d72f.jpg");
   padding: 100px 40px;
@@ -538,6 +535,7 @@ body{
   }
 } 
 
+//フッター部分
 .footer{
   padding: 60px 0;
   color: #fff;
@@ -582,6 +580,8 @@ body{
       font-size: 14px;
     }
   }
+
+  //出品ボタン
   .purchaseBtn {
     width: 120px;
     background: #3ccace;
@@ -607,9 +607,7 @@ body{
         width: 60%;
         vertical-align: bottom;
         font-size:56px;
-        
       }
     }
-    
   }
 } 
