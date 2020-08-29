@@ -37,12 +37,12 @@ first_name|	string|	null: false
 family_name|	string|	null: false
 first_name_kana|	string|	null: false
 family_name_kana|	string|	null: false
-post_code|	integer(7)|	null:false
+post_code|	string|	null:false
 prefecture_code|	integer|	null:false
 city|	string|	null:false
 house_number|	string|	null:false
 building_name|	string	
-phone_number|	integer|	unique: true
+phone_number|	string|	unique: true
 user_id|	references|	 foreign_key: true
 
 ## Asociation
