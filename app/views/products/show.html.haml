@@ -1,26 +1,28 @@
-%header.pcHeader
-  .pcHeader__headerInner
-    .pcHeader__headerInner__mainHeader
-      %h1.icon
-        = link_to ("#") do
-          = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
-      .pcHeader__headerInner__mainHeader--searchbox
+= render "main_header"
 
-    .pcHeader__headerInner__nav
-      %ul.listsLeft
-        %li.listsLeft__item.listsLeft__item--first
-          = link_to "#",id:"catBtn" do
-            カテゴリー
-        %li.listsLeft__item
-          = link_to "#",id:"brandBtn" do
-            ブランド
-      %ul.listsRight
-        %li.listsRight__item.listsRight__item--login
-          = link_to "#" do
-            ログイン
-        %li.listsRight__item.listsRight__item--new
-          = link_to "#" do
-            新規会員登録
+-# %header.pcHeader
+-#   .pcHeader__headerInner
+-#     .pcHeader__headerInner__mainHeader
+-#       %h1.icon
+-#         = link_to ("#") do
+-#           = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+-#       .pcHeader__headerInner__mainHeader--searchbox
+
+-#     .pcHeader__headerInner__nav
+-#       %ul.listsLeft
+-#         %li.listsLeft__item.listsLeft__item--first
+-#           = link_to "#",id:"catBtn" do
+-#             カテゴリー
+-#         %li.listsLeft__item
+-#           = link_to "#",id:"brandBtn" do
+-#             ブランド
+-#       %ul.listsRight
+-#         %li.listsRight__item.listsRight__item--login
+-#           = link_to "#" do
+-#             ログイン
+-#         %li.listsRight__item.listsRight__item--new
+-#           = link_to "#" do
+-#             新規会員登録
 
 .breadCrumbs
 
@@ -38,21 +40,179 @@
             .itemBox__body--bottom
               %ul
                 %li
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
                 %li
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png"
                 %li
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png"
           .itemBox__price
+            ¥30000
             .itemBox__price--detail
+              (税込) 送料込み
           .itemBox__itemDetail
+            %p
+              親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
           .itemBox__table
+            %table
+              %tbody
+                %tr
+                  %th
+                    出品者
+                  %td
+                    hoge
+                %tr
+                  %th
+                    カテゴリー
+                  %td
+                    = link_to "#",class:"itemBox__table--category" do
+                      ベビー・キッズ
+                    = link_to "#",class:"itemBox__table--category" do
+                      ベビー服(男女兼用) ~95cm
+                    = link_to "#",class:"itemBox__table--category" do
+                      アウター
+                %tr
+                  %th
+                    ブランド
+                  %td
+
+                %tr
+                  %th
+                    商品のサイズ
+                  %td
+
+                %tr
+                  %th
+                    商品の状態
+                  %td
+                    未使用に近い
+                %tr
+                  %th
+                    配送料の負担
+                  %td
+                    送料込み（出品者負担）
+                %tr
+                  %th
+                    発送元の地域
+                  %td
+                    = link_to "#" do
+                      岩手県
+                %tr
+                  %th
+                    発送日の目安
+                  %td
+                    4-7日で発送
+
           .itemBox__optionalArea
+            .itemBox__optionalArea__like
+              .itemBox__optionalArea__like--name
+                = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
+                %p.itemBox__optionalArea__like--name--content
+                  お気に入り
+              .itemBox__optionalArea__like--count
+                %p
+                  0
 
-        .commentBox    
+            = link_to "#" do   
+              .itemBox__optionalArea--alart
+                .itemBox__optionalArea--alart--logo
+                  = icon("fas","flag")
+                .itemBox__optionalArea--alart--content
+                  %p
+                    不適切な商品の通報
+
+
+      .commentBox
+        %form
+          %textarea{class:"commentBox__text"}
+          .commentBox__detail
+            %p
+              相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          .commentBox__btn
+            %button{type:"submit",class:"commentBox__btn--submit"}
+              .commentBox__btn--submit--icon
+                = icon("fas","comment")
+                %p
+                  コメントする
+
+
       .links
+        =link_to "#" do
+          .links__before
+            = icon("fas","chevron-left",class:"links__before--icon")
+            %p
+              前の商品
+        =link_to "#" do
+          .links__after
+            %p
+              次の商品
+            = icon("fas","chevron-right",class:"links__after--icon")
+        
       .relatedItems 
+        = link_to "#" do
+          .relatedItems__link
+            %p
+              ベビー・キッズをもっとみる
+        .relatedItems__list
+          = link_to "#" do
+            .relatedItems__list__item
+              .relatedItems__list__item__image
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"
+              .relatedItems__list__item__detail
+                .relatedItems__list__item__detail__left
+                  .relatedItems__list__item__detail__left--name
+                    %p
+                      商品名
+                  .relatedItems__list__item__detail__left--price
+                    %p
+                      ¥3000
+                    %span  
+                      (税込み)
+                .relatedItems__list__item__detail__right
+                  = icon("fas","star")
+                  .relatedItems__list__item__detail__right--count
+                    0
+          = link_to "#" do
+            .relatedItems__list__item
+              .relatedItems__list__item__image
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"
+              .relatedItems__list__item__detail
+                .relatedItems__list__item__detail__left
+                  .relatedItems__list__item__detail__left--name
+                    %p
+                      商品名
+                  .relatedItems__list__item__detail__left--price
+                    %p
+                      ¥3000
+                    %span  
+                      (税込み)
+                .relatedItems__list__item__detail__right
+                  = icon("fas","star")
+                  .relatedItems__list__item__detail__right--count
+                    0
+          = link_to "#" do
+            .relatedItems__list__item
+              .relatedItems__list__item__image
+                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"
+              .relatedItems__list__item__detail
+                .relatedItems__list__item__detail__left
+                  .relatedItems__list__item__detail__left--name
+                    %p
+                      商品名
+                  .relatedItems__list__item__detail__left--price
+                    %p
+                      ¥3000
+                    %span  
+                      (税込み)
+                .relatedItems__list__item__detail__right
+                  = icon("fas","star")
+                  .relatedItems__list__item__detail__right--count
+                    0
 
 
 
 
-%aside.appBanner
 
-.footer
+
+= render "appBanner" 
+
+= render "footer"
