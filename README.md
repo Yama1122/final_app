@@ -91,8 +91,7 @@ deal_closed_day|	timestamp
 * has_many :comments, dependent: :destroy
 * has_many :product_images, dependent: :destroy
 * has_many :favorites
-* has_many :users,through: :comments,dependent: :destroy
-* has_many :users,through: :favorites,dependent: :destroy
+* has_many :users, dependent: :destroy
 * belongs_to :brand
 * belongs_to :category
 * belongs_to_active_hash :size
