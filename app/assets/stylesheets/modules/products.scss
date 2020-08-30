@@ -76,49 +76,21 @@ body{
         padding: 0;
         line-height: 38px;
         .category{
-          background-image: url("icon_category.png");
           color: #333;
           text-decoration: none;
           line-height: 32px;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
           padding-right: 30px;
         }
-        .tree  {
-          z-index: 2;
-          position: absolute;
-          background-color: #fff;
-          width: 240px;
-          top: 40px;
-          .categoryTree {
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            &__item {
-              position: relative;
-            }
-          }
-        }
+      
       }
       &__item {
         display: flex;
         line-height: 38px;
         padding: 0 0 0 16px;
         .bland {
-          background-image: url("icon_brand.png");
           color: #333;
           text-decoration: none;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
           padding-right: 30px;
-        }
-        .brandsPulldown {
-          position: absolute;
-          z-index: 1;
-          background-color: #fff;
         }
       }
     }
@@ -138,8 +110,6 @@ body{
         }
       }
       &__item--new {
-        color: #333;
-        line-height: 38px;
         padding: 0 0 0 16px;
         .new {
           display: flex;
@@ -152,6 +122,27 @@ body{
     }
   }
 } 
+
+.breadCrumbs{
+  &__category{
+    display:flex;
+    align-content: center;
+    line-height: 50px;
+    padding:0 20px;
+    p{
+      padding:0 5px;
+      font-size:14px;
+      &:hover{
+        color:#3CCACD;
+      }
+    }
+    &--icon{
+      font-size:6px;
+      
+    }
+    
+  }
+}
 
 //パンくずリスト
 .breadCrumbs{
@@ -495,7 +486,7 @@ body{
 
 // アプリバーナー部分
 .appBanner {
-  background-image: url("http://furima.tokyo/assets/bg-appBanner-pict-ce684a4c4d5fa2da43c30a3839923591af75a642a3a906ad975065771ef3d72f.jpg");
+  background-image: image-url("products/bg-appBanner.jpg");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
@@ -504,14 +495,14 @@ body{
     color: #fff;
     text-align: center;
     &__title {
-      text-shadow: 0 0 5px;
+      text-shadow: 0 0 5px black;
       font-size: 24px;
       font-weight: bold;
       line-height: 1.4;
     }
     &__text {
       font-size: 35px;
-      text-shadow: 0 0 5px;
+      text-shadow: 0 0 5px black;
     }
     &__icon {
       width: 100%;
@@ -523,6 +514,9 @@ body{
         width: 180px;
         vertical-align: bottom;
         text-decoration: underline;
+        &:hover{
+          opacity:0.8;
+        }
       }
       .linkIcongBtn {
         margin-top: 10px;
@@ -530,6 +524,9 @@ body{
         text-decoration: underline;
         width: 180px;
         vertical-align: bottom;
+        &:hover{
+          opacity:0.8;
+        }
       }
     }
   }

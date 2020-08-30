@@ -3,12 +3,11 @@
     .mainheader
       %h1.icon
         =link_to "#" do
-          = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", size: '140x40'
+          = image_tag "products/logo.svg", size: '140x40'
       .searchbox
         = form_with(class: "search-form") do |f|
           = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
           %button.submit-btn
-            -# = image_tag src="icon-search 1.png", size: '20x20'
             = icon("fas","search")
       %ul.resultList
   .nav

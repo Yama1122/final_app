@@ -1,6 +1,11 @@
 = render "main_header"
 
 .breadCrumbs
+  .breadCrumbs__category
+    %p FURIMA
+    %span
+      = icon("fas","chevron-right",class:"breadCrumbs__category--icon")
+    %p ベビー・キッズ
 
 .showMain
   .showMain__container
@@ -11,15 +16,15 @@
             product
           .itemBox__body
             .itemBox__body--top
-              = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png",class:"itemBox__body--top--image"
+              = image_tag "products/product2.png",class:"itemBox__body--top--image"
             .itemBox__body--bottom
               %ul
                 %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"
+                  = image_tag "products/product2.png"
                 %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png"
+                  = image_tag "products/product3.png"
                 %li
-                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png" 
+                  = image_tag "products/product4.png" 
           .itemBox__price
             ¥30000
             .itemBox__price--detail
@@ -127,7 +132,7 @@
           = link_to "#" do
             .relatedItems__list__item
               .relatedItems__list__item__image
-                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"
+                = image_tag "products/product1.jpeg"
               .relatedItems__list__item__detail
                 .relatedItems__list__item__detail__left
                   .relatedItems__list__item__detail__left--name
@@ -145,7 +150,7 @@
           = link_to "#" do
             .relatedItems__list__item
               .relatedItems__list__item__image
-                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"
+                = image_tag "products/product1.jpeg"
               .relatedItems__list__item__detail
                 .relatedItems__list__item__detail__left
                   .relatedItems__list__item__detail__left--name
@@ -163,7 +168,7 @@
           = link_to "#" do
             .relatedItems__list__item
               .relatedItems__list__item__image
-                = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"
+                = image_tag "products/product1.jpeg"
               .relatedItems__list__item__detail
                 .relatedItems__list__item__detail__left
                   .relatedItems__list__item__detail__left--name
