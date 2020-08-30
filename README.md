@@ -43,7 +43,7 @@ city|	string|	null:false
 house_number|	string|	null:false
 building_name|	string	
 phone_number|	string|	unique: true
-user_id|	references|	 foreign_key: true
+user|	references|	 foreign_key: true
 
 ## Asociation
 
@@ -58,7 +58,7 @@ user_id|	references|	 foreign_key: true
 |:---|:---|:---|
 customer_id|	string|	null:false
 card_id|	string|	null:false
-user_id|	references|	 foreign_key: true
+user|	references|	 foreign_key: true
 
 ## Asociation
 
@@ -73,16 +73,16 @@ user_id|	references|	 foreign_key: true
 name|	string|	null: false
 profile|	text|	null: false
 price|	integer|	null: false
-category_id|	references|	 foreign_key: true
-brand_id|	references|	foreign_key: true
-size_id|	references|	 foreign_key: true
-condition_id|	references|	foreign_key: true
-sending_day_id| references| foreign_key: true
-postage_id|	references|	foreign_key: true
+category|	references|	 foreign_key: true
+brand|	references|	foreign_key: true
+size|	references|	 foreign_key: true
+condition|	references|	foreign_key: true
+sending_day| references| foreign_key: true
+postage|	references|	foreign_key: true
 prefecture_code|	integer|	null: false
-sending_type_id| references| foreign_key: true
-seller_id|	references|	null: false, foreign_key: true
-buyer_id|	references|	foreign_key: true
+sending_type| references| foreign_key: true
+seller|	references|	null: false, foreign_key: true
+buyer|	references|	foreign_key: true
 deal_closed_day|	timestamp	
 
 
@@ -124,7 +124,7 @@ name|	string | null: false
 
 |Column|Type|Options|
 |:---|:---|:---|
-product_id|	references|	null: false, foreign_key: true
+product|	references|	null: false, foreign_key: true
 url|	string|	null: false
 
 
@@ -139,8 +139,8 @@ url|	string|	null: false
 
 |Column|Type|Options|
 |:---|:---|:---|
-user_id|	references|	 null: false, foreign_key: true
-product_id|	references|	 null: false, foreign_key: true
+user|	references|	 null: false, foreign_key: true
+product|	references|	 null: false, foreign_key: true
 
 
 ## Asociation
@@ -156,8 +156,8 @@ product_id|	references|	 null: false, foreign_key: true
 |Column|Type|Options|
 |:---|:---|:---|
 body|	text|	null: false
-user_id|	references|	 null: false, foreign_key: true
-product_id|	references|	 null: false, foreign_key: true
+user|	references|	 null: false, foreign_key: true
+product|	references|	 null: false, foreign_key: true
 created_at|	timestamp|
 
 
