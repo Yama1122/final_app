@@ -1,0 +1,27 @@
+.header
+  .headerInner
+    .mainheader
+      %h1.icon
+        =link_to "#" do
+          = image_tag "products/logo.svg", size: '140x40'
+      .searchbox
+        = form_with(class: "search-form") do |f|
+          = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
+          %button.submit-btn
+            = icon("fas","search")
+      %ul.resultList
+  .nav
+    %ul.listsleft
+      %li.listsleft__item--first
+        =link_to "カテゴリー", "#", class: "category"
+        .treedisplayNone
+          %ul.categoryTree
+            %li.categoryTree--item
+      %li.listsleft__item
+        =link_to "ブランド", "#", class: "bland"
+        %ul.brandsPulldowndisplayNone
+    %ul.listsRight
+      %li.listsRight__item--login
+        =link_to "ログイン","#" , class: "login"
+      %li.listsRight__item--new
+        =link_to "新規会員登録", "#" , class: "new"

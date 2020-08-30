@@ -1,3 +1,610 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+// ヘッダー部分
+.header {
+  padding: 0 60px;
+  .headerInner{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    .mainheader{
+      position: relative;
+      display: flex;
+      align-items: center;
+      .icon{
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+        a {
+          width: 140px;
+          display: block;
+        }
+      }
+      .searchbox{
+        margin-left: auto;
+        width: 100%;
+        .search-form{
+          width: 100%;
+          display: flex;
+          margin-bottom: 5px;
+          .search-input {
+            width:  calc(100% - 26px);
+            height: 36px;
+            padding: 0 0 0 5px;
+          }
+        }
+        .submit-btn {
+          width: 36px;
+          border: 0;
+          cursor: pointer;
+          background-color: #3ccace;
+          padding: 8px;
+          color:white;
+          .submit-icon {
+            width: 100%;
+            vertical-align: bottom;
+          }
+        }
+        .resultList{
+          display: flex;
+          position: absolute;
+          right: 0;
+          top: 36px;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  .nav {
+    font-size: 14px;
+    display: flex;
+    margin-bottom: 10px;
+    .listsleft {
+      position: relative;
+      display: flex;
+      &__item--first {
+        text-decoration: none;
+        padding: 0;
+        line-height: 38px;
+        .category{
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          padding-right: 30px;
+        }
+      
+      }
+      &__item {
+        display: flex;
+        line-height: 38px;
+        padding: 0 0 0 16px;
+        .bland {
+          color: #333;
+          text-decoration: none;
+          padding-right: 30px;
+        }
+      }
+    }
+    .listsRight {
+      margin-left: auto;
+      display: flex;
+      &__item--login {
+        color: #333;
+        line-height: 38px;
+        padding: 0 0 0 16px;
+        .login {
+          display: flex;
+          align-items: center;
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+        }
+      }
+      &__item--new {
+        padding: 0 0 0 16px;
+        .new {
+          display: flex;
+          align-items: center;
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+} 
+
+.breadCrumbs{
+  &__category{
+    display:flex;
+    align-content: center;
+    line-height: 50px;
+    padding:0 20px;
+    p{
+      padding:0 5px;
+      font-size:14px;
+      &:hover{
+        color:#3CCACD;
+      }
+    }
+    &--icon{
+      font-size:6px;
+      
+    }
+    
+  }
+}
+
+//パンくずリスト
+.breadCrumbs{
+  border-top:1px solid #EEEEEE;
+  margin-top:15px;
+  height:50px;
+  box-shadow:0 3px 3px 0px rgba(0,0,0,0.16);
+  position:relative;
+}
+
+// 商品詳細メイン
+.showMain{
+  background-color: #F8F8F8;
+  width:100%;
+  height:2300px;
+  margin:0 auto;
+  padding-top:30px;
+  &__container{
+    width:50%;
+    margin: 0 auto;
+    &__content{
+      width:100%;
+      &__topContent{
+        background-color: white;
+        width:100%;
+        height:1380px;
+      }
+      }
+  }
+}
+
+.itemBox{
+  padding-top:20px;
+  width:100%;
+  &__name{
+    text-align: center;
+    font-weight:bold;
+    font-size:24px;
+    padding-bottom:20px;
+  }
+  &__body{
+    width:100%;
+    &--top{
+      width:95%;
+      height:400px;
+      margin:0 auto;
+      padding-bottom:20px;
+      &--image{
+        display: block;
+        width:80%;
+        height:100%;
+        margin:0 auto;
+        object-fit: cover;
+        border:1px solid #F8F8F8;
+        border-radius: 2px;
+      }
+    }
+    &--bottom{
+      margin:0 auto;
+      width:65%;
+      ul{
+        margin:0 auto;
+        display: flex;
+        justify-content: space-around;
+        li{
+          img{
+            display:block;
+            width:95%;
+            height:100px;
+            object-fit: cover;
+            border:1px solid #F8F8F8;
+            border-radius:2px;
+          }
+        }
+      }
+    }
+  }
+  &__price{
+    margin:0 auto;
+    text-align: center;
+    padding-top:30px;
+    font-weight:bold;
+    font-size:46px;
+    &--detail{
+      font-weight: normal;
+      font-size:16px;
+    }
+  }
+  &__itemDetail{
+    width:90%;
+    margin:0 auto;
+    line-height: 1.5;
+    font-size: 18px;
+    padding:20px 0;
+  }
+
+  &__table{
+    margin:0 auto;
+    &--category{
+      display: block;
+    }
+    table{
+      margin:0 auto;
+      width:90%;
+      tbody{
+        border:1px solid #DEDEDE;
+        margin:0 auto;
+        font-size:14px;
+        tr{
+          border:1px solid #DEDEDE;
+          
+          th{
+            background-color: #EEEEEE;
+            padding:10px 20px;
+            text-align: center;
+          }
+          td{
+            background-color: #fff;
+            padding:10px 100px 10px 10px;
+            a{
+              text-decoration:none;
+              color:#3CCACD;
+              &:hover{
+                opacity:0.5;
+              }
+            }
+          }
+        }   
+      }
+    }
+  }
+  &__optionalArea{
+    display:flex;
+    justify-content: space-between;
+    padding:30px 0;
+    width:85%;
+    margin:0 auto;
+    a{
+      text-decoration: none;
+      color:black;
+    }
+    &--alert{
+      display: flex;
+      border:solid 1px black;
+      border-radius: 4px;
+      height:38px;
+      font-size:14px;
+      line-height: 38px;
+      padding:0 10px;
+      &:hover{
+        opacity:0.5;
+      }
+      &--logo{
+        padding-right:5px;
+      }
+    }
+    &__like{
+      color:#3CCACD;
+      display:flex;
+      border:1px solid #FCB340;
+      border-radius: 25px;
+      padding:10px 10px;
+      align-content: center;
+      &:hover{
+        opacity:0.5;
+      }
+      &--name{
+        display: flex;
+        align-content: center;
+        line-height:20px;
+        &--content{
+          display: block;
+        }
+        &--icon{
+          display: block;
+          padding-right:3px;
+          font-size:14px;
+          line-height: 18px;
+        }
+      }
+      &--count{
+        padding-left:3px;
+      }
+    }
+  }
+}
+
+.commentBox{
+  margin-top:20px;
+  background-color:white;
+  padding:20px;
+  &__text{
+    width:100%;
+    margin:0 auto;
+    height:100px;
+    margin-bottom:20px;
+  }
+  &__detail{
+    background-color:#F8F8F8;
+    padding:10px;
+  }
+  &__btn{
+    padding:30px;
+    margin:0 auto;
+    text-align:center;
+    &--submit{
+      background-color: #3CCACD;
+      color:white;
+      border:none;
+      display: flex;
+      width:350px;
+      height:50px;
+      border-radius:25px;
+      margin:0 auto;
+      text-align: center;
+      line-height: 50px;
+      text-align:center;
+      font-size:18px;
+      &:hover{
+        opacity:0.8;
+      }
+      &--icon{
+        text-align:center;
+        line-height: 50px;
+        margin:0 auto;
+      }
+      p{
+        display: inline-block;
+      }
+    }
+    
+  }
+}
+
+.links{
+  display: flex;
+  justify-content: space-between;
+  padding-top:10px;
+  a{
+    text-decoration: none;
+    color:#3CCACD;
+  }
+  &__before{
+    display:flex;
+    &:hover{
+      opacity:0.5;
+    }
+    &--icon{
+      font-size:12px;
+      line-height: 26px;
+      padding-right:5px;
+    }
+  }
+  &__after{
+    display:flex;
+    &:hover{
+      opacity:0.5;
+    }
+    &--icon{
+      font-size:12px;
+      line-height: 26px;
+      padding-left:5px;
+    }
+  }
+}
+
+.relatedItems{
+  a{
+    color:#3CCACD;
+    text-decoration: none;
+  }
+  &__link{
+    padding:30px 0;
+    font-weight:bold;
+    font-size:20px;
+    &:hover{
+      opacity:0.5;
+    }
+  }
+  &__list{
+    display: flex;
+    overflow-y: scroll;
+    a{
+      text-decoration: none;
+      color:black;
+    }
+    &__item{
+      width:250px;
+      height:300px;
+      background-color: #fff;
+      padding:20px;
+      border-radius:2px;
+      margin-right:10px;
+      &:hover{
+        opacity:0.8;
+      }
+      &__image{
+        width:200px;
+        height:150px;
+        margin:0 auto;
+        margin-bottom:20px;
+        img{
+          width:100%;
+          height:100%;
+          border-radius:5px;
+          object-fit: cover;
+        }
+      }
+      &__detail{
+        display:flex;
+        align-content: center;
+        justify-content: space-between;
+        &__left{
+          &--name{
+            font-weight:bold;
+            font-size:22px;
+            padding-bottom:10px;
+            letter-spacing: 2px;
+          }
+          &--price{
+            p{
+              font-size:18px;
+            }
+            span{
+              font-size:10px;
+              font-weight: bold;
+            }
+          }
+        }
+        &__right{
+          padding-top:30px;
+          display: flex;
+          &--count{
+            padding-left:5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// アプリバーナー部分
+.appBanner {
+  background-image: image-url("products/bg-appBanner.jpg");
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  .inner {
+    color: #fff;
+    text-align: center;
+    &__title {
+      text-shadow: 0 0 5px black;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &__text {
+      font-size: 35px;
+      text-shadow: 0 0 5px black;
+    }
+    &__icon {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+      .linkIconaBtn {
+        margin-top: 10px;
+        width: 180px;
+        vertical-align: bottom;
+        text-decoration: underline;
+        &:hover{
+          opacity:0.8;
+        }
+      }
+      .linkIcongBtn {
+        margin-top: 10px;
+        cursor: pointer;
+        text-decoration: underline;
+        width: 180px;
+        vertical-align: bottom;
+        &:hover{
+          opacity:0.8;
+        }
+      }
+    }
+  }
+} 
+
+//フッター部分
+.footer{
+  padding: 60px 0;
+  color: #fff;
+  background-color: #272727;
+  text-align: center;
+  .contents {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: calc(1/3 * 100%);
+      margin: 0 2% 0 0;
+      &__head {
+        margin: 0 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .items {
+        list-style: none;
+        .footer-item {
+          color: #fff;
+          text-decoration: none;
+          font-size: 12px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+  &__logo {
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+    .logo-link {
+      color: #fff;
+      cursor: pointer;
+      width: 100%;
+      text-decoration: underline;
+    }
+    .copyright {
+      font-size: 14px;
+    }
+  }
+
+  //出品ボタン
+  .purchaseBtn {
+    width: 120px;
+    background: #3ccace;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 32px;
+    right: 32px;
+    position: fixed;
+    padding: 15px;
+    &:hover{
+      opacity:0.5;
+    }
+    a{
+      color:white;
+    }
+    &__text {
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      text-decoration: none;
+      margin-bottom: 5px;
+      &__icon {
+        width: 60%;
+        vertical-align: bottom;
+        font-size:56px;
+      }
+    }
+  }
+}
