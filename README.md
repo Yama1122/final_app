@@ -75,13 +75,13 @@ profile|	text|	null: false
 price|	integer|	null: false
 category|	references|	 foreign_key: true
 brand|	references|	foreign_key: true
-size|	references|	 foreign_key: true
-condition|	references|	foreign_key: true
-sending_day| references| foreign_key: true
-postage|	references|	foreign_key: true
+size|	integer|	null: false
+condition|	integer|	null: false
+sending_day| integer| null: false
+postage|	integer|	null: false
 prefecture_code|	integer|	null: false
-sending_type| references| foreign_key: true
-seller|	references|	null: false, foreign_key: true
+sending_type| integer| foreign_key: true
+seller|	references|	null: false
 buyer|	references|	foreign_key: true
 deal_closed_day|	timestamp	
 
