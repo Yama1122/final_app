@@ -31,7 +31,8 @@
     =link_to "#" do
       = image_tag src="logo-white.png", class:"logo-link"
     %p.copyright  ©︎ FURIMA
-    =link_to "#" do
-      .purchaseBtn
-        %span.purchaseBtn__text 出品する
-          = image_tag src="icon_camera.png",size:"54x54", class:'purchaseBtn__icon'
+ =link_to "#" do
+    .purchaseBtn
+      %span.purchaseBtn__text
+        出品する
+        = icon("fas","camera",class:'purchaseBtn__text__icon')
