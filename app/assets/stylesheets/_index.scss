@@ -16,13 +16,13 @@
       margin: 0 auto;
       padding: 35px 0 0 0;
       &__subtitle {
-        text-shadow: 0 0 5px;
+        text-shadow: rgba(0,0,0,4) 0 0 5px;
         font-size: 60px;
         line-height: 1.2;
         color: #fff;
       }
       &__text {
-        text-shadow: 0 0 5px;
+        text-shadow: rgba(0,0,0,4) 0 0 5px;
         font-size: 18px;
         line-height: 1.77778;
         color: #fff;
@@ -267,7 +267,6 @@
         .productList {
           width: 220px;
           display: inline-block;
-          float: left;
           .listimage {
             background-color: #fff;
             display: inline-block;

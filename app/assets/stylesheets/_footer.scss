@@ -60,10 +60,11 @@
       font-size: 18px;
       text-decoration: none;
       margin-bottom: 5px;
-      &__icon {
-        width: 60%;
-        vertical-align: bottom;
-      }
     }
+    &__text-icon {
+      width: 60%;
+      vertical-align: bottom;
+    }
+  
   }
 }
