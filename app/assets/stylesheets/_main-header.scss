@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
   padding: 0 60px;
   .headerInner{
@@ -22,7 +26,7 @@
       .searchbox{
         margin-left: auto;
         width: 100%;
-        .search-form{
+        .search-form {
           width: 100%;
           display: flex;
           margin-bottom: 5px;
@@ -38,7 +42,6 @@
           cursor: pointer;
           background-color: #3ccace;
           padding: 8px;
-          color:white;
           .submit-icon {
             width: 100%;
             vertical-align: bottom;
@@ -54,7 +57,6 @@
       }
     }
   }
-
   .nav {
     font-size: 14px;
     display: flex;
@@ -67,10 +69,30 @@
         padding: 0;
         line-height: 38px;
         .category{
+          background-image: url("icon_category.png");
           color: #333;
           text-decoration: none;
           line-height: 32px;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: 18px;
           padding-right: 30px;
+        }
+        .tree  {
+          z-index: 2;
+          position: absolute;
+          background-color: #fff;
+          width: 240px;
+          top: 40px;
+          .categoryTree {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            &__item {
+              position: relative;
+            }
+          }
         }
       
       }
@@ -79,9 +101,18 @@
         line-height: 38px;
         padding: 0 0 0 16px;
         .bland {
+          background-image: url("icon_brand.png");
           color: #333;
           text-decoration: none;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: 18px;
           padding-right: 30px;
+        }
+        .brandsPulldown {
+          position: absolute;
+          z-index: 1;
+          background-color: #fff;
         }
       }
     }
@@ -101,6 +132,8 @@
         }
       }
       &__item--new {
+        color: #333;
+        line-height: 38px;
         padding: 0 0 0 16px;
         .new {
           display: flex;

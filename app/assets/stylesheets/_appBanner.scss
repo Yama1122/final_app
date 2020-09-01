@@ -1,5 +1,5 @@
 .appBanner {
-  background-image: image-url("products/bg-appBanner.jpg");
+  background-image: url("products/bg-appBanner-pict.jpg");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
@@ -8,14 +8,14 @@
     color: #fff;
     text-align: center;
     &__title {
-      text-shadow: 0 0 5px black;
+      text-shadow:rgba(0,0,0,4) 0 0 5px;
       font-size: 24px;
       font-weight: bold;
       line-height: 1.4;
     }
     &__text {
       font-size: 35px;
-      text-shadow: 0 0 5px black;
+      text-shadow:rgba(0,0,0,4) 0 0 5px;
     }
     &__icon {
       width: 100%;
