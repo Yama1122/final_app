@@ -608,3 +608,452 @@ body{
     }
   }
 }
+
+// 商品出品、購入確認ヘッダー
+.sub_header{
+  background-color: rgb(241, 241, 241);
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    height: 70px;
+  }
+}
+
+// 商品出品、購入確認フッター
+.sub_footer {
+  height: 150px;
+  padding: 20px;
+  background-color: rgb(241, 241, 241);
+  .wrapper {
+    display:flex;
+    justify-content: center;
+    font-size: 12px;
+    .policy {
+      padding-right: 20px;
+    }
+    .terms {
+      padding-right: 20px;
+    }
+    .notation {
+
+    }
+  }
+  .furima_logo {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    .logo {
+      .logo-white{
+        height: 60px;
+      }
+    }
+  }
+}
+
+// 商品出品
+.Exhibition-wrapper {
+  background-color: rgb(241, 241, 241);
+  height: 1850px;
+  font-size: 15px;
+  
+  a {
+    text-decoration: none;
+  }
+  .p {
+    &__image {
+      padding-bottom: 10px;
+    }
+    &__upload {
+      font-size: 12px;
+      
+    }
+  }
+  
+  .hr {
+    border-width: 1px 0 0 0;
+	  border-style: solid;
+  	border-color: rgb(241, 241, 241);
+  }
+
+  .required {
+    color: rgb(255, 255, 255);
+    background-color: red;
+    padding: 0 5px 0 5px;
+  }
+  .any {
+    color: rgb(255, 255, 255);
+    background-color: rgb(126, 126, 126);
+    padding: 0 5px 0 5px;
+  }
+
+  .Exhibition-logo {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      height: 70px;
+    }
+  }
+
+  .Exhibition-form {
+    background-color: rgb(255, 255, 255);
+    height:1850px;
+    width: 700px;
+    margin:0 auto;
+  }
+
+  .product_images {
+    padding:30px;
+    height: 300px;
+    .image_text {
+    }
+    .images__upload{
+      height: 150px;
+      background-color: rgb(230, 230, 230);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border:dashed 1px rgb(192, 192, 192);
+    }
+  }
+
+  .product {
+    padding: 30px;
+    height: 300px;
+  }
+
+  .name {
+    &__text {
+      padding-bottom:10px;
+    }
+    &__field {
+      .text {
+        border: 1px solid #000000;  /* 枠線 */
+        border-radius: 4px;   /* 角丸 */
+        padding: 0.5em;          /* 内側の余白量 */
+        background-color: rgb(255, 255, 255);  /* 背景色 */
+        width: 100%;             /* 横幅いっぱいにする */
+        box-sizing: border-box;  /* ※これがないと横にはみ出る */
+        height: 25px;           /* 高さ */
+        font-size: 15px;          /* 文字サイズ */
+        line-height: 1.2;        /* 行の高さ */
+        &:focus {
+          outline: none;
+          border: 1px solid #1b6aff;
+        }
+      }
+      
+    }
+    
+  }
+
+  .explanation {
+    padding-top: 20px;
+    &__text {
+      padding-bottom: 10px;
+    }
+
+    &__field {
+      .textlines {
+        border: 1px solid #000000;  /* 枠線 */
+        border-radius: 4px;   /* 角丸 */
+        padding: 0.5em;          /* 内側の余白量 */
+        background-color: rgb(255, 255, 255);  /* 背景色 */
+        width: 100%;             /* 横幅いっぱいにする */
+        box-sizing: border-box;  /* ※これがないと横にはみ出る */
+        height: 120px;           /* 高さ */
+        font-size: 15px;          /* 文字サイズ */
+        line-height: 1.2;        /* 行の高さ */
+        &:focus {
+          outline: none;
+          border: 1px solid #1b6aff;
+        }
+      }
+    }
+  }
+  .product_details {
+    padding: 30px;
+    height: 300px;
+    &__text {
+      color: #505050;
+      padding-bottom: 15px;
+    }
+    .category {
+      &__text {
+        padding-bottom:10px;
+      }
+      &__list_box {
+        .text {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 100%;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 25px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+
+      }
+    }
+    .brand {
+      &__text {
+        padding:20px 0 10px 0;
+      }
+      .text {
+        border: 1px solid #000000;  /* 枠線 */
+        border-radius: 4px;   /* 角丸 */
+        padding: 0.5em;          /* 内側の余白量 */
+        background-color: rgb(255, 255, 255);  /* 背景色 */
+        width: 100%;             /* 横幅いっぱいにする */
+        box-sizing: border-box;  /* ※これがないと横にはみ出る */
+        height: 25px;           /* 高さ */
+        font-size: 15px;          /* 文字サイズ */
+        line-height: 1.2;        /* 行の高さ */
+        &:focus {
+          outline: none;
+          border: 1px solid #1b6aff;
+        }
+      }
+    }
+    .condition {
+      &__text {
+        padding:20px 0 10px 0;
+      }
+      &__list_box {
+        #condition_id {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.2em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 100%;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 25px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+      }
+    }
+  } 
+  .sending {
+    padding: 30px;
+    height: 400px;
+    &__text {
+      color: #505050;
+      padding-bottom: 15px;
+    }
+    .burden {
+      &__text {
+        padding:20px 0 10px 0;
+      }
+      &__list_box {
+        #postage_id {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.2em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 100%;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 25px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+      }
+    }
+
+    .sending_type {
+      &__text {
+        padding:20px 0 10px 0;
+      }
+      &__list_box {
+        #sendingtype_id {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.2em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 100%;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 25px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+      }
+    }
+
+    .sending_preficture {
+      &__text {
+        padding:20px 0 10px 0;
+      }
+      &__list_box {
+        .text {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 100%;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 25px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+      }
+    }
+
+    .sending_day {
+      &__text {
+        padding:20px 0 10px 0;
+      }
+      &__list_box {
+        #sendingday_id {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.2em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 100%;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 25px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+      }
+    }
+  }
+
+  .price {
+    padding: 30px;
+    height: 250px;
+    &__about {
+      color: #505050;
+      padding-bottom: 15px;
+    }
+    .wrapper {
+      display:flex;
+      justify-content: space-between;
+      height:70px;
+      &__text {
+        
+      }
+      &__listbox {
+        .text {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 250px;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 25px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          text-align: right;
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+      }
+
+    }
+
+    .wrapper_tex {
+      display:flex;
+      justify-content: space-between;
+      height:70px;
+      &__text {
+      }
+      &__view {
+      }
+    }
+
+    .wrapper_gain {
+      display:flex;
+      justify-content: space-between;
+      height:70px;
+      padding-top: 20px;
+      &__text {
+      }
+      &__view {
+      }
+    }
+  }
+
+  .exhibition {
+    height: 190px;
+    text-align: center;
+    &__wrapper {
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+      .exhibition_btn {
+        height: 48px;
+        width: 360px;
+        background-color: #ea352d;
+        color: #ffffff;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+      .draft_btn{
+        height: 48px;
+        width: 360px;
+        background-color: #ccc;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        border-radius: 4px;
+      }
+    }
+    .return {
+      a {
+        text-decoration: none;
+        color: #0095ee;
+      }
+    }
+  }
+  .precautions {
+    &__text {
+      font-size: 12px;
+      padding: 0 30px 0 30px;
+      height: 100px;
+      a {
+        color: #0095ee;
+      }
+    }
+  }
+        
+}
