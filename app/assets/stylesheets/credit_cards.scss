@@ -1,0 +1,96 @@
+.creditNew{
+  background-color:white;
+  width:650px;
+  height:550px;
+  border-radius: 5px;
+  &__container{
+    width:100%;
+    margin:0 auto;
+    &__name{
+      border-bottom:1px solid #F5F5F5;
+      padding:20px;
+      p{
+        text-align:center;
+        font-weight:bold;
+        font-size:24px;
+      }
+    }
+    &__form{
+      padding:20px;
+      width:65%;
+      margin:0 auto;
+      label{
+        display: block;
+        font-weight:bold;
+        span{
+          font-size:12px;
+          background-color:red;
+          color:white;
+          padding:0 3px;
+          display:inline-block;
+          border-radius:2px;
+          vertical-align:1px;
+          margin-left:2px;
+        }
+      }
+    }
+  }
+}
+
+.number{
+  margin:10px 0;
+  padding:10px;
+  width:370px;
+  height:45px;
+  border:solid 1px #CCCCCC;
+  border-radius:5px;
+}
+
+.exp_month{
+  margin:10px 0;
+  padding:10px;
+  width:80px;
+  height:45px;
+  border:solid 1px #CCCCCC;
+  border-radius:5px;
+  margin-right:10px;
+  
+}
+
+.exp_year{
+  margin:10px 0;
+  padding:10px;
+  width:80px;
+  height:45px;
+  border:solid 1px #CCCCCC;
+  border-radius:5px;
+  margin-right:10px;
+}
+
+.cvc{
+  margin:10px 0;
+  padding:10px;
+  width:370px;
+  height:45px;
+  border:solid 1px #CCCCCC;
+  border-radius:5px;
+  margin-right:10px;
+}
+
+#token_submit{
+  color:white;
+  background-color:#3CCACD;
+  border:none;
+  width:370px;
+  height:45px;
+  margin:35px auto;
+  border-radius:2px;
+  font-weight: bold;
+  &:hover{
+    opacity:0.5;
+  }
+}
+
+.backbtn{
+  text-align:center;
+}

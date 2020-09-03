@@ -1,5 +1,5 @@
 .appBanner {
-  background-image: url("bg-appBanner-pict.jpg");
+  background-image: url("products/bg-appBanner-pict.jpg");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
@@ -27,6 +27,9 @@
         width: 180px;
         vertical-align: bottom;
         text-decoration: underline;
+        &:hover{
+          opacity:0.8;
+        }
       }
       .linkIcongBtn {
         margin-top: 10px;
@@ -34,7 +37,12 @@
         text-decoration: underline;
         width: 180px;
         vertical-align: bottom;
+
+        &:hover{
+          opacity:0.8;
+        }
       }
     }
   }
-}
+} 
+
