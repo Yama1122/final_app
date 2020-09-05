@@ -486,7 +486,7 @@ body{
 
 // アプリバーナー部分
 .appBanner {
-  background-image: image-url("products/bg-appBanner.jpg");
+  background-image: image-url("products/bg-appBanner-pict.png");
   padding: 100px 40px;
   position: relative;
   background-size: cover;
@@ -608,6 +608,7 @@ body{
     }
   }
 }
+
 
 // 商品出品、購入確認ヘッダー
 .sub_header{
@@ -1057,3 +1058,4 @@ body{
   }
         
 }
+

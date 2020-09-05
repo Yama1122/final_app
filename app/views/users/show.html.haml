@@ -1,0 +1,148 @@
+= render "user_header"
+
+.userShow
+  .userShow__container
+    .userShow__container__left
+      .userShow__container__left__index
+        .userShow__container__left__index__name
+          %p マイページ
+        .userShow__container__left__index__content
+          %ul
+            = link_to "#" do
+              %li.userbtn 
+                お知らせ
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                やることリスト
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                出品する
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                下書き一覧
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                出品した商品-出品中
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                出品した商品-取引中
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                出品した商品-売却済み
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                購入した商品-取引中
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                購入した商品-過去の取引
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                ニュース一覧
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                評価一覧
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                ガイド
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                お問い合わせ
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+           
+      .userShow__container__left__config
+        .userShow__container__left__config__name
+          %p 設定
+        .userShow__container__left__config__content
+          %ul
+            = link_to "#" do
+              %li.userbtn 
+                ユーザー情報更新
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                発送元・お届け先住所変更
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to new_credit_card_path do
+              %li.userbtn 
+                クレジットカード登録
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
+              %li.userbtn 
+                ログアウト
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+          
+    .userShow__container__right
+      .userShow__container__right__profile
+        .userShow__container__right__profile__image
+          = image_tag "users/member_thumb.png",class:"userShow__container__right__profile__image--icon"
+        %p.userShow__container__right__profile__name ユーザー名
+        .userShow__container__right__profile__product
+          .userShow__container__right__profile__product__value 
+            .userShow__container__right__profile__product__value--name
+              %p 評価
+            .userShow__container__right__profile__product__value--count
+              %p 0
+          .userShow__container__right__profile__product__sell
+            .userShow__container__right__profile__product__sell--name
+              %p 出品数
+            .userShow__container__right__profile__product__sell--count
+              %p 0
+      .userShow__container__right__list
+        .userShow__container__right__list__name
+          %p いいね！一覧
+        .userShow__container__right__list__inner
+          .userShow__container__right__list__inner__content
+            .userShow__container__right__list__inner__content__image
+              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
+            .userShow__container__right__list__inner__content__detail
+              .userShow__container__right__list__inner__content__detail__name
+                %p 商品名
+              .userShow__container__right__list__inner__content__detail__price
+                %p ¥30000
+            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
+
+          .userShow__container__right__list__inner__content
+            .userShow__container__right__list__inner__content__image
+              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
+            .userShow__container__right__list__inner__content__detail
+              .userShow__container__right__list__inner__content__detail__name
+                %p 商品名
+              .userShow__container__right__list__inner__content__detail__price
+                %p ¥30000
+            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
+
+          .userShow__container__right__list__inner__content
+            .userShow__container__right__list__inner__content__image
+              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
+            .userShow__container__right__list__inner__content__detail
+              .userShow__container__right__list__inner__content__detail__name
+                %p 商品名
+              .userShow__container__right__list__inner__content__detail__price
+                %p ¥30000
+            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
+
+          .userShow__container__right__list__inner__content
+            .userShow__container__right__list__inner__content__image
+              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
+            .userShow__container__right__list__inner__content__detail
+              .userShow__container__right__list__inner__content__detail__name
+                %p 商品名
+              .userShow__container__right__list__inner__content__detail__price
+                %p ¥30000
+            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
+
+= render "products/appBanner" 
+
+= render "products/footer"
