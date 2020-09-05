@@ -3,12 +3,12 @@
     .mainheader
       %h1.icon
         =link_to "#" do
-          = image_tag src="logo.png", size: '140x40'
+          = image_tag asset_path("logo.png"), size: '140x40'
       .searchbox
         =form_with(url: searches_path, method: :get, class: "search-form") do |f|
           = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
           %button.submit-btn
-            = image_tag src="icon-search 1.png", size: '20x20'
+            = image_tag asset_path("icon-search 1.png"), size: '20x20'
       %ul.resultList
   .nav
     %ul.listsleft
