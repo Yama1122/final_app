@@ -8,7 +8,7 @@
         =form_with(url: searches_path, method: :get, class: "search-form") do |f|
           = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
           %button.submit-btn
-            = image_tag asset_path("icon-search 1.png"), size: '20x20'
+            = image_tag "icon-search 1.png", size: '20x20'
       %ul.resultList
   .nav
     %ul.listsleft
