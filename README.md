@@ -16,6 +16,8 @@ image|	string|
 introduction|	text|	
 
 
+
+
 ## Association
 
 * has_many :comments
