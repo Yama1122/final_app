@@ -1,0 +1,10 @@
+$(function(){
+  $(".userbtn").hover(
+    function(){
+    $(this).children(".userShow__container__left__index__content--icon").animate({"right":"15px"},200).css("color","black");
+  },
+    function(){
+      $(this).children(".userShow__container__left__index__content--icon").animate({"right":"20px"},200).css("color","#CCC");
+  }
+);
+});
