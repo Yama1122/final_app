@@ -1,0 +1,51 @@
+.single-container
+  .single-header
+    %h1.head
+      =link_to "#", class:"logo" do
+        = image_tag src="products/logo.png", size: '140x40'
+  .main
+    %section.container
+      %h2.head 新規会員登録
+      .inner-form
+        .content
+          = link_to "#", class:'btn-mail' do
+            = icon("fas","envelope-square", class:'icon')
+            メールアドレスで登録する
+          %button#google-login.btn-google 
+            = icon("fab","google",class:'icon')
+            Googleで登録する
+          %button#facebook-login.btn-facebook
+            = icon("fab","facebook-square",class:'icon')
+            Facebookで登録する
+          %button#apple-login.btn-apple
+            = icon("fab","apple",class:'icon')
+            Appleで登録する
+          .form-group
+            %p.form-info-text 
+              登録することで、
+              =link_to '利用規約' , target: :_blank
+              と
+              =link_to 'プライバシーポリシー' , target: :_blank
+              に同意したものとみなされます。
+  .single-footer
+    .nav
+      %ul.clearfix
+        %li.list
+          =link_to 'プライバシーポリシー',"#",class: "text"
+        %li.lists
+          =link_to 'FURIMA利用規約',"#", class: "text"
+        %li.lists
+          =link_to '特定商取引に関する表記',"#", class: "text"
+    =link_to "#", class:"footer-logo" do
+      = image_tag src="products/logo.png", size: '140x40'
+    %p.copyright  ©︎ FURIMA
+
+
+
+
+
+
+
+
+
+

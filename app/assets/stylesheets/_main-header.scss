@@ -68,7 +68,7 @@
         padding: 0;
         line-height: 38px;
         .category{
-          background-image: url("icon_category.png");
+          background-image: image-url("products/icon_category.png");
           color: #333;
           text-decoration: none;
           line-height: 32px;
@@ -99,7 +99,7 @@
         line-height: 38px;
         padding: 0 0 0 16px;
         .bland {
-          background-image: url("icon_brand.png");
+          background-image: image-url("products/icon_brand.png");
           color: #333;
           text-decoration: none;
           background-position: center right;
