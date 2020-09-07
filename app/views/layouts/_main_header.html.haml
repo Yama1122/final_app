@@ -3,12 +3,13 @@
     .mainheader
       %h1.icon
         =link_to "#" do
-          = image_tag asset_path("logo.png"), size: '140x40'
+          = image_tag "products/logo.svg", size: '140x40'
       .searchbox
-        =form_with(url: searches_path, method: :get, class: "search-form") do |f|
+        = form_with(class: "search-form") do |f|
           = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
           %button.submit-btn
-            = image_tag "icon-search 1.png", size: '20x20'
+            =link_to "#" do
+              = image_tag "products/icon-search 1.png", size: '20x20'
       %ul.resultList
   .nav
     %ul.listsleft
@@ -22,6 +23,6 @@
         %ul.brandsPulldowndisplayNone
     %ul.listsRight
       %li.listsRight__item--login
-        =link_to "ログイン","#" , class: "login"
+        =link_to "ログイン", new_user_session_path, class: "login"
       %li.listsRight__item--new
-        =link_to "新規会員登録", "#" , class: "new"
+        =link_to "新規会員登録", new_user_registration_path , class: "new"
