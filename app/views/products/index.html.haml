@@ -1,4 +1,6 @@
-= render "products/main_header"
+
+= render "layouts/main_header"
+
 .main
   %section.mainVisual
     .content
@@ -18,7 +20,7 @@
       %li.list
         .list__pict
           %span.number 1
-          = image_tag src="products/pict-reason-01.jpg", size: '216x216'
+          = image_tag src="products/pict-reason-01.jpg", size: '280x280'
         %h3.list__text
           %span 3分
           ですぐに出品
@@ -26,7 +28,7 @@
       %li.list
         .list__pict
           %span.number ２
-          = image_tag src="products/pict-reason-02.jpg", size: '216x216'
+          = image_tag src="products/pict-reason-02.jpg", size: '280x280'
         %h3.list__text
           %span シンプル
           で使いやすい
@@ -34,7 +36,7 @@
       %li.list--last
         .list__pict
           %span.number ３
-          = image_tag src="products/pict-reason-03.jpg", size: '216x216'
+          = image_tag src="products/pict-reason-03.jpg", size: '280x280'
         %h3.list__text 手数料
         %span 業界最安値
         %p.list__description 最大３％でお得に出品・購入！
@@ -107,5 +109,4 @@
                 %p.tax (税込)
 
 = render "products/appBanner"
-
-= render "products/footer"
+= render "layouts/footer"
