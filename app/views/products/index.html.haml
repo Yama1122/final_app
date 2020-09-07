@@ -1,4 +1,5 @@
-= render "products/main_header"
+
+= render "layouts/main_header"
 .main
   %section.mainVisual
     .content
@@ -18,7 +19,7 @@
       %li.list
         .list__pict
           %span.number 1
-          = image_tag src="products/pict-reason-01.jpg", size: '216x216'
+          = image_tag src="pict-reason-01.png", size: '216x216'
         %h3.list__text
           %span 3分
           ですぐに出品
@@ -26,7 +27,7 @@
       %li.list
         .list__pict
           %span.number ２
-          = image_tag src="products/pict-reason-02.jpg", size: '216x216'
+          = image_tag src="pict-reason-02.png", size: '216x216'
         %h3.list__text
           %span シンプル
           で使いやすい
@@ -34,7 +35,7 @@
       %li.list--last
         .list__pict
           %span.number ３
-          = image_tag src="products/pict-reason-03.jpg", size: '216x216'
+          = image_tag src="pict-reason-03.png", size: '216x216'
         %h3.list__text 手数料
         %span 業界最安値
         %p.list__description 最大３％でお得に出品・購入！
@@ -56,17 +57,17 @@
     .items
       %section.item
         %figure.item__img
-          = image_tag src="products/icon-01.png", size: '103x158'
+          = image_tag src="icon-01.png", size: '103x158'
         %h3.item__subtitlle 簡単に売り買いできる
         %p.item__detail スマホ一つで、いつでもどこでも簡単に出品・購入が可能！
       %section.item
         %figure.item__img
-          = image_tag src="products/icon-03.png", size: '103x158'
+          = image_tag src="icon-03.png", size: '103x158'
         %h3.item__subtitlle 売上金は即日振り込みに対応
         %p.item__detail 午前９時までに振り込みを依頼いただければ、翌日に指定の口座に入金いたします！
       %section.item
         %figure.item__img
-          = image_tag src="products/icon-04.png", size: '103x158'
+          = image_tag src="icon-04.png", size: '103x158'
         %h3.item__subtitlle 様々な支払いに対応
         %p.item__detail お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります！
   %section.pickupContainer
@@ -106,6 +107,6 @@
                     =icon('fa','star')
                 %p.tax (税込)
 
-= render "products/appBanner"
+= render "layouts/appBanner"
 
-= render "products/footer"
+= render "layouts/footer"
