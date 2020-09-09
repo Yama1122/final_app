@@ -31,7 +31,7 @@ introduction|	text|
 
 ***
 
-## sending_adress
+## sending_address
 
 |Column|Type|Options|
 |:---|:---|:---|
