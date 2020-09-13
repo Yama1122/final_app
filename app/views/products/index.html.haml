@@ -19,35 +19,37 @@
     %ul.lists
       %li.list
         .list__pict
-          %span.number 1
-          = image_tag src="products/pict-reason-01.jpg", size: '280x280'
+          %span 1
+          = image_tag src="products/pict-reason-01.jpg"
         %h3.list__text
           %span 3分
           ですぐに出品
         %p.list__description スマホで入力するだけで簡単に出品できる！
       %li.list
         .list__pict
-          %span.number ２
-          = image_tag src="products/pict-reason-02.jpg", size: '280x280'
+          %span 2
+          = image_tag src="products/pict-reason-02.jpg"
         %h3.list__text
           %span シンプル
           で使いやすい
         %p.list__description めんどくさい入力は必要なく、検索も購入もスムーズ！
       %li.list--last
         .list__pict
-          %span.number ３
-          = image_tag src="products/pict-reason-03.jpg", size: '280x280'
-        %h3.list__text 手数料
-        %span 業界最安値
+          %span 3
+          = image_tag src="products/pict-reason-03.jpg"
+        %h3.list__text 
+          手数料
+          %span 業界最安値
         %p.list__description 最大３％でお得に出品・購入！
   %section.topMiddle
-    .topmiddle__inner
+    .topMiddle__inner
       %h2.subtittle 会員数日本一位
-      %p.text FURIMAは、フリマアプリで最も人気。
-      %br
-      出品・購入回数も業界最多です！
-      %br
-      欲しかったあの商品に出会えるかもしれません。
+      %p.text 
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        欲しかったあの商品に出会えるかもしれません。
       .btn
         =link_to "#", class:'aBtn' do
           = image_tag src="https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"
@@ -58,17 +60,17 @@
     .items
       %section.item
         %figure.item__img
-          = image_tag src="products/icon-01.png", size: '103x158'
+          = image_tag src="products/icon-01.png"
         %h3.item__subtitlle 簡単に売り買いできる
         %p.item__detail スマホ一つで、いつでもどこでも簡単に出品・購入が可能！
       %section.item
         %figure.item__img
-          = image_tag src="products/icon-03.png", size: '103x158'
-        %h3.item__subtitlle 売上金は即日振り込みに対応
+          = image_tag src="products/icon-03.png"
+        %h3.item__subtitlle 売上金は即日振込みに対応
         %p.item__detail 午前９時までに振り込みを依頼いただければ、翌日に指定の口座に入金いたします！
       %section.item
         %figure.item__img
-          = image_tag src="products/icon-04.png", size: '103x158'
+          = image_tag src="products/icon-04.png"
         %h3.item__subtitlle 様々な支払いに対応
         %p.item__detail お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります！
   %section.pickupContainer
