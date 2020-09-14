@@ -76,7 +76,7 @@
       display: flex;
       max-width: 1020px;
       width: 100%;
-      margin: auto;
+      margin: 0 auto;
       .list {
         width: 30%;
         margin: 16px 5% 0 0;
@@ -87,7 +87,7 @@
         &__pict {
           position: relative;
           margin-bottom: 20px;
-          .number {
+          span {
             display: inline-block;
             position: absolute;
             top: 0;
@@ -100,12 +100,19 @@
             background-color: #3ccace;
             color: #fff;
           }
+          img {
+            width: 100%;
+            vertical-align: bottom;
+          }
         }
         &__text {
           font-weight: bold;
           font-size: 24px;
           line-height: 50px;
           margin: 0 0 0 2px;
+          span {
+            color: #3ccace;
+          }
         }
         &__description {
           font-size: 18px;
@@ -123,19 +130,6 @@
         &__pict {
           position: relative;
           margin-bottom: 20px;
-          .number {
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            border-radius: 4%;
-            font-size: 30px;
-            text-align: center;
-            margin: 0 5px 0 0;
-            padding: 10px 20px;
-            background-color: #3ccace;
-            color: #fff;
-          }
         }
         &__text {
           font-weight: bold;
@@ -160,9 +154,9 @@
     align-items: center;
     &__inner {
       color: #fff;
-      text-shadow: 0 0 5px;
+      text-shadow: rgba(0,0,0,4) 0 0 5px;
       text-align: left;
-      max-width: 1050px;
+      max-width: 1040px;
       width: 100%;
       margin: 0 auto;
       .subtittle {
@@ -195,7 +189,8 @@
     }
   }
   .topKeyFaetures {
-    display: block;
+    padding: 60px 100px;
+    background-color: #fff;
     .head {
       font-size: 27px;
       text-align: center;
@@ -204,8 +199,18 @@
       padding-bottom: 15px;
       position: relative;
     }
+    .head::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: #3ccace;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     .items {
-      max-width: calc(1040px + 20pxpx);
+      max-width: calc(1040px + 20px);
       width: 100%;
       margin: 0 auto;
       display: flex;
@@ -220,6 +225,10 @@
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
+          img {
+            width: 100%;
+            vertical-align: bottom;
+          }
         }
         &__subtitlle {
           margin: 38px 0 10px;
@@ -228,7 +237,7 @@
         }
         &__detail {
           margin: 0 0 40px;
-          font-weight: bold;
+          font-weight: 200px;
           font-size: 17px;
           text-align: left;
         }
