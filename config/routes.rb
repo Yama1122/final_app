@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     member do
       get 'logout'
     end
+    collection do
+      get 'registration_select'
+    end
   end
   resources :credit_cards, only: :new
   resources 'searches', only: :index

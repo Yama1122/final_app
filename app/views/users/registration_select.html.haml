@@ -1,0 +1,41 @@
+.single-container
+  .single-header
+    %h1.head
+      =link_to "#", class:"logo" do
+        = image_tag src="products/logo.png", size: '140x40'
+  .single-main
+    .login-form
+      .login-no-account
+        %p 
+          アカウントをお持ちでない方はこちら
+          =link_to '新規会員登録', new_user_registration_path
+      .login-form-inner
+        %button#google-login.btn-google 
+          = icon("fab","google",class:'icon')
+          Googleでログイン
+        %button#facebook-login.btn-facebook
+          = icon("fab","facebook-square",class:'icon')
+          Facebookでログイン
+        %button#apple-login.btn-apple
+          = icon("fab","apple",class:'icon')
+          Appleでログイン
+        = form_with(class: "register-form") do |f|
+          .form-label
+            = f.text_field :email, placeholder:"mail", class: "mail-input"
+          .form-label
+            = f.password_field :password, placeholder:"password", class: "password-input"
+          .form-label
+            = f.submit "ログイン", class: 'btn'
+          =link_to "パスワードをお忘れの方","#"
+  .single-footer
+    .nav
+      %ul.clearfix
+        %li.list
+          =link_to 'プライバシーポリシー',"#",class: "text"
+        %li.lists
+          =link_to 'FURIMA利用規約',"#", class: "text"
+        %li.lists
+          =link_to '特定商取引に関する表記',"#", class: "text"
+    =link_to "#", class:"footer-logo" do
+      = image_tag src="products/logo-white.svg", size: '140x40'
+    %p.copyright  ©︎ FURIMA
