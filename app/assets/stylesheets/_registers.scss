@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .single-container {
-  padding: 0 0 250px;
+  
   background-color: #f5f5f5;
   .single-header {
     height: 128px;
@@ -19,6 +19,7 @@
   }
   .main {
     display: block;
+    background: #f1f1f1;
     .container {
       width: 700px;
       margin: 0 auto;
