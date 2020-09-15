@@ -6,4 +6,7 @@ class UsersController < ApplicationController
   def registration_select
   end
 
+  def complete
+  end
+
 end

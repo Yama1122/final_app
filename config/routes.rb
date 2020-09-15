@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
     collection do
       get 'registration_select'
+      get 'complete'
     end
   end
   resources :credit_cards, only: :new
