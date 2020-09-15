@@ -1,8 +1,5 @@
 .single-container
-  .single-header
-    %h1.head
-      =link_to "#", class:"logo" do
-        = image_tag src="products/logo.png", size: '140x40'
+  = render 'products/sub_header'
   .main
     %section.container
       %h2.head 新規会員登録
@@ -27,15 +24,4 @@
               と
               =link_to 'プライバシーポリシー' , target: :_blank
               に同意したものとみなされます。
-  .single-footer
-    .nav
-      %ul.clearfix
-        %li.list
-          =link_to 'プライバシーポリシー',"#",class: "text"
-        %li.lists
-          =link_to 'FURIMA利用規約',"#", class: "text"
-        %li.lists
-          =link_to '特定商取引に関する表記',"#", class: "text"
-    =link_to "#", class:"footer-logo" do
-      = image_tag src="products/logo-white.svg", size: '140x40'
-    %p.copyright  ©︎ FURIMA
+  = render 'products/sub_footer'

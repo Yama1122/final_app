@@ -1,0 +1,27 @@
+.single-container
+  = render 'products/sub_header'
+  .single-main
+    .login-form
+      .login-no-account
+        %p 
+          アカウントをお持ちでない方はこちら
+          =link_to '新規会員登録', new_user_registration_path
+      .login-form-inner
+        %button#google-login.btn-google 
+          = icon("fab","google",class:'icon')
+          Googleでログイン
+        %button#facebook-login.btn-facebook
+          = icon("fab","facebook-square",class:'icon')
+          Facebookでログイン
+        %button#apple-login.btn-apple
+          = icon("fab","apple",class:'icon')
+          Appleでログイン
+        = form_with(class: "register-form") do |f|
+          .form-label
+            = f.text_field :email, placeholder:"mail", class: "mail-input"
+          .form-label
+            = f.password_field :password, placeholder:"password", class: "password-input"
+          .form-label
+            = f.submit "ログイン", class: 'btn'
+          =link_to "パスワードをお忘れの方","#"
+  = render 'products/sub_footer'

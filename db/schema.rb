@@ -120,6 +120,8 @@ ActiveRecord::Schema.define(version: 2020_09_10_130022) do
     t.date "birth_day", null: false
     t.string "image"
     t.text "introduction"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
