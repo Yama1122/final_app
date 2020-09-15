@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     member do
       get 'logout'
     end
+    collection do
+      get 'registration_select'
+      get 'complete'
+    end
   end
 
   resources :categories, only: [:index,:show] do

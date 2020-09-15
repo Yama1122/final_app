@@ -21,6 +21,10 @@
         a {
           width: 140px;
           display: block;
+          img {
+            width: 100%;
+            vertical-align: bottom;
+          }
         }
       }
       .searchbox{
@@ -42,6 +46,10 @@
           cursor: pointer;
           background-color: #3ccace;
           padding: 8px;
+          img {
+            width: 100%;
+            vertical-align: bottom;
+          }
           .submit-icon {
             width: 100%;
             vertical-align: bottom;
@@ -57,92 +65,93 @@
       }
     }
   }
-  .nav {
-    font-size: 14px;
-    display: flex;
-    margin-bottom: 10px;
-    .listsleft {
-      position: relative;
+    .nav {
+      font-size: 14px;
       display: flex;
-      &__item--first {
-        text-decoration: none;
-        padding: 0;
-        line-height: 38px;
-        .category{
-          background-image: image-url("products/icon_category.png");
-          color: #333;
+      margin-bottom: 10px;
+      .listsleft {
+        position: relative;
+        display: flex;
+        &__item--first {
           text-decoration: none;
-          line-height: 32px;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
-          padding-right: 30px;
-        }
-        .tree  {
-          z-index: 2;
-          position: absolute;
-          background-color: #fff;
-          width: 240px;
-          top: 40px;
-          .categoryTree {
+          padding: 0;
+          line-height: 38px;
+          .category{
+            background-image: image-url("products/icon_category.png");
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            padding-right: 30px;
+          }
+          .tree  {
+            display: none;
+            z-index: 2;
+            position: absolute;
             background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            &__item {
+            width: 240px;
+            top: 40px;
+            .categoryTree {
+              background-color: #fff;
+              display: flex;
+              flex-direction: column;
               position: relative;
+              &__item {
+                position: relative;
+              }
             }
           }
         }
+        &__item {
+          display: flex;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+          .bland {
+            background-image: image-url("products/icon_brand.png");
+            color: #333;
+            text-decoration: none;
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            padding-right: 30px;
+          }
+          .brandsPulldown {
+            position: absolute;
+            z-index: 1;
+            background-color: #fff;
+          }
+        }
       }
-      &__item {
+      .listsRight {
+        margin-left: auto;
         display: flex;
-        line-height: 38px;
-        padding: 0 0 0 16px;
-        .bland {
-          background-image: image-url("products/icon_brand.png");
+        &__item--login {
           color: #333;
-          text-decoration: none;
-          background-position: center right;
-          background-repeat: no-repeat;
-          background-size: 18px;
-          padding-right: 30px;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+          .login {
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+          }
         }
-        .brandsPulldown {
-          position: absolute;
-          z-index: 1;
-          background-color: #fff;
+        &__item--new {
+          color: #333;
+          line-height: 38px;
+          padding: 0 0 0 16px;
+          .new {
+            display: flex;
+            align-items: center;
+            color: #333;
+            text-decoration: none;
+            line-height: 32px;
+          }
         }
       }
     }
-    .listsRight {
-      margin-left: auto;
-      display: flex;
-      &__item--login {
-        color: #333;
-        line-height: 38px;
-        padding: 0 0 0 16px;
-        .login {
-          display: flex;
-          align-items: center;
-          color: #333;
-          text-decoration: none;
-          line-height: 32px;
-        }
-      }
-      &__item--new {
-        color: #333;
-        line-height: 38px;
-        padding: 0 0 0 16px;
-        .new {
-          display: flex;
-          align-items: center;
-          color: #333;
-          text-decoration: none;
-          line-height: 32px;
-        }
-      }
-    }
-  }
-} 
+  } 
 
