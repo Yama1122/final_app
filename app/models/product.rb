@@ -5,8 +5,6 @@ class Product < ApplicationRecord
   has_many :users, dependent: :destroy
   belongs_to :brand
   belongs_to :category
-
-  
   belongs_to_active_hash :size
   belongs_to_active_hash :condition
   belongs_to_active_hash :sendingday

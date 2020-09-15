@@ -3,9 +3,7 @@ $(function(){
   $(".listsleft__item--first").hover(function(e){  
     e.preventDefault();
     $('#tree_menu').show();
-    $('.categoryTree').show();
-  },function(){
-    
+    $('.categoryTree').show();  
   });
 
 // 子カテゴリに追加する要素
@@ -54,8 +52,6 @@ $(function(){
     .fail(function () {
       alert("カテゴリーを選択してください");
     });
-  },function(){
-
   });
 
 // 子カテゴリー要素をホバーすると孫カテゴリを表示
@@ -85,8 +81,7 @@ $(function(){
     },
     mouseleave: function () {
     }
-// $(document)で親要素である.child_btnを指定
-  }, '.child_btn');
+  }, '.child_btn');  // $(document)で親要素である.child_btnを指定
 
 // マウスが離れたときに非表示にする
   $(document).on({
@@ -102,6 +97,4 @@ $(function(){
     mouseenter: function () {
     }
   }, '#tree_menu');
-
-
 });
