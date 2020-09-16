@@ -71,7 +71,7 @@
             発送元の地域
             %span.required 必須
           .sending_preficture__list_box
-            %input.text{:placeholder => "愛知県", :type => "text"}/
+            = f.collection_select :prefecture_code_id, Prefecture_code.all, :id, :name
         .sending_day
           .sending_day__text
             発送までの日数
