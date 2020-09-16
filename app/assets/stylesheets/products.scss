@@ -226,6 +226,10 @@ body{
     padding-top:30px;
     font-weight:bold;
     font-size:46px;
+    span{
+      font-size:34px;
+      vertical-align: top;
+    }
     &--detail{
       font-weight: normal;
       font-size:16px;
