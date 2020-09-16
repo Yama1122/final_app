@@ -1,6 +1,6 @@
 = render "sub_header"
 .Exhibition-wrapper
-  = form_with model: @item do |f|
+  = form_with model: @product do |f|
     .Exhibition-form
       .product_images
         .image__text
@@ -35,12 +35,8 @@
       .product_details
         .product_details__text
           商品の詳細
-        .category
-          .category__text
-            カテゴリー
-            %span.required 必須
-          .category__list_box
-            %input.text{:placeholder => "選択してください", :type => "text"}/
+        -# formの中身を部分テンプレートに切り出すときは変数fを渡す必要がある
+        = render "products/products_category", f:f
         .brand
           .brand__text
             ブランド
