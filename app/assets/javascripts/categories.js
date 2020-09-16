@@ -80,8 +80,6 @@ $(function(){
         .fail(function () {
           alert("カテゴリーを選択してください");
         });
-    },
-    mouseleave: function () {
     }
   }, '.child_btn');  // $(document)で親要素である.child_btnを指定
 
@@ -95,8 +93,6 @@ $(function(){
       $(this).hide();
       $(".category_child").remove();
       $(".category_grandchild").remove();
-    },
-    mouseenter: function () {
     }
   }, '#tree_menu');
 // ---topページここまで---
@@ -162,7 +158,6 @@ $(function(){
 
         // 子カテゴリを選択すると孫カテゴリを表示
         $("#child-form").on("change", function(){
-          console.log("hello");
           let childrenValue = document.getElementById("child-form").value;
           if (childrenValue != '') {
             $.ajax({
@@ -210,6 +205,5 @@ $(function(){
   });
 
 // ---商品出品ページここまで---
-
 
 });
