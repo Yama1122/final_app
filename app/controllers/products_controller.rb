@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: :show
+  before_action :set_product, only: [:show]
   def index 
+  end
+
+  def new
   end
 
   def show
