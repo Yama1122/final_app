@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:id])
   end
 
   def search
@@ -17,6 +18,9 @@ class CategoriesController < ApplicationController
       end
     end
   end
+
+  private
+  
 
 
   
