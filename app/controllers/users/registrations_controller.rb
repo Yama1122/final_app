@@ -5,7 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
 
-  @address = @user.sending_address 
+  # @address = @user.sending_address 
   #build_ship_addressメソッドはhas_one :ship_addressのアソシエーションを設定すると使用可。
 
 
