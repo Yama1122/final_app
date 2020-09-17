@@ -1,6 +1,6 @@
 = render "sub_header"
 .Exhibition-wrapper
-  = form_with model: @item do |f|
+  = form_with model: @product, local: true do |f|
     .Exhibition-form
       .product_images
         .image__text
@@ -9,6 +9,21 @@
             %span.required 必須
           最大10枚までアップロードできます
         .images__upload
+          .image_box#image-box
+            #previews 
+              - if @product.persisted?
+                @product.images.each_with_index do |image, i|
+                = image_tag src. url, data: { index: i }, width: "100",  height: '100'
+              = f.fields_for :product_images do |image|
+                .js-file_group{data: {index: image.index}} 
+                  = image.file_field :url, class: 'js-file'
+                  %span.js-remove 削除
+              - if @product.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - if @product.persisted?
+                .js-file_group{data: {index: @product.images.const}} 
+                  = file_field_tag :url, name:"product[images_attributes][#{@product.images.count}][url]", class: 'js-file'
+                  .js-remove 削除
           .p__upload
             ドラッグ&ドロップ
             %br
@@ -21,17 +36,14 @@
             商品名
             %span.required 必須
           .name__field
-            %input.text{:placeholder => "40文字まで", :type => "text"}/
-
+            = f.text_field :name, placeholder:"40字まで"
         .explanation
           .explanation__text
             商品の説明
             %span.required 必須
           .explanation__field
-            %textarea.textlines{:placeholder => "商品の説明（必須 1,000文字以内)"}
+            = f.text_field :profile, placeholder: "商品の説明（必須 1,000文字以内)"
       .hr  
-
-    
       .product_details
         .product_details__text
           商品の詳細
@@ -40,13 +52,13 @@
             カテゴリー
             %span.required 必須
           .category__list_box
-            %input.text{:placeholder => "選択してください", :type => "text"}/
+        -# =f.collection_select :category_id, @category_parent_array, :id, :name,{ include_blank: "選択してください"}
         .brand
           .brand__text
             ブランド
             %span.any 任意
           .brand__field
-            %input.text{:placeholder => "例)  シャネル", :type => "text"}/
+            =f.text_field :brand_name, placeholder: "ブランド"
         .condition
           .condition__text
             商品の状態
@@ -54,7 +66,6 @@
           .condition__list_box
             = f.collection_select :condition_id, Condition.all, :id, :name
       .hr  
-      
       .sending
         .sending__text
           配送について
@@ -75,7 +86,7 @@
             発送元の地域
             %span.required 必須
           .sending_preficture__list_box
-            %input.text{:placeholder => "愛知県", :type => "text"}/
+            -#= f.collection_select :prefecture_code_id, Prefecture_code.all, :id, :name
         .sending_day
           .sending_day__text
             発送までの日数
@@ -92,7 +103,7 @@
             %span.required 必須
           .wrapper__listbox
             ¥
-            %input.text{:placeholder => "0", :type => "text"}/
+            = f.number_field :price, :placeholder => "0"
         .wrapper_tex
           .wrapper_tex__text
             販売手数料(10%)
@@ -109,9 +120,8 @@
 
       .exhibition
         .exhibition__wrapper
-          = link_to '#' do
-            .exhibition_btn
-              出品する
+          .exhibition_btn
+            = f.submit "出品する"
           = link_to '#' do
             .draft_btn
               下書きに保存

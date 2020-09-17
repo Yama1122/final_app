@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to:'products#index'
-  resources :products, only: [:index,:show,:new] do
-    member do
-      get 'confirmation'
-    end
+    resources :products, only: [:index,:show,:new, :create] do
+      member do
+        get 'confirmation'
+      end
   end
   
   resources :users, only: :show do
@@ -15,3 +15,4 @@ Rails.application.routes.draw do
   resources :credit_cards, only: :new
   resources 'searches', only: :index
 end
+
