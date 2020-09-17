@@ -13,7 +13,7 @@
       .showMain__container__content__topContent
         .itemBox
           %h2.itemBox__name
-            product
+            = @product.name
           .itemBox__body
             .itemBox__body--top
               = image_tag "products/product2.png",class:"itemBox__body--top--image"
@@ -26,12 +26,14 @@
                 %li
                   = image_tag "products/product4.png"
           .itemBox__price
-            ¥30000
+            %p
+              = @product.price 
+              %span 円
             .itemBox__price--detail
               (税込) 送料込み
           .itemBox__itemDetail
             %p
-              親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+              = @product.profile
           .itemBox__table
             %table
               %tbody
@@ -45,11 +47,13 @@
                     カテゴリー
                   %td
                     = link_to "#",class:"itemBox__table--category" do
-                      ベビー・キッズ
+                      -# 孫カテゴリが存在しない場合
+                      - if @category.parent.parent != nil  
+                        = @category.parent.parent.name
                     = link_to "#",class:"itemBox__table--category" do
-                      ベビー服(男女兼用) ~95cm
+                      = @category.parent.name
                     = link_to "#",class:"itemBox__table--category" do
-                      アウター
+                      = @category.name
                 %tr
                   %th
                     ブランド

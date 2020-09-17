@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_130022) do
+ActiveRecord::Schema.define(version: 2020_09_16_061724) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2020_09_10_130022) do
     t.integer "price", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.integer "size", null: false
+    t.string "size", default: ""
     t.integer "condition", null: false
     t.integer "sendingday", null: false
     t.integer "postage", null: false
@@ -108,6 +108,9 @@ ActiveRecord::Schema.define(version: 2020_09_10_130022) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.string "nickname", null: false
     t.string "email", null: false
     t.string "password", null: false
@@ -120,9 +123,6 @@ ActiveRecord::Schema.define(version: 2020_09_10_130022) do
     t.date "birth_day", null: false
     t.string "image"
     t.text "introduction"
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false

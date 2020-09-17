@@ -1,0 +1,11 @@
+#tree_menu
+  %ul.categoryTree
+    - @parents.each do |parent|
+      %li.category_parent
+        = link_to category_path(parent) do
+          %input{type: "button", value:"#{parent.name}",name:"#{parent.id}",class:"parent_btn"}
+    %li.category_parent
+      = link_to categories_path do
+        %input{type: "button", value: "カテゴリー一覧", id: "all_btn"}
+  %ul.categoryTree-child
+  %ul.categoryTree-grandchild

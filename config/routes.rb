@@ -16,6 +16,13 @@ Rails.application.routes.draw do
       get 'complete'
     end
   end
+
+  resources :categories, only: [:index,:show] do
+    collection do
+      get :search
+    end
+  end
+  
   resources :credit_cards, only: :new
   resources 'searches', only: :index
 end
