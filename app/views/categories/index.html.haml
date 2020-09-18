@@ -6,11 +6,11 @@
       %p カテゴリー一覧
     .categoryIndex__container__pickup
       - @parents.each do |parent|
-        = link_to category_path(parent.id) do
+        = link_to "\##{parent.id}" do
           .categoryIndex__container__pickup__content
             = parent.name
     - @parents.each do |parent|        
-      .categoryIndex__container__list
+      .categoryIndex__container__list{id:"#{parent.id}"}
         .categoryIndex__container__list__name
           = parent.name
         .categoryIndex__container__list__content
