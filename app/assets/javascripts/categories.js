@@ -5,8 +5,10 @@ $(function(){
   $(".listsleft__item--first").hover(function(e){  
     e.preventDefault();
     $('#tree_menu').show();
-    $('.categoryTree').show();  
-  });
+    $('.categoryTree').show(); 
+    },function(){
+    } 
+  );
 
 // 子カテゴリに追加する要素
   function childBuild(children){ 
@@ -207,6 +209,22 @@ $(function(){
 // ---商品出品ページここまで---
 
 // カテゴリ一覧ページ
-
+// 親カテゴリボタンを押すとページをスクロール
+$(function(){
+  // リンクが#から始まるaタグで発火
+  $('a[href^="#"]').click(function(){
+    //スクロールのスピード
+    var speed = 500;
+    //リンク元を取得
+    var href= $(this).attr("href");
+    //リンク先を取得
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    //リンク先までの距離を取得
+    var position = target.offset().top;
+    //スムーススクロール
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
+});
 
 });

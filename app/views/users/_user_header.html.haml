@@ -14,7 +14,9 @@
   .nav
     %ul.listsleft
       %li.listsleft__item--first
-        =link_to "カテゴリー", "#", class: "category"
+        =link_to "カテゴリー", categories_path, class: "category"
+        = render "layouts/categoryTree"
+
         .treedisplayNone
           %ul.categoryTree
             %li.categoryTree--item
