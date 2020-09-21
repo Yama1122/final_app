@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  # deviseにてusersを作成し使用する場合、controllers: {registrations: 'users/registrations'｝が必要
   root to:'products#index'
   resources :products, only: [:index,:show,:new] do
     member do

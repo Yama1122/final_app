@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+
+
   def logout
   end
 
@@ -8,5 +10,7 @@ class UsersController < ApplicationController
 
   def complete
   end
+
+
 
 end
