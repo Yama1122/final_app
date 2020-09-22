@@ -15,10 +15,9 @@
   .nav
     %ul.listsleft
       %li.listsleft__item--first
-        =link_to "カテゴリー", "#", class: "category"
-        .treedisplayNone
-          %ul.categoryTree
-            %li.categoryTree--item
+        =link_to "カテゴリー", categories_path, class: "category" 
+        = render "layouts/categoryTree"
+        
       %li.listsleft__item
         =link_to "ブランド", "#", class: "bland"
         %ul.brandsPulldowndisplayNone

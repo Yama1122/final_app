@@ -226,6 +226,10 @@ body{
     padding-top:30px;
     font-weight:bold;
     font-size:46px;
+    span{
+      font-size:34px;
+      vertical-align: top;
+    }
     &--detail{
       font-weight: normal;
       font-size:16px;
@@ -778,7 +782,7 @@ body{
   }
   .product_details {
     padding: 30px;
-    height: 360px;
+    // brandを非表示のためheight削除
     &__text {
       color: #505050;
       padding-bottom: 15px;
@@ -788,6 +792,42 @@ body{
         padding-bottom:10px;
       }
       &__list_box {
+        &--child{
+          margin-top:20px;
+          .text {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+        &--gc{
+          margin-top:20px;
+          .text {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
         .text {
           border: 1px solid #000000;  /* 枠線 */
           border-radius: 4px;   /* 角丸 */
@@ -807,6 +847,7 @@ body{
       }
     }
     .brand {
+      display: none;
       &__text {
         padding:20px 0 10px 0;
       }
@@ -907,7 +948,7 @@ body{
         padding:20px 0 10px 0;
       }
       &__list_box {
-        .text {
+        #prefecture_code_id {
           border: 1px solid #000000;  /* 枠線 */
           border-radius: 4px;   /* 角丸 */
           padding: 0.5em;          /* 内側の余白量 */

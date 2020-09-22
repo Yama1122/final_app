@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_parents
 
   protected
   def configure_permitted_parameters
@@ -21,5 +22,9 @@ class ApplicationController < ActionController::Base
   end
 
   def confirmation
+  end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
   end
 end
