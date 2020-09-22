@@ -3,13 +3,37 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  def new
+    @user = User.new
+    @user.build_sending_address
+  end
+  
+  def create
+    
+    @user = User.new(user_params)
+    
+    if @user.save 
+      sign_in(:user, @user) #登録後ログイン状態になるようにしている
+      redirect_to complete_users_path, notice: '登録が完了しました'
+    else
+      redirect_to   new_user_registration_path, alert: '登録できませんでした'
+    end
+    
+
+  end
 
 
-  # @address = @user.sending_address 
-  #build_ship_addressメソッドはhas_one :ship_addressのアソシエーションを設定すると使用可。
 
 
+  
 
+
+  private
+  def user_params
+    params.require(:user).permit(:nickname, :email, :password, :first_name, :family_name, :first_name_kana, :family_name_kana, :birth_date, :image, :introduction, sending_address_attributes:[:id, :first_name, :family_name, :first_name_kana, :family_name_kana, :post_code, :prefecture_code, :city, :house_number, :building_name, :phone_number, :user_id])
+    #usersテーブル上パスワードはencrypted_passwordであるが、パラメータ上passwordとなるため上記ように記載
+    # ユーザー登録の際にsending_address_attributes:を付属させることでsending_addressesテーブルにもデータを入れることが可能。user_idは自動的にmergeされる。
+  end
 
 
 
