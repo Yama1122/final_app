@@ -10,8 +10,6 @@
     = javascript_include_tag 'application'
   %body
     - flash.each do |message_type, message|
-    - binding.pry
       = content_tag :div, message, class: message_type
-    -# - flash.each do |key, value|
-    -#   = content_tag(:div, value, class: "#{key}")
+    
     = yield

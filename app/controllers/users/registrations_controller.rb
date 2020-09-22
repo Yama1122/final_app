@@ -14,10 +14,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
     if @user.save 
       sign_in(:user, @user) #登録後ログイン状態になるようにしている
-      redirect_to complete_users_path
+      redirect_to complete_users_path, notice: '登録が完了しました'
     else
-      flash.now[:alert] = '登録ができませんでした'
-      redirect_to   new_user_registration_path
+      redirect_to   new_user_registration_path, alert: '登録できませんでした'
     end
     
 
