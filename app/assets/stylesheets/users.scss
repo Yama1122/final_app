@@ -3,12 +3,16 @@
   width:100%;
   background-color: #F5F5F5;
   height:1050px;
+  a {
+    text-decoration: none;
+  }
   &__container{
     padding:40px;
     display:flex;
     width:70%;
     margin:0 auto;
     &__left{
+      
       ul{
         background-color:#fff;
         a{
@@ -172,6 +176,8 @@
   }
 }
 
+
+
 .logout{
   background-color: #fff;
   width:700px;
@@ -180,6 +186,7 @@
   margin-left:40px;
   border-radius:5px;
   padding-top:100px;
+  
   &__btn{
     margin:0 auto;
     width:70%;
@@ -191,6 +198,7 @@
     border-radius: 5px;
     text-align:center;
     line-height:60px;
+    text-decoration: none;
     &:hover{
       opacity:0.5;
     }
