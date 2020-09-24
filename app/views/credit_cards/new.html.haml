@@ -137,6 +137,10 @@
                 %span
                   必須
               = f.text_field "cvc", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+              .cvcinfo
+                = icon("fas","question-circle")
+                %p
+                  カード裏面の番号とは？
               #card_token
               = f.submit "追加する", id: "token_submit"
 
