@@ -125,3 +125,75 @@
     line-height: 20px;
   }
 }
+
+.credit_complete{
+  background-color: #fff;
+  width:700px;
+  height:280px;
+  margin-top:35px;
+  margin-left:40px;
+  border-radius:5px;
+  // padding-top:100px;
+  &__container{
+   margin:0 auto;
+   padding:20px;
+   &__info{
+     background-color: orange;
+     border-radius: 5px;
+     padding:15px;
+     color:white;
+     display: flex;
+     p{
+       line-height: 24px;
+     }
+     &__icon{
+       line-height: 22px;
+       padding-right:5px;
+     }
+   }
+   &__btns{
+     padding:10px;
+     margin:0 auto;
+     display: flex;
+     justify-content: space-around;
+     padding-top:80px;
+     a{
+      color:white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+   }
+  }
+}
+
+.my_page_link{
+  background-color: #3CCACD;
+  width:180px;
+  height:60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  &:hover{
+    opacity:0.5;
+  }
+  a{
+    color:white;
+    text-decoration: none;
+  }
+}
+
+.credit_cards_index_link{
+  background-color: #3CCACD;
+  width:180px;
+  height:60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  &:hover{
+    opacity:0.5;
+  }
+  a{
+    color:white;
+    text-decoration: none;
+  }
+}

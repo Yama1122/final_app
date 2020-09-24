@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :credit_cards, only: [:new,:index,:delete,:create] 
+  resources :credit_cards, only: [:new,:index,:delete,:create] do
+    collection do
+      get 'complete'
+    end
+  end
   resources 'searches', only: :index
 end
