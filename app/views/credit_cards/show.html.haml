@@ -1,3 +1,4 @@
+-# 登録クレジットカード一覧ページ
 = render "users/user_header"
 
 .userShow
@@ -82,3 +83,35 @@
               %li.userbtn 
                 ログアウト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+
+
+
+    .creditIndex
+      .creditIndex__container
+        .creditIndex__container__name
+          %p 登録クレジットカード情報
+        .creditIndex__container__subname
+          %p クレジットカード一覧
+        .creditIndex__container__list
+          - @cards.each do |card|
+            .creditIndex__container__list__content
+              .creditIndex__container__list__content__left
+                .creditIndex__container__list__content__left__logo
+                  = image_tag "cards/#{@card_src}"
+                .creditIndex__container__list__content__left__info
+                  .creditIndex__container__list__content__left__info__number
+                    = "**** **** **** " +  @customer_card.last4
+                  .creditIndex__container__list__content__left__info__limit
+                    %p 有効期限 
+                    %span
+                      = @exp_month + " / " + @exp_year
+              .creditIndex__container__list__content__right
+                .creditIndex__container__list__content__right__btn
+                  = link_to credit_card_path, method: :delete do
+                    削除する
+
+        = link_to "#" do
+          .creditIndex__container__hint
+            %p 支払い方法について
+            = icon("fas","chevron-right")
+

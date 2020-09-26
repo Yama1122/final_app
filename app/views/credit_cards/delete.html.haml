@@ -1,4 +1,4 @@
--# クレジットカード登録完了ページ
+-# クレジットカード削除完了ページ
 = render "users/user_header"
 
 .userShow
@@ -88,7 +88,7 @@
       .credit_complete__container
         .credit_complete__container__info
           = icon("fas","exclamation-circle",class:"credit_complete__container__info__icon")
-          %p 登録が完了しました。
+          %p クレジットカード情報を削除しました。
         %ul.credit_complete__container__btns
           = link_to user_path(current_user.id), class: "my_page_link__btn" do
             %li.my_page_link
