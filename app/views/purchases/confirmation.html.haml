@@ -1,21 +1,25 @@
-= render "sub_header"
+= render "products/sub_header"
 .purchase_detail_wrapper
   .purchase_detail_wrapper__form
     .top_text
       購入内容の確認
     .hr
     .purchase-product
-      .product_wrapper
-        .product_image
-          = image_tag 'products/product2.png', class: 'product2'
-        .product_detail
-          .name
-            サバの味噌煮
-          .price
-            .shipping1
-              送料込み（税込）
-            .price
-              ¥1500
+      .purchase-product__wrapper
+        .purchase-product__wrapper__left
+          .purchase-product__wrapper__left__image
+            = image_tag 'products/product2.png', class: 'product2'
+        .purchase-product__wrapper__right    
+          .purchase-product__wrapper__right__name
+            %p 
+              サバの味噌煮
+          .purchase-product__wrapper__right__price
+            %p (税込)送料込み
+            %p 
+              %span ¥
+              %p １５００
+          
+          
     .hr
     .total_price
       .total_price__text
@@ -27,9 +31,11 @@
     .payment_methods
       .payment_methods__wrapper
         .text
-          支払い方法
+          %p 支払い方法
         .change
-          = link_to '変更する　＞', '#'
+          = link_to "#" do
+            変更する
+            = icon("fas","chevron-right")
       .credit_card
         .text
           クレジットカード
@@ -43,9 +49,11 @@
     .shipping
       .wrapper
         .text
-          配送先
+          %p 配送先
         .change
-          = link_to '変更する　＞', '#'
+          = link_to "#" do
+            変更する
+            = icon("fas","chevron-right")
       .seiding__address
         .post_code
           〒453-0014
@@ -62,7 +70,7 @@
         .text
           購入する
 
-= render "sub_footer"
+= render "products/sub_footer"
 
 
     

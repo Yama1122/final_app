@@ -12,7 +12,7 @@
     height:1100px;
     width: 700px;
     margin:0 auto;
-    
+    border-radius: 2px;
   }
 
   .hr {
@@ -26,26 +26,44 @@
     height:30px;
     text-align: center;
     font-size: 24px;
-    padding:40px 90px 40px 90px;
+    padding:40px 90px 50px 90px;
+    font-weight: bold;
   }
 
-  .purchase-product {
-    height: 200px;
-    padding:30px 90px;
-    .product_wrapper {
+  .purchase-product{
+    &__wrapper{
+      padding:20px 90px;
+      padding-bottom: 0;
       display: flex;
-      justify-content:space-between;
-      .product2 {
-        height: 140px;
-      }
-      .product_detail {
-        width:300px;
-        .name {
-          padding-bottom: 20px;
+      justify-content: space-between;
+      &__left{
+        padding-left:20px;
+        &__image{
+          img{
+            border-radius: 5px;
+            width:150px;
+            height:150px;
           }
-        .price {
-          display:flex;
+        }
+      }
+      &__right{
+        padding-top:20px;
+        &__name{
+          padding-right:160px;
+          font-size: 20px;
+          padding-top: 20px;
+          font-weight: bold;
+        }
+        &__price{
+          padding-right: 30px;
+          padding-top:30px;
+          display: flex;
           justify-content: flex-end;
+          font-size:12px;
+          span{
+            line-height:20px;
+            padding-left:10px;
+          }
         }
       }
     }
@@ -77,7 +95,11 @@
         font-size:18px;
       }
       .change {
-        font-size:18px;
+        font-size:14px;
+        i{
+          font-size:10px;
+          vertical-align: 1px;
+        }
       }
       .number1 {
       }
@@ -95,7 +117,11 @@
         font-size:18px;
       }
       .change {
-        font-size:18px;
+        font-size:14px;
+        i{
+          font-size:10px;
+          vertical-align: 1px;
+        }
       }
     }
   }
@@ -111,6 +137,9 @@
     padding: 30px 90px;
     display:flex;
     justify-content: center;
+    &:hover{
+      opacity:0.8;
+    }
     .text {
       height: 48px;
       width: 360px;
@@ -123,5 +152,11 @@
       border-radius: 4px;
       margin-bottom: 20px;
     }
+  }
+}
+
+.text{
+  p{
+    font-weight: bold;
   }
 }

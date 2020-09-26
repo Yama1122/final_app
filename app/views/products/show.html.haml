@@ -32,7 +32,7 @@
             .itemBox__price--detail
               (税込) 送料込み
           .itemBox__purchace
-            = link_to "#" do
+            = link_to confirmation_product_purchase_path(params[:id]) do
               .itemBox__purchace__btn
                 購入画面に進む
           .itemBox__itemDetail
