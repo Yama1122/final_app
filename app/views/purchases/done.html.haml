@@ -14,12 +14,13 @@
         .purchase-product__wrapper__right    
           .purchase-product__wrapper__right__name
             %p 
-              サバの味噌煮
+              = @product.name
           .purchase-product__wrapper__right__price
             %p (税込)送料込み
             %p 
               %span ¥
-              %p １５００
+              %p
+                = @product.price
           
           
     .hr
@@ -27,7 +28,9 @@
       .total_price__text
         支払い金額
       .total_price__view
-        ¥1,500
+        %span ¥
+        %p 
+          = @product.price
     .hr
 
     %ul.credit_complete__container__btns#purchaseDoneBtn

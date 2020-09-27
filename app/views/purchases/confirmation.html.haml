@@ -26,7 +26,9 @@
       .total_price__text
         支払い金額
       .total_price__view
-        ¥1,500
+        %span ¥
+        %p 
+          = @product.price
     .hr
       
     .payment_methods
