@@ -93,22 +93,21 @@
         .creditIndex__container__subname
           %p クレジットカード一覧
         .creditIndex__container__list
-          - @cards.each do |card|
-            .creditIndex__container__list__content
-              .creditIndex__container__list__content__left
-                .creditIndex__container__list__content__left__logo
-                  = image_tag "cards/#{@card_src}"
-                .creditIndex__container__list__content__left__info
-                  .creditIndex__container__list__content__left__info__number
-                    = "**** **** **** " +  @customer_card.last4
-                  .creditIndex__container__list__content__left__info__limit
-                    %p 有効期限 
-                    %span
-                      = @exp_month + " / " + @exp_year
-              .creditIndex__container__list__content__right
-                .creditIndex__container__list__content__right__btn
-                  = link_to credit_card_path, method: :delete do
-                    削除する
+          .creditIndex__container__list__content
+            .creditIndex__container__list__content__left
+              .creditIndex__container__list__content__left__logo
+                = image_tag "cards/#{@card_src}"
+              .creditIndex__container__list__content__left__info
+                .creditIndex__container__list__content__left__info__number
+                  = "**** **** **** " +  @customer_card.last4
+                .creditIndex__container__list__content__left__info__limit
+                  %p 有効期限 
+                  %span
+                    = @exp_month + " / " + @exp_year
+            .creditIndex__container__list__content__right
+              .creditIndex__container__list__content__right__btn
+                = link_to credit_card_path, method: :delete do
+                  削除する
 
         = link_to "#" do
           .creditIndex__container__hint

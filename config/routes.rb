@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :purchases do
       member do
         get 'confirmation'
+        post 'pay'
+        get 'done'
       end
     end
   end

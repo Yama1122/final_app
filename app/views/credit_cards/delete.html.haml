@@ -93,6 +93,6 @@
           = link_to user_path(current_user.id), class: "my_page_link__btn" do
             %li.my_page_link
               マイページに戻る
-          = link_to credit_card_path(current_user.id), class: "credit_cards_index_link__btn" do
+          = link_to new_credit_card_path, class: "credit_cards_index_link__btn" do
             %li.credit_cards_index_link
               登録カード一覧             

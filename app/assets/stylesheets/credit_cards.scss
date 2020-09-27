@@ -37,7 +37,6 @@
     }
   }
 }
-
 .number{
   margin:10px 0;
   padding:10px;
@@ -46,7 +45,6 @@
   border:solid 1px #CCCCCC;
   border-radius:5px;
 }
-
 .exp_month{
   margin:10px 0;
   padding:10px;
@@ -57,7 +55,6 @@
   margin-right:10px;
   
 }
-
 .exp_year{
   margin:10px 0;
   padding:10px;
@@ -67,7 +64,6 @@
   border-radius:5px;
   margin-right:10px;
 }
-
 .cvc{
   margin:10px 0;
   padding:10px;
@@ -77,7 +73,6 @@
   border-radius:5px;
   margin-right:10px;
 }
-
 #token_submit{
   color:white;
   background-color:#3CCACD;
@@ -91,11 +86,9 @@
     opacity:0.5;
   }
 }
-
 .backbtn{
   text-align:center;
 }
-
 .creditIndexList{
   display:flex;
   width:100%;
@@ -107,7 +100,6 @@
     padding:0;
   }
 }
-
 .cvcinfo{
   display:flex;
   text-align: left;
@@ -166,7 +158,6 @@
    }
   }
 }
-
 .my_page_link{
   background-color: #3CCACD;
   width:180px;
@@ -182,7 +173,6 @@
     text-decoration: none;
   }
 }
-
 .credit_cards_index_link{
   background-color: #3CCACD;
   width:180px;
@@ -203,7 +193,7 @@
 .creditIndex{
   background-color: #fff;
   width:700px;
-  height:600px;
+  height:300px;
   margin-top:35px;
   margin-left:40px;
   border-radius:5px;
@@ -240,8 +230,6 @@
       font-size:20px;
     }
     &__list{
-      overflow: scroll;
-      height:500px;
       &__content{
         display:flex;
         width:80%;
@@ -249,7 +237,6 @@
         margin: 0 auto;
         padding-top: 20px;
         padding-bottom: 20px;
-        border-bottom: solid 1px #CCCCCC;
         &__left{
           display: flex;
           border: solid 1px #CCCCCC;
