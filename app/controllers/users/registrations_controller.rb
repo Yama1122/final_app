@@ -22,7 +22,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   end
 
-
+  def destroy
+    redirect_to root_path
+  end
 
 
   
