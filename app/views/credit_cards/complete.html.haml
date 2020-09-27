@@ -75,9 +75,9 @@
               %li.userbtn 
                 発送元・お届け先住所変更
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to new_credit_card_path do
+            = link_to credit_card_path(current_user.id) do
               %li.userbtn 
-                クレジットカード登録
+                クレジットカード一覧/削除
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
             = link_to "#" do
               %li.userbtn 
