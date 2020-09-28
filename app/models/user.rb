@@ -12,4 +12,7 @@ class User < ApplicationRecord
   validates :nickname, :password, :email, :family_name, :first_name, :first_name_kana, :family_name_kana, :birth_date, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture_code
 end

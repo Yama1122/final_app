@@ -100,7 +100,8 @@
               都道府県
               %span.required 必須
             .prefecture
-              = i.text_field :prefecture_code
+              -# = i.text_field :prefecture_code
+              = i.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name
           .city
             .label
               市区町村
