@@ -1,0 +1,67 @@
+.complete-wrapper {
+  background-color: rgb(241, 241, 241);
+  height: 350px;
+  font-size: 15px;
+
+  .hr {
+    border-width: 1px 0 0 0;
+	  border-style: solid;
+  	border-color: rgb(241, 241, 241);
+  }
+
+  .white-area {
+    background-color: rgb(255, 255, 255);
+    height:350px;
+    width: 500px;
+    margin:0 auto;
+    
+
+    .registration {
+      height: 100px;
+      padding: 30px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .credit-registration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0 10px 0;
+      a {
+        text-decoration: none;
+      }
+      .btn {
+        height: 50px;
+        width:300px;
+        background-color: rgb(70, 192, 182);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .credit-information {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .mypage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0 10px 0;
+      a {
+        text-decoration: none;
+      }
+      .btn {
+        height: 50px;
+        width:300px;
+        background-color: rgb(70, 192, 182);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -6,6 +6,10 @@ body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
+.js-file {
+  display: none;
+}
+
 // ヘッダー部分
 .header {
   padding: 0 60px;
@@ -226,6 +230,10 @@ body{
     padding-top:30px;
     font-weight:bold;
     font-size:46px;
+    span{
+      font-size:34px;
+      vertical-align: top;
+    }
     &--detail{
       font-weight: normal;
       font-size:16px;
@@ -656,7 +664,7 @@ body{
 // 商品出品
 .Exhibition-wrapper {
   background-color: rgb(241, 241, 241);
-  height: 1850px;
+  height: 2000px;
   font-size: 15px;
   
   a {
@@ -701,26 +709,93 @@ body{
 
   .Exhibition-form {
     background-color: rgb(255, 255, 255);
-    height:1850px;
+    height:2000px;
     width: 700px;
     margin:0 auto;
   }
 
   .product_images {
     padding:30px;
-    height: 300px;
-    .image_text {
+    .image__text {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.4em;
     }
-    .images__upload{
-      height: 150px;
-      background-color: rgb(230, 230, 230);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      border:dashed 1px rgb(192, 192, 192);
-    }
+    .upload-box {
+      margin-top: 16px;
+      .upload-area{
+        display: flex;
+        flex-wrap: wrap;
+        margin: -8px -4px 0px;
+        .previewimg {
+          width: 20%;
+          padding: 0 4px;
+          margin-top: 8px;
+          background-color: rgb(245,245,245);
+          img {
+            height: 118px;
+            display: block;
+            margin: 0 auto;
+          }
+          .border-style{
+            border-color: rgb(204, 204, 204);
+            border-top-width: 1px;
+            border-left: 0 solid #efefef;
+            border-bottom: 0 solid #efefef;
+            border-right: 0 solid #efefef;
+            border-top-style: solid;
+          }
+          .js-remove {
+            -webkit-box-align: center;
+            align-items: center;
+            color: rgb(0, 149, 238);
+            cursor: pointer;
+            display: flex;
+            height: 32px;
+            -webkit-box-pack: center;
+            justify-content: center;
+          }
+        }
+        .images__upload-box {
+          flex: 1 1 0%;
+          height: 165px;
+          margin-top: 8px;
+          padding: 0 4px;
+          #images__upload{
+            place-content: center;
+            -webkit-box-align: center;
+            display: flex;
+            height: 100%;
+            background-color: rgb(230, 230, 230);
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            align-items: center;
+            text-align: center;
+            border:dashed 1px rgb(192, 192, 192);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.5s ease-out 0s;
+          }
+        }
+      #image-box {
+        display: block;
+        display: none;
+        #previews {
+          display: block;
+          display: none;
+          .js-file_group {
+            display: block;
+            display: none;
+            .js-file {
+              display: none;
+              }
+            }
+          }
+        }
+      }
   }
+  }
+
 
   .product {
     padding: 30px;
@@ -739,7 +814,7 @@ body{
         background-color: rgb(255, 255, 255);  /* 背景色 */
         width: 100%;             /* 横幅いっぱいにする */
         box-sizing: border-box;  /* ※これがないと横にはみ出る */
-        height: 25px;           /* 高さ */
+        height: 40px;           /* 高さ */
         font-size: 15px;          /* 文字サイズ */
         line-height: 1.2;        /* 行の高さ */
         &:focus {
@@ -778,7 +853,7 @@ body{
   }
   .product_details {
     padding: 30px;
-    height: 300px;
+    // brandを非表示のためheight削除
     &__text {
       color: #505050;
       padding-bottom: 15px;
@@ -788,6 +863,42 @@ body{
         padding-bottom:10px;
       }
       &__list_box {
+        &--child{
+          margin-top:20px;
+          .text {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+        &--gc{
+          margin-top:20px;
+          .text {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
         .text {
           border: 1px solid #000000;  /* 枠線 */
           border-radius: 4px;   /* 角丸 */
@@ -795,7 +906,7 @@ body{
           background-color: rgb(255, 255, 255);  /* 背景色 */
           width: 100%;             /* 横幅いっぱいにする */
           box-sizing: border-box;  /* ※これがないと横にはみ出る */
-          height: 25px;           /* 高さ */
+          height: 40px;           /* 高さ */
           font-size: 15px;          /* 文字サイズ */
           line-height: 1.2;        /* 行の高さ */
           &:focus {
@@ -807,6 +918,7 @@ body{
       }
     }
     .brand {
+      display: none;
       &__text {
         padding:20px 0 10px 0;
       }
@@ -817,7 +929,7 @@ body{
         background-color: rgb(255, 255, 255);  /* 背景色 */
         width: 100%;             /* 横幅いっぱいにする */
         box-sizing: border-box;  /* ※これがないと横にはみ出る */
-        height: 25px;           /* 高さ */
+        height: 40px;           /* 高さ */
         font-size: 15px;          /* 文字サイズ */
         line-height: 1.2;        /* 行の高さ */
         &:focus {
@@ -838,7 +950,7 @@ body{
           background-color: rgb(255, 255, 255);  /* 背景色 */
           width: 100%;             /* 横幅いっぱいにする */
           box-sizing: border-box;  /* ※これがないと横にはみ出る */
-          height: 25px;           /* 高さ */
+          height: 40px;           /* 高さ */
           font-size: 15px;          /* 文字サイズ */
           line-height: 1.2;        /* 行の高さ */
           &:focus {
@@ -851,7 +963,7 @@ body{
   } 
   .sending {
     padding: 30px;
-    height: 400px;
+    height: 470px;
     &__text {
       color: #505050;
       padding-bottom: 15px;
@@ -868,7 +980,7 @@ body{
           background-color: rgb(255, 255, 255);  /* 背景色 */
           width: 100%;             /* 横幅いっぱいにする */
           box-sizing: border-box;  /* ※これがないと横にはみ出る */
-          height: 25px;           /* 高さ */
+          height: 40px;           /* 高さ */
           font-size: 15px;          /* 文字サイズ */
           line-height: 1.2;        /* 行の高さ */
           &:focus {
@@ -891,7 +1003,7 @@ body{
           background-color: rgb(255, 255, 255);  /* 背景色 */
           width: 100%;             /* 横幅いっぱいにする */
           box-sizing: border-box;  /* ※これがないと横にはみ出る */
-          height: 25px;           /* 高さ */
+          height: 40px;           /* 高さ */
           font-size: 15px;          /* 文字サイズ */
           line-height: 1.2;        /* 行の高さ */
           &:focus {
@@ -907,14 +1019,14 @@ body{
         padding:20px 0 10px 0;
       }
       &__list_box {
-        .text {
+        #prefecture_code_id {
           border: 1px solid #000000;  /* 枠線 */
           border-radius: 4px;   /* 角丸 */
           padding: 0.5em;          /* 内側の余白量 */
           background-color: rgb(255, 255, 255);  /* 背景色 */
           width: 100%;             /* 横幅いっぱいにする */
           box-sizing: border-box;  /* ※これがないと横にはみ出る */
-          height: 25px;           /* 高さ */
+          height: 40px;           /* 高さ */
           font-size: 15px;          /* 文字サイズ */
           line-height: 1.2;        /* 行の高さ */
           &:focus {
@@ -937,7 +1049,7 @@ body{
           background-color: rgb(255, 255, 255);  /* 背景色 */
           width: 100%;             /* 横幅いっぱいにする */
           box-sizing: border-box;  /* ※これがないと横にはみ出る */
-          height: 25px;           /* 高さ */
+          height: 40px;           /* 高さ */
           font-size: 15px;          /* 文字サイズ */
           line-height: 1.2;        /* 行の高さ */
           &:focus {
@@ -971,7 +1083,7 @@ body{
           background-color: rgb(255, 255, 255);  /* 背景色 */
           width: 250px;             /* 横幅いっぱいにする */
           box-sizing: border-box;  /* ※これがないと横にはみ出る */
-          height: 25px;           /* 高さ */
+          height: 40px;           /* 高さ */
           font-size: 15px;          /* 文字サイズ */
           line-height: 1.2;        /* 行の高さ */
           text-align: right;
@@ -1020,13 +1132,16 @@ body{
         height: 48px;
         width: 360px;
         background-color: #ea352d;
-        color: #ffffff;
         display:flex;
         justify-content: center;
         align-items: center;
         font-weight: 600;
         border-radius: 4px;
         margin-bottom: 20px;
+        input {
+          background-color: #ea352d;
+          color: #F8F8F8;
+        }
       }
       .draft_btn{
         height: 48px;

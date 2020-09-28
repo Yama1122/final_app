@@ -11,18 +11,19 @@
             =link_to "#" do
               = image_tag "products/icon-search 1.png"
       %ul.resultList
-    .nav
-      %ul.listsleft
-        %li.listsleft__item--first
-          =link_to "カテゴリー", "#", class: "category"
-          .treedisplayNone
-            %ul.categoryTree
-              %li.categoryTree--item
-        %li.listsleft__item
-          =link_to "ブランド", "#", class: "bland"
-          %ul.brandsPulldowndisplayNone
-      %ul.listsRight
-        %li.listsRight__item--login
-          =link_to "ログイン", new_user_session_path, class: "login"
-        %li.listsRight__item--new
-          =link_to "新規会員登録", new_user_registration_path , class: "new"
+
+  .nav
+    %ul.listsleft
+      %li.listsleft__item--first
+        =link_to "カテゴリー", "#", class: "category" 
+        = render "layouts/categoryTree"
+        
+      %li.listsleft__item
+        =link_to "ブランド", "#", class: "bland"
+        %ul.brandsPulldowndisplayNone
+    %ul.listsRight
+      %li.listsRight__item--login
+        =link_to "ログイン", new_user_session_path, class: "login"
+      %li.listsRight__item--new
+        =link_to "新規会員登録", registration_select_users_path , class: "new"
+

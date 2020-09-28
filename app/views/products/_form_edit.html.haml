@@ -8,21 +8,22 @@
             出品画像
             %span.required 必須
           最大10枚までアップロードできます
-        .upload-box
-          .upload-area
-            .images__upload-box
-              #images__upload
-                .p__upload
-                ドラッグ&ドロップ
-                %br
-                またはクリックしてファイルをアップロード
-          #image-box
-            #previews
-              = f.fields_for :product_images do |image|
-                .js-file_group{data: {index: image.index}} 
-                  = image.file_field :src, class: 'js-file'
-              - if @product.persisted?
-                = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
+        .images__upload
+          .p__upload
+          ドラッグ&ドロップ
+          %br
+          またはクリックしてファイルをアップロード
+      #image-box
+      #previews
+        = f.fields_for :product_images do |image|
+          .js-file_group{data: {index: image.index}} 
+            = image.file_field :url, class: 'js-file'
+          - if @product.persisted?
+            = image= f.check_box :destroy, data{ index: image.index }, class: 'hidden-destroy'
+        - if @product.persisted?
+          .js-file_group{data: {index: @product.images.count}} 
+             = file_field_tag :url, name: "product[images_attributes][#{@product.images.count}][url]", class: 'js-file'
+              .js-remove 削除
       .hr    
       .product
         .name
