@@ -1125,3 +1125,11 @@ body{
         
 }
 
+// 詳細ページ購入ボタン売り切れ時の表示
+#soldout-btn{
+  background-color: #848484;
+  cursor: not-allowed;
+  &:hover{
+    opacity:1;
+  }
+}

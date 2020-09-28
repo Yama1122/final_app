@@ -58,6 +58,8 @@ class PurchasesController < ApplicationController
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
     )
+    # 購入処理後、製品にbuyer_idを付与することで購入済みかを判断
+    @product.update(buyer_id:current_user.id)
     # 購入完了ページへ遷移
     redirect_to done_product_purchase_path(params[:id])
   end
