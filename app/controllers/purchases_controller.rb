@@ -8,7 +8,7 @@ class PurchasesController < ApplicationController
     # ログインの確認
     if user_signed_in?
       # クレジット登録をしているか
-      if @user.credit_card.present?
+      if current_user.credit_card.present?
         # PAY.JPの秘密鍵をセット（環境変数）
         # 秘密鍵等は.envにて保管
         Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -67,7 +67,7 @@ class PurchasesController < ApplicationController
     # ログインの確認
     if user_signed_in?
       # クレジット登録をしているか
-      if @user.credit_card.present?
+      if current_user.credit_card.present?
         # PAY.JPの秘密鍵をセット（環境変数）
         Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
         @card = CreditCard.find_by(user_id: current_user.id)
