@@ -1,14 +1,12 @@
 class PurchasesController < ApplicationController
   require 'payjp'
+  before_action :set_product
   
   # 購入確認
   def confirmation
-    # 商品情報の取得
-    @product = Product.find(params[:product_id])
     @cards = CreditCard.where(user_id: current_user.id)
     # ログインの確認
     if user_signed_in?
-      @user = current_user
       # クレジット登録をしているか
       if @user.credit_card.present?
         # PAY.JPの秘密鍵をセット（環境変数）
@@ -49,8 +47,7 @@ class PurchasesController < ApplicationController
 
 # 購入処理
   def pay
-    card = CreditCard.where(user_id: current_user.id).first
-    @product = Product.find(params[:id])
+    card = CreditCard.find_by(user_id: current_user.id)
     # PAY.JPの秘密鍵をセット（環境変数）
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -66,12 +63,9 @@ class PurchasesController < ApplicationController
 
 # 購入完了
   def done
-    # 商品情報の取得
-    @product = Product.find(params[:product_id])
     @cards = CreditCard.where(user_id: current_user.id)
     # ログインの確認
     if user_signed_in?
-      @user = current_user
       # クレジット登録をしているか
       if @user.credit_card.present?
         # PAY.JPの秘密鍵をセット（環境変数）
@@ -106,5 +100,11 @@ class PurchasesController < ApplicationController
       # ログインページへ遷移
       redirect_to new_user_session_path, alert: "ログインしてください"
     end
+  end
+
+  private
+  def set_product
+    # 商品情報の取得
+    @product = Product.find(params[:product_id])
   end
 end

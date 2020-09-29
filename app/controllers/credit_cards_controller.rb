@@ -90,7 +90,7 @@ class CreditCardsController < ApplicationController
   private
   def set_user
     if CreditCard.where(user_id: current_user.id).present?
-      @card = CreditCard.where(user_id: current_user.id).first
+      @card = CreditCard.find_by(user_id: current_user.id)
     end 
   end
 
