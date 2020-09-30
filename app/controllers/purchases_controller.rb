@@ -1,6 +1,8 @@
 class PurchasesController < ApplicationController
   require 'payjp'
   before_action :set_product
+  before_action :set_adress
+  before_action :set_product_image
   
   # 購入確認
   def confirmation
@@ -37,7 +39,7 @@ class PurchasesController < ApplicationController
         @exp_year = @customer_card.exp_year.to_s.slice(2,3)
       else
         # クレジット登録ページへ遷移
-        redirect_to new_credit_card_psth, alert: "クレジットカードの登録をしてください"
+        redirect_to new_credit_card_path, alert: "クレジットカードの登録をしてください"
       end
     else
       # ログインページへ遷移
@@ -106,5 +108,13 @@ class PurchasesController < ApplicationController
   def set_product
     # 商品情報の取得
     @product = Product.find(params[:product_id])
+  end
+
+  def set_adress
+    @adress = SendingAddress.find(params[:id])
+  end
+
+  def set_product_image
+    @image = ProductImage.find_by(params[:id])
   end
 end

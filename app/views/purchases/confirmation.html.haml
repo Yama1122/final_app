@@ -8,7 +8,7 @@
       .purchase-product__wrapper
         .purchase-product__wrapper__left
           .purchase-product__wrapper__left__image
-            = image_tag 'products/product2', class: 'product2'
+            = image_tag @image.url, class: 'product2'
         .purchase-product__wrapper__right    
           .purchase-product__wrapper__right__name
             %p 
@@ -62,11 +62,19 @@
             = icon("fas","chevron-right")
       .sending__address
         .post_code
-          〒453-0014
+          %p 
+            〒
+            %span 
+              = @adress.post_code
         .address
-          愛知県名古屋市中村区則武１丁目９−１９
-        .buildingname
-          協和名駅ビル6階
+          %p 
+            %span
+              = @adress.city
+            %span
+              = @adress.house_number
+          %p
+            = @adress.building_name
+  
     .hr
     .about
       .text
