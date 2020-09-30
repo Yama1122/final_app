@@ -168,7 +168,7 @@ body{
       &__topContent{
         background-color: white;
         width:100%;
-        height:1380px;
+        height:1480px;
       }
       }
   }
@@ -220,15 +220,40 @@ body{
       }
     }
   }
+  &__purchace{
+    margin: 0 auto;
+    text-align: center;
+    padding:30px 0;
+    width:100%;
+    a{
+      text-decoration: none;
+    }
+    &__btn{
+      margin: 0 auto;
+      background-color: #3ccace;
+      color:#fff;
+      width:90%;
+      height:70px;
+      line-height: 70px;
+      font-weight: bold;
+      font-size:26px;
+      &:hover{
+        opacity:0.5;
+      }
+    }
+  }
   &__price{
     margin:0 auto;
     text-align: center;
     padding-top:30px;
     font-weight:bold;
     font-size:46px;
-    span{
-      font-size:34px;
-      vertical-align: top;
+    p{
+      span{
+        line-height: 56px;
+        font-size:40px;
+        vertical-align: top;
+      }
     }
     &--detail{
       font-weight: normal;
@@ -1100,3 +1125,11 @@ body{
         
 }
 
+// 詳細ページ購入ボタン売り切れ時の表示
+#soldout-btn{
+  background-color: #848484;
+  cursor: not-allowed;
+  &:hover{
+    opacity:1;
+  }
+}

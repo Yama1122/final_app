@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   # deviseにてusersを作成し使用する場合、controllers: {registrations: 'users/registrations'｝が必要
   root to:'products#index'
   resources :products, only: [:index,:show,:new] do
-    member do
-      get 'confirmation'
+    resources :purchases do
+      member do
+        get 'confirmation'
+        post 'pay'
+        get 'done'
+      end
     end
   end
   
@@ -26,6 +30,11 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :credit_cards, only: :new
+  resources :credit_cards, only: [:new,:show,:destroy,:create] do
+    collection do
+      get 'complete'
+      get 'delete'
+    end
+  end
   resources 'searches', only: :index
 end

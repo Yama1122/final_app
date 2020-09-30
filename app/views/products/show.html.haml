@@ -27,10 +27,19 @@
                   = image_tag "products/product4.png"
           .itemBox__price
             %p
+              %span ¥
               = @product.price 
-              %span 円
             .itemBox__price--detail
               (税込) 送料込み
+          .itemBox__purchace
+            -# buyer_idがある場合、売り切れ表示
+            - if @product.buyer_id.present?
+              .itemBox__purchace__btn#soldout-btn
+                売り切れました
+            - else  
+              = link_to confirmation_product_purchase_path(params[:id]) do
+                .itemBox__purchace__btn
+                  購入画面に進む
           .itemBox__itemDetail
             %p
               = @product.profile

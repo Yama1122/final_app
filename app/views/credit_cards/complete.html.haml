@@ -1,4 +1,4 @@
--# クレジットカード新規登録ページ
+-# クレジットカード登録完了ページ
 = render "users/user_header"
 
 .userShow
@@ -61,7 +61,7 @@
               %li.userbtn 
                 お問い合わせ
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-           
+
       .userShow__container__left__config
         .userShow__container__left__config__name
           %p 設定
@@ -75,79 +75,24 @@
               %li.userbtn 
                 発送元・お届け先住所変更
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to credit_card_path(current_user.id) do
+              %li.userbtn 
+                クレジットカード一覧/削除
+                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
             = link_to "#" do
               %li.userbtn 
                 ログアウト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-          
-    .userShow__container__right
-      .creditNew
-        .creditNew__container
-          .creditNew__container__name
-            %p クレジットカード情報入力
-          .creditNew__container__form
-            = form_with url:credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm" do |f|
-              %label 
-                カード番号
-                %span
-                  必須
-              = f.text_field "number", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-              %br
-              .creditIndexList
-                = image_tag "cards/VISA.png"
-                = image_tag "cards/JCB.png"
-                = image_tag "cards/mastercard.png"
-                = image_tag "cards/AmericanExpress.png"
-                = image_tag "cards/discover.png"
 
-              %label 
-                有効期限
-                %span
-                  必須
-              %select#exp_month{name: "exp_month",class:"exp_month", type: "text"}
-                -# %option{value: ""} --
-                %option{value: "1"}01
-                %option{value: "2"}02
-                %option{value: "3"}03
-                %option{value: "4"}04
-                %option{value: "5"}05
-                %option{value: "6"}06
-                %option{value: "7"}07
-                %option{value: "8"}08
-                %option{value: "9"}09
-                %option{value: "10"}10
-                %option{value: "11"}11
-                %option{value: "12"}12
-              %span 月
-              %select#exp_year{name: "exp_year",class:"exp_year", type: "text"}
-                -# %option{value: ""} --
-                %option{value: "2020"}20
-                %option{value: "2021"}21
-                %option{value: "2022"}22
-                %option{value: "2023"}23
-                %option{value: "2024"}24
-                %option{value: "2025"}25
-                %option{value: "2026"}26
-                %option{value: "2027"}27
-                %option{value: "2028"}28
-                %option{value: "2029"}29
-              %span 年
-              %br
-              %label 
-                セキュリティコード
-                %span
-                  必須
-              = f.text_field "cvc", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-              .cvcinfo
-                = icon("fas","question-circle")
-                %p
-                  カード裏面の番号とは？
-              #card_token
-              = f.submit "追加する", id: "token_submit"
-
-              = link_to :back do
-                %p.backbtn 戻る
-
-= render "layouts/appBanner" 
-
-= render "layouts/footer"
+    .credit_complete
+      .credit_complete__container
+        .credit_complete__container__info
+          = icon("fas","exclamation-circle",class:"credit_complete__container__info__icon")
+          %p 登録が完了しました。
+        %ul.credit_complete__container__btns
+          = link_to user_path(current_user.id), class: "my_page_link__btn" do
+            %li.my_page_link
+              マイページに戻る
+          = link_to credit_card_path(current_user.id), class: "credit_cards_index_link__btn" do
+            %li.credit_cards_index_link
+              登録カード一覧             
