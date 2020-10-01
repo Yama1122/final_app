@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     @category = @product.category
   end
 
-end
+
 
   private
   def set_product
