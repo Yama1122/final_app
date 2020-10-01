@@ -5,7 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
   def new
     @user = User.new
-    # @user.build_sending_address
+    @user.build_sending_address
   end
   
   def create
