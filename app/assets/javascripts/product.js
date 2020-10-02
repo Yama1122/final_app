@@ -26,10 +26,11 @@ $(document).on('turbolinks:load', ()=> {
 　//クリックされた時に発火させる 
   $("#images__upload").on("click", function(e){
     let last_field = $(`.js-file`).last();
+    // トリガーメソッドを使用して
     last_field.trigger("click");
   });
   
-  // 
+  // ファイルに変換させる
   $('#image-box').on('change', `input[type="file"]`, function(e) {
     const targetIndex = $(this).parent().data('index');
 
