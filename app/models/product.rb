@@ -3,11 +3,9 @@ class Product < ApplicationRecord
   has_many :product_images, dependent: :destroy
   has_many :favorites
   has_many :users, dependent: :destroy
-  belongs_to :brand
   belongs_to :brand, optional: true
   belongs_to :category
   belongs_to :seller, class_name: "User"
-  belongs_to :buyer, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
 
   accepts_nested_attributes_for :product_images, allow_destroy: true
