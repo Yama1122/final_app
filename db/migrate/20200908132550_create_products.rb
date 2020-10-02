@@ -6,15 +6,16 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :price, null:false
       t.references :category, type: :bigint, foreign_key: true
       t.references :brand, type: :bigint, foreign_key: true
-      t.integer :size, null:false
-      t.integer :condition, null:false
-      t.integer :sendingday, null:false
-      t.integer :postage, null:false
-      t.integer :prefecture_code, null:false
-      t.integer :sendingtype, null:false
+      t.integer :size_id, null:false
+      t.integer :condition_id, null:false
+      t.integer :sendingday_id, null:false
+      t.integer :postage_id, null:false
+      t.integer :prefecture_code_id, null:false
+      t.integer :sendingtype_id, null:false
       t.references :seller, type: :bigint, foreign_key: { to_table: :users }
       t.references :buyer, type: :bigint, foreign_key: { to_table: :users }
       t.datetime :deal_closed_day
+      t.string   :status_id, default:  "出品中"
       t.timestamps
     end
   end
