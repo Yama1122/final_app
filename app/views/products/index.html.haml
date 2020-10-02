@@ -84,7 +84,7 @@
           .productList
             =link_to "#", class:"listimage" do
               %figure.productList--img
-                -# = image_tag src = product.product_image(id)
+                = image_tag product .product_images[0].url.url
               .productList__body
                 %h3.name 
                   = product.name

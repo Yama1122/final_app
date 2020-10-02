@@ -2,6 +2,9 @@
   background-color: #f1f1f1;
   height: 1850px;
   font-size: 15px;
+  
+  
+
 
   .hr {
     border-width: 1px 0 0 0;
@@ -35,7 +38,7 @@
     height: 370px;
     .nickname-text {
       padding-bottom: 20px;
-      .text {
+      #user_nickname {
         border: 1px solid #000000;  /* 枠線 */
         border-radius: 4px;   /* 角丸 */
         padding: 0.5em;          /* 内側の余白量 */
@@ -53,7 +56,7 @@
     }
     .mail-text {
       padding-bottom: 20px;
-      .text {
+      #user_email {
         border: 1px solid #000000;  /* 枠線 */
         border-radius: 4px;   /* 角丸 */
         padding: 0.5em;          /* 内側の余白量 */
@@ -70,7 +73,7 @@
       }
     }
     .password-text {
-      .text {
+      #user_password {
         border: 1px solid #000000;  /* 枠線 */
         border-radius: 4px;   /* 角丸 */
         padding: 0.5em;          /* 内側の余白量 */
@@ -91,7 +94,7 @@
     }
 
     .password-text2 {
-      .text {
+      #user_password_confirmation {
         border: 1px solid #000000;  /* 枠線 */
         border-radius: 4px;   /* 角丸 */
         padding: 0.5em;          /* 内側の余白量 */
@@ -121,8 +124,8 @@
         justify-content: center;
         padding-bottom: 20px;
         .last_name {
-          padding: 0 5px 0 5px;
-          .text {
+          
+          #user_family_name {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -140,7 +143,7 @@
         }
         .first_name {
           padding: 0 5px 0 5px;
-          .text {
+          #user_first_name {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -164,8 +167,8 @@
         justify-content: center;
         padding-bottom: 20px;
         .last_name {
-          padding: 0 5px 0 5px;
-          .text {
+          
+          #user_family_name_kana {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -183,7 +186,7 @@
         }
         .first_name {
           padding: 0 5px 0 5px;
-          .text {
+          #user_first_name_kana {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -204,55 +207,55 @@
     .birthday {
       .wrapper {
         display: flex;
-        .year {
-          .yyyy {
-            border: 1px solid #000000;  /* 枠線 */
-            border-radius: 4px;   /* 角丸 */
-            padding: 0.5em;          /* 内側の余白量 */
-            background-color: rgb(255, 255, 255);  /* 背景色 */
-            width: 100%;             /* 横幅いっぱいにする */
-            box-sizing: border-box;  /* ※これがないと横にはみ出る */
-            height: 40px;           /* 高さ */
-            font-size: 15px;          /* 文字サイズ */
-            line-height: 1.2;        /* 行の高さ */
-            &:focus {
-              outline: none;
-              border: 1px solid #1b6aff;
-            }
+        align-items: center;
+        #user_birth_date_1i {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 70px;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 40px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
           }
         }
-        .month {
-          .mm {
-            border: 1px solid #000000;  /* 枠線 */
-            border-radius: 4px;   /* 角丸 */
-            padding: 0.5em;          /* 内側の余白量 */
-            background-color: rgb(255, 255, 255);  /* 背景色 */
-            width: 100%;             /* 横幅いっぱいにする */
-            box-sizing: border-box;  /* ※これがないと横にはみ出る */
-            height: 40px;           /* 高さ */
-            font-size: 15px;          /* 文字サイズ */
-            line-height: 1.2;        /* 行の高さ */
-            &:focus {
-              outline: none;
-              border: 1px solid #1b6aff;
-            }
+        
+        
+        #user_birth_date_2i {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 60px;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 40px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          margin-left: 10px;
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
           }
         }
-        .day {
-          .dd {
-            border: 1px solid #000000;  /* 枠線 */
-            border-radius: 4px;   /* 角丸 */
-            padding: 0.5em;          /* 内側の余白量 */
-            background-color: rgb(255, 255, 255);  /* 背景色 */
-            width: 100%;             /* 横幅いっぱいにする */
-            box-sizing: border-box;  /* ※これがないと横にはみ出る */
-            height: 40px;           /* 高さ */
-            font-size: 15px;          /* 文字サイズ */
-            line-height: 1.2;        /* 行の高さ */
-            &:focus {
-              outline: none;
-              border: 1px solid #1b6aff;
-            }
+        
+        #user_birth_date_3i {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 60px;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 40px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          margin-left: 10px;
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
           }
         }
         .year-text {
@@ -285,7 +288,83 @@
       padding-top: 20px;
     }
     
-    .text {
+    #user_sending_address_attributes_post_code {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+
+    #user_sending_address_attributes_prefecture_code_id {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_city {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_house_number {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_building_name {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_phone_number {
       border: 1px solid #000000;  /* 枠線 */
       border-radius: 4px;   /* 角丸 */
       padding: 0.5em;          /* 内側の余白量 */
@@ -306,8 +385,8 @@
         justify-content: center;
         padding-bottom: 20px;
         .last_name {
-          padding: 0 5px 0 5px;
-          .text {
+          
+          #user_sending_address_attributes_family_name {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -325,7 +404,7 @@
         }
         .first_name {
           padding: 0 5px 0 5px;
-          .text {
+          #user_sending_address_attributes_first_name {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -349,8 +428,8 @@
         justify-content: center;
         padding-bottom: 20px;
         .last_name {
-          padding: 0 5px 0 5px;
-          .text {
+          
+          #user_sending_address_attributes_family_name_kana {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -368,7 +447,7 @@
         }
         .first_name {
           padding: 0 5px 0 5px;
-          .text {
+          #user_sending_address_attributes_first_name_kana {
             border: 1px solid #000000;  /* 枠線 */
             border-radius: 4px;   /* 角丸 */
             padding: 0.5em;          /* 内側の余白量 */
@@ -388,7 +467,7 @@
     }
     
   }
-  .next-btn {
+  .btn-area{
     display: flex;
     justify-content: center;
     a {

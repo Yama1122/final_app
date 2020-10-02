@@ -76,6 +76,14 @@
           text-decoration: none;
           padding: 0;
           line-height: 38px;
+          // カテゴリ一覧へのリンクをわかりやすく
+          a{
+            &:hover{
+              color:orange;
+              cursor: pointer;
+              font-weight: bold;
+            }
+          }
           .category{
             background-image: image-url("products/icon_category.png");
             color: #333;
@@ -86,28 +94,19 @@
             background-size: 18px;
             padding-right: 30px;
           }
-          .tree  {
-            display: none;
-            z-index: 2;
-            position: absolute;
-            background-color: #fff;
-            width: 240px;
-            top: 40px;
-            .categoryTree {
-              background-color: #fff;
-              display: flex;
-              flex-direction: column;
-              position: relative;
-              &__item {
-                position: relative;
-              }
-            }
-          }
         }
         &__item {
           display: flex;
           line-height: 38px;
           padding: 0 0 0 16px;
+          // ブランド一覧へのリンクをわかりやすく
+          a{
+            &:hover{
+              color:orange;
+              cursor: pointer;
+              font-weight: bold;
+            }
+          }
           .bland {
             background-image: image-url("products/icon_brand.png");
             color: #333;
@@ -116,6 +115,7 @@
             background-repeat: no-repeat;
             background-size: 18px;
             padding-right: 30px;
+            
           }
           .brandsPulldown {
             position: absolute;
@@ -131,6 +131,14 @@
           color: #333;
           line-height: 38px;
           padding: 0 0 0 16px;
+          // ログインページへのリンクをわかりやすく
+          a{
+            &:hover{
+              color:orange;
+              cursor: pointer;
+              font-weight: bold;
+            }
+          }
           .login {
             display: flex;
             align-items: center;
@@ -143,6 +151,14 @@
           color: #333;
           line-height: 38px;
           padding: 0 0 0 16px;
+          // 新規登録へのリンクをわかりやすく
+          a{
+            &:hover{
+              color:orange;
+              cursor: pointer;
+              font-weight: bold;
+            }
+          }
           .new {
             display: flex;
             align-items: center;

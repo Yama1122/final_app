@@ -84,7 +84,9 @@
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
 
     .logout
-      .logout__btn ログアウト
+      =link_to destroy_user_session_path, method: :delete do
+        .logout__btn
+          ログアウト
 
 = render "layouts/appBanner" 
 

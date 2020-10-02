@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', ()=> {
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <input class="js-file" type="file"
-                    name="product[product_images_attributes][${num}][src]"
+                    name="product[product_images_attributes][${num}][url]"
                     id="product_product_images_attributes_${num}_src"><br>
                   </div>`;
     return html;
@@ -55,68 +55,31 @@ $(document).on('turbolinks:load', ()=> {
     }
   });
 
-  $('#images__upload').on('dragover drop',function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('#images__upload').css('border', '1px solid #333');
-    });
+  // $('#images__upload').on('dragover drop',function(e){
+  //   debugger
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   $('#images__upload').css('border', '1px solid #333');
+  // });
 
-  $('#images__upload').on('dragleave',function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $('#images__upload').css('border', '1px dashed #aaa');
-    });
+  // $('#images__upload').on('dragleave',function(e){
+  //   e.preventDefault();
+  //   e.stopPropagation();
+  //   $('#images__upload').css('border', '1px dashed #aaa');
+  // });
 
-    var target = $(".js-file");
+  //   var target = $(".js-file");
       
-    target.on("drop",function(e){
-      $(".js-file").prop('files',e.originalEvent.daraTransfer.files);
-      console.log("123")
-      var reader = new FileReader();
-      reader.onload = function(e){
-        target.attr('src', e.target.result);
-      }
-      reader.readAsDataURL(e.originalEvent.daraTransfer.files[0]);
-    });
-       
-
-
-    //   var target = document.getElementById('images__upload');
-    // target.addEventListener('dragover', function (e) {
-    //   e.preventDefault();
-    //   e.stopPropagation();
-    //   e.dataTransfer.dropEffect = 'copy';
-    // });
-    // target.addEventListener('drop', function (e) {
-    //   e.stopPropagation();
-    //   e.preventDefault();
-    //   const reader = new FileReader();
-    //   reader.onload = function (e) {
-    //     document.getElementById('previews').src = e.target.result;
-    //     console.log("123")
-    //   }
-    //   reader.readAsDataURL(e.dataTransfer.files[0]);
-    // });
-  //  let dropArea = document.getElementById("test");
-  //    dropArea.addEventListener("draghover",function(e){
-  //       e.preventDefault();
-  //       e.stopPropagation();
-  //      $(this).children('#images__upload').css({'border': '1px solid rgb(240, 204, 204)','box-shadow': '0px 0px 4px'})
-  //    },false);
-
-  //    dropArea.addEventListener("dragleave", function(e){
-  //     e.preventDefault();
-  //      $(this).children('#images__upload').css({'border': '1px solid rgb(240, 204, 204)','box-shadow': '0px 0px 0px'})
-  //    },false);
-
-  //    dropArea.addEventListener("drop", function(e) {
-  //     e.preventDefault();
-  //     e.stopPropagation();
-  //     console.log("123")  
-  //     $(this).children('#images__upload').css({'border': '1px dashed rgb(204, 204, 204)','box-shadow': '0px 0px 0px'});
-  //    });
-
-
+  //   target.on("drop",function(e){
+  //     $(".js-file").prop('files',e.originalEvent.daraTransfer.files);
+  //     console.log("123")
+  //     var reader = new FileReader();
+  //     reader.onload = function(e){
+  //       target.attr('src', e.target.result);
+  //     }
+  //     reader.readAsDataURL(e.originalEvent.daraTransfer.files[0]);
+  //   });
+  
   $('.upload-area').on('click', '.js-remove', function() {
     const targetIndex = $(this).prev().data('index');
     // 該当indexを振られているチェックボックスを取得する

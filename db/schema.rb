@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_16_061724) do
+ActiveRecord::Schema.define(version: 2020_09_28_113514) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_061724) do
     t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "deal_closed_day"
-    t.integer "status_id", default: 0
+    t.string "status_id", default: "出品中"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_061724) do
     t.string "first_name_kana", null: false
     t.string "family_name_kana", null: false
     t.string "post_code", null: false
-    t.integer "prefecture_code", null: false
+    t.integer "prefecture_code_id", null: false
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
@@ -106,14 +106,12 @@ ActiveRecord::Schema.define(version: 2020_09_16_061724) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", null: false
-    t.string "password", null: false
+    t.string "encrypted_password", null: false
     t.string "first_name", null: false
     t.string "family_name", null: false
     t.string "first_name_kana", null: false
     t.string "family_name_kana", null: false
-    t.date "birth_year", null: false
-    t.date "birth_month", null: false
-    t.date "birth_day", null: false
+    t.date "birth_date", null: false
     t.string "image"
     t.text "introduction"
     t.string "reset_password_token"
