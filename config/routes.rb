@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to:'products#index'
   resources :products, only: [:index,:show,:new] do
     resources :purchases do
+    resources :products, only: [:index,:show,:new, :create] do
       member do
         get 'confirmation'
         post 'pay'
@@ -36,5 +37,7 @@ Rails.application.routes.draw do
       get 'delete'
     end
   end
+  resources :credit_cards, only: :new
   resources 'searches', only: :index
 end
+
