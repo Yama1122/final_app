@@ -4,10 +4,24 @@ class Product < ApplicationRecord
   has_many :favorites
   has_many :users, dependent: :destroy
   belongs_to :brand
+  belongs_to :brand, optional: true
   belongs_to :category
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User"
+  belongs_to :buyer, class_name: "User", optional: true
 
+  accepts_nested_attributes_for :product_images, allow_destroy: true
+
+  validates :name,                presence: true,  length: { maximum: 40 }
+  validates :profile,             presence: true,  length: { maximum: 1000 }
+  validates :price,               presence: true
+  validates :category_id,         presence: true
+  validates :condition_id,        presence: true
+  validates :postage_id,          presence: true
+  validates :prefecture_code_id,  presence: true
+  validates :sendingtype_id,      presence: true
+  validates_associated :product_images
+  validates :product_images,                       presence: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
