@@ -77,7 +77,6 @@
     %h2.head ピックアップカテゴリー
     .productBox
       .productHead
-        =link_to "#", class:"product" do
         =link_to new_product_path, class:"product" do
           %h3.title 新規投稿商品
       .productLists
@@ -85,7 +84,6 @@
           .productList
             =link_to "#", class:"listimage" do
               %figure.productList--img
-                -# = image_tag src = product.product_image(id)
                 = image_tag product .product_images[0].url.url
               .productList__body
                 %h3.name 
