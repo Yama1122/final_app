@@ -68,15 +68,16 @@ ActiveRecord::Schema.define(version: 2020_09_28_113514) do
     t.integer "price", null: false
     t.bigint "category_id"
     t.bigint "brand_id"
-    t.string "size"
-    t.integer "condition", null: false
-    t.integer "sendingday", null: false
-    t.integer "postage", null: false
-    t.integer "prefecture_code", null: false
-    t.integer "sendingtype", null: false
+    t.string "size_id"
+    t.integer "condition_id", null: false
+    t.integer "sendingday_id", null: false
+    t.integer "postage_id", null: false
+    t.integer "prefecture_code_id", null: false
+    t.integer "sendingtype_id", null: false
     t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "deal_closed_day"
+    t.string "status_id", default: "出品中"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
