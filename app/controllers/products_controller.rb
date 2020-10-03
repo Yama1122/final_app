@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show]
-  before_action :set_product_image
+  before_action :set_product, only: [:show,:destroy,:delete]
+  before_action :set_product_image, except: :index
   
  
   def index
@@ -9,6 +9,20 @@ class ProductsController < ApplicationController
   end
 
   def new
+  end
+
+  def delete
+    unless current_user.id == @product.seller_id
+      redirect_to product_path(params[:id]),alert:"出品者のみ削除が行なえます"
+    end
+      
+  end
+
+  def destroy
+    @product.destroy
+    if @product.destroy
+      redirect_to products_path
+    end
   end
 
   def show
