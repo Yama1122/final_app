@@ -16,33 +16,41 @@
             = @product.name
           .itemBox__body
             .itemBox__body--top
-              = image_tag "products/product2.png",class:"itemBox__body--top--image"
+              = image_tag @image.url,class:"itemBox__body--top--image"
             .itemBox__body--bottom
-              %ul
-                %li
-                  = image_tag "products/product2.png"
-                %li
-                  = image_tag "products/product3.png"
-                %li
-                  = image_tag "products/product4.png"
+            -# 画像が一枚しかない場合は表示させない
+              - if @images.count >= 2
+                %ul
+                -# 追加画像がある場合は表示
+                  - if @images[0]
+                    %li
+                      = image_tag @images[0].url
+                  - if @images[1]    
+                    %li
+                      = image_tag @images[1].url
+                  - if @images[2]    
+                    %li
+                      = image_tag @images[2].url
           .itemBox__price
             %p
               %span ¥
               = @product.price 
             .itemBox__price--detail
               (税込) 送料込み
-          .itemBox__purchace
-            -# buyer_idがある場合、売り切れ表示
-            - if @product.buyer_id.present?
-              .itemBox__purchace__btn#soldout-btn
-                売り切れました
-            - else  
-              = link_to confirmation_product_purchase_path(params[:id]) do
-                .itemBox__purchace__btn
-                  購入画面に進む
           .itemBox__itemDetail
             %p
               = @product.profile
+          -# 出品者には購入ボタンを表示させない
+          - unless current_user.id == @product.seller_id
+            .itemBox__purchace
+              -# buyer_idがある場合、売り切れ表示
+              - if @product.buyer_id.present?
+                .itemBox__purchace__btn#soldout-btn
+                  売り切れました
+              - else  
+                = link_to confirmation_product_purchase_path(params[:id]) do
+                  .itemBox__purchace__btn
+                    購入画面に進む
           .itemBox__table
             %table
               %tbody
@@ -50,49 +58,50 @@
                   %th
                     出品者
                   %td
-                    hoge
+                    = @product.seller.nickname
                 %tr
                   %th
                     カテゴリー
                   %td
-                    = link_to "#",class:"itemBox__table--category" do
+                    = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do
                       -# 孫カテゴリが存在しない場合
                       - if @category.parent.parent != nil  
                         = @category.parent.parent.name
-                    = link_to "#",class:"itemBox__table--category" do
+                    = link_to category_path(@category.parent),class:"itemBox__table--category" do
                       = @category.parent.name
-                    = link_to "#",class:"itemBox__table--category" do
+                    = link_to category_path(@category),class:"itemBox__table--category" do
                       = @category.name
                 %tr
                   %th
                     ブランド
                   %td
+                    = @product.brand.name
                 %tr
                   %th
                     商品のサイズ
                   %td
+                    サイズ仮置
                 %tr
                   %th
                     商品の状態
                   %td
-                    未使用に近い
+                    = @product.condition.name
                 %tr
                   %th
                     配送料の負担
                   %td
-                    送料込み（出品者負担）
+                    = @product.postage.name
                 %tr
                   %th
                     発送元の地域
                   %td
                     = link_to "#" do
-                      岩手県
+                      = @product.prefecture_code.name  
                 %tr
                   %th
                     発送日の目安
                   %td
-                    4-7日で発送
-
+                    = @product.sendingday.name
           .itemBox__optionalArea
             .itemBox__optionalArea__like
               .itemBox__optionalArea__like--name
@@ -110,6 +119,15 @@
                 .itemBox__optionalArea--alert--content
                   %p
                     不適切な商品の通報
+      -# 出品者のみ商品の編集/削除が可能に
+      - if current_user.id == @product.seller_id
+        .itemBox__editArea
+          = link_to "#" do
+            .itemBox__editArea__editBtn
+              編集
+          = link_to "#" do
+            .itemBox__editArea__editBtn
+              削除    
 
       .commentBox
         %form
@@ -137,10 +155,13 @@
             = icon("fas","chevron-right",class:"links__after--icon")
         
       .relatedItems 
-        = link_to "#" do
+        = link_to category_path(@category) do
           .relatedItems__link
             %p
-              ベビー・キッズをもっとみる
+              %span
+                = @category.name
+              %span
+                をもっとみる
         .relatedItems__list
           = link_to "#" do
             .relatedItems__list__item
