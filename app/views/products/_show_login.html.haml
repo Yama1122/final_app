@@ -9,10 +9,8 @@
             .itemBox__body--top
               = image_tag @image.url,class:"itemBox__body--top--image"
             .itemBox__body--bottom
-            -# 画像が一枚しかない場合は表示させない
               - if @images.count >= 2
                 %ul
-                -# 追加画像がある場合は表示
                   - if @images[0]
                     %li
                       = image_tag @images[0].url

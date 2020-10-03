@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def set_product_image
-    @image = ProductImage.find_by(params[:id])
+    @image = ProductImage.find(params[:id])
     @images = ProductImage.where(params[:id])
   end
 end
