@@ -1161,3 +1161,26 @@ body{
     opacity:1;
   }
 }
+
+// 商品削除ページ
+#product_deleteBtn{
+  width:60%;
+  height:60px;
+  line-height: 60px;
+  border-radius: 5px;
+  background-color:#ea352d;
+  margin-top:30px;
+}
+
+#delete_confirmation{
+  height:500px;
+}
+
+#delete_change{
+  text-align: right;
+  padding-right:40px;
+  padding-top:70px;
+  a{
+    color:#3ccace;
+  }
+}

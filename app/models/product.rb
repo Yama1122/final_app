@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :product_images, dependent: :destroy
   has_many :favorites
-  has_many :users, dependent: :destroy
+  belongs_to :user
   belongs_to :brand
   belongs_to :category
   belongs_to :seller, class_name: "User"
