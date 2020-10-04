@@ -1,0 +1,45 @@
+-# 購入完了ページ
+= render "products/sub_header"
+
+.purchase_detail_wrapper
+  .purchase_detail_wrapper__form#purchase-done
+    .top_text
+      購入が完了しました！
+    .hr
+    .purchase-product
+      .purchase-product__wrapper
+        .purchase-product__wrapper__left
+          .purchase-product__wrapper__left__image
+            = image_tag @image.url, class: 'product2'
+        .purchase-product__wrapper__right    
+          .purchase-product__wrapper__right__name
+            %p 
+              = @product.name
+          .purchase-product__wrapper__right__price
+            %p (税込)送料込み
+            %p 
+              %span ¥
+              %p
+                = @product.price
+          
+          
+    .hr
+    .total_price
+      .total_price__text
+        支払い金額
+      .total_price__view
+        %span ¥
+        %p 
+          = @product.price
+    .hr
+
+    %ul.credit_complete__container__btns#purchaseDoneBtn
+      = link_to user_path(current_user.id), class: "my_page_link__btn" do
+        %li.my_page_link
+          マイページに戻る
+      = link_to root_path, class: "credit_cards_index_link__btn" do
+        %li.credit_cards_index_link
+          トップページへ      
+
+
+= render "products/sub_footer"

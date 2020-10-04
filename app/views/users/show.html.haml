@@ -74,11 +74,17 @@
               %li.userbtn 
                 発送元・お届け先住所変更
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to new_credit_card_path do
-              %li.userbtn 
-                クレジットカード登録
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to logout_user_path do
+            - unless @card.present?
+              = link_to new_credit_card_path do
+                %li.userbtn 
+                  新規クレジットカード登録
+                  = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            - else
+              = link_to credit_card_path(params[:id]) do
+                %li.userbtn 
+                  登録クレジットカード一覧/削除
+                  = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+            = link_to "#" do
               %li.userbtn 
                 ログアウト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")

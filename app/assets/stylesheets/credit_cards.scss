@@ -1,6 +1,8 @@
+// クレジット新規登録ページ
 .creditNew{
   background-color:white;
   width:650px;
+  height:600px;
   height:550px;
   border-radius: 5px;
   &__container{
@@ -36,7 +38,6 @@
     }
   }
 }
-
 .number{
   margin:10px 0;
   padding:10px;
@@ -45,7 +46,6 @@
   border:solid 1px #CCCCCC;
   border-radius:5px;
 }
-
 .exp_month{
   margin:10px 0;
   padding:10px;
@@ -56,7 +56,6 @@
   margin-right:10px;
   
 }
-
 .exp_year{
   margin:10px 0;
   padding:10px;
@@ -66,7 +65,6 @@
   border-radius:5px;
   margin-right:10px;
 }
-
 .cvc{
   margin:10px 0;
   padding:10px;
@@ -76,7 +74,6 @@
   border-radius:5px;
   margin-right:10px;
 }
-
 #token_submit{
   color:white;
   background-color:#3CCACD;
@@ -90,7 +87,211 @@
     opacity:0.5;
   }
 }
-
 .backbtn{
   text-align:center;
+}
+.creditIndexList{
+  display:flex;
+  width:100%;
+  padding-bottom:30px;
+  img{
+    width:40px;
+    height:30px;
+    margin-right:10px;
+    padding:0;
+  }
+}
+.cvcinfo{
+  display:flex;
+  text-align: left;
+  color:skyblue;
+  font-size:14px;
+  width:50%;
+  margin-left:auto;
+  padding-top:5px;
+  &:hover{
+    opacity:0.5;
+  }
+  p{
+    line-height: 14px;
+  }
+  icon{
+    line-height: 20px;
+  }
+}
+
+// クレジット登録完了ページ
+.credit_complete{
+  background-color: #fff;
+  width:700px;
+  height:280px;
+  margin-top:35px;
+  margin-left:40px;
+  border-radius:5px;
+  &__container{
+   margin:0 auto;
+   padding:20px;
+   &__info{
+     background-color: orange;
+     border-radius: 5px;
+     padding:15px;
+     color:white;
+     display: flex;
+     p{
+       line-height: 24px;
+     }
+     &__icon{
+       line-height: 22px;
+       padding-right:5px;
+     }
+   }
+   &__btns{
+     padding:10px;
+     margin:0 auto;
+     display: flex;
+     justify-content: space-around;
+     padding-top:80px;
+     a{
+      color:white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+   }
+  }
+}
+.my_page_link{
+  background-color: #3CCACD;
+  width:180px;
+  height:60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  &:hover{
+    opacity:0.5;
+  }
+  a{
+    color:white;
+    text-decoration: none;
+  }
+}
+.credit_cards_index_link{
+  background-color: #3CCACD;
+  width:180px;
+  height:60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50px;
+  &:hover{
+    opacity:0.5;
+  }
+  a{
+    color:white;
+    text-decoration: none;
+  }
+}
+
+// クレジット一覧ページ
+.creditIndex{
+  background-color: #fff;
+  width:700px;
+  height:300px;
+  margin-top:35px;
+  margin-left:40px;
+  border-radius:5px;
+  a{
+    color:#4E4E4E;
+    text-decoration: none;
+  }
+  &__container{
+    padding:20px;
+    width:100%;
+    &__hint{
+      display: flex;
+      justify-content: flex-end;
+      padding-top:10px;
+      &:hover{
+        opacity:0.5;
+      }
+      i{
+        line-height: 24px;
+        padding-left:5px;
+      }
+    }
+    &__name{
+      margin: 0 auto;
+      text-align: center;
+      font-weight: bold;
+      font-size:24px;
+      padding-bottom: 10px;
+    }
+    &__subname{
+      margin: 0 auto;
+      text-align: center;
+      font-weight: bold;
+      font-size:20px;
+    }
+    &__list{
+      &__content{
+        display:flex;
+        width:80%;
+        padding-left:20px;
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        &__left{
+          display: flex;
+          border: solid 1px #CCCCCC;
+          border-radius: 10px;
+          padding:10px;
+          padding-right:20px;
+          &__logo{
+            padding-right:20px;
+            img{
+              width:80px;
+              height:60px;
+            }
+          }
+          &__info{
+            font-weight: bold;
+            &__number{
+              padding:5px;
+            }
+            &__limit{
+              display: flex;
+              font-size:16px;
+              padding: 5px;
+              padding-bottom: 0;
+              p{
+                padding-right:10px;
+              }
+              span{
+                letter-spacing: 1px;
+                line-height: 26px;
+              }
+            }
+          }
+        }
+        &__right{
+          padding-left:40px;
+          padding-top:20px;
+          &__btn{
+            background-color: #3CCACD;
+            color:#fff;
+            width:120px;
+            height:50px;
+            border-radius: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            text-align: center;
+            a{
+              color:white;
+            }
+            &:hover{
+              opacity:0.5;
+            }
+          }
+        }
+      }
+    }
+  }
 }

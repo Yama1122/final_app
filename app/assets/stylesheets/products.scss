@@ -6,6 +6,10 @@ body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
+.js-file {
+  display: none;
+}
+
 // ヘッダー部分
 .header {
   padding: 0 60px;
@@ -157,7 +161,6 @@ body{
 .showMain{
   background-color: #F8F8F8;
   width:100%;
-  height:2300px;
   margin:0 auto;
   padding-top:30px;
   &__container{
@@ -168,6 +171,7 @@ body{
       &__topContent{
         background-color: white;
         width:100%;
+        height:1480px;
         height:1380px;
       }
       }
@@ -175,13 +179,38 @@ body{
 }
 
 .itemBox{
-  padding-top:20px;
+  padding-top:40px;
   width:100%;
+  border-radius: 2px;
+  &__editArea{
+    display:flex;
+    justify-content: flex-end;
+    margin-left:auto;
+    padding-top:20px;
+    width:150px;
+    &__editBtn{
+      color:#fff;
+      background-color: #EA352E;
+      padding:2px 10px;
+      border-radius: 2px;
+      &:hover{
+        opacity:0.8;
+      }
+    }
+    a{
+      color:#3CCACD;
+      text-decoration: none;
+      text-align: right;
+      padding-right:10px;
+      font-size:14px;
+      font-weight: bold;
+    }
+  }
   &__name{
     text-align: center;
     font-weight:bold;
-    font-size:24px;
-    padding-bottom:20px;
+    font-size:40px;
+    padding-bottom:40px;
   }
   &__body{
     width:100%;
@@ -220,12 +249,40 @@ body{
       }
     }
   }
+  &__purchace{
+    margin: 0 auto;
+    text-align: center;
+    padding:30px 0;
+    width:100%;
+    a{
+      text-decoration: none;
+    }
+    &__btn{
+      margin: 0 auto;
+      background-color: #3ccace;
+      color:#fff;
+      width:90%;
+      height:70px;
+      line-height: 70px;
+      font-weight: bold;
+      font-size:26px;
+      &:hover{
+        opacity:0.5;
+      }
+    }
+  }
   &__price{
     margin:0 auto;
     text-align: center;
     padding-top:30px;
     font-weight:bold;
     font-size:46px;
+    p{
+      span{
+        line-height: 56px;
+        font-size:40px;
+        vertical-align: top;
+      }
     span{
       font-size:34px;
       vertical-align: top;
@@ -238,9 +295,14 @@ body{
   &__itemDetail{
     width:90%;
     margin:0 auto;
-    line-height: 1.5;
-    font-size: 18px;
+    line-height: 2;
+    font-size: 20px;
     padding:20px 0;
+    overflow: auto;
+    p{
+      word-wrap: break-word;
+      letter-spacing: 2px;
+    }
   }
 
   &__table{
@@ -723,9 +785,86 @@ body{
       align-items: center;
       text-align: center;
       border:dashed 1px rgb(192, 192, 192);
+    .image__text {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.4em;
+    }
+    .upload-box {
+      margin-top: 16px;
+      .upload-area{
+        display: flex;
+        flex-wrap: wrap;
+        margin: -8px -4px 0px;
+        .previewimg {
+          width: 20%;
+          padding: 0 4px;
+          margin-top: 8px;
+          background-color: rgb(245,245,245);
+          img {
+            height: 118px;
+            display: block;
+            margin: 0 auto;
+          }
+          .border-style{
+            border-color: rgb(204, 204, 204);
+            border-top-width: 1px;
+            border-left: 0 solid #efefef;
+            border-bottom: 0 solid #efefef;
+            border-right: 0 solid #efefef;
+            border-top-style: solid;
+          }
+          .js-remove {
+            -webkit-box-align: center;
+            align-items: center;
+            color: rgb(0, 149, 238);
+            cursor: pointer;
+            display: flex;
+            height: 32px;
+            -webkit-box-pack: center;
+            justify-content: center;
+          }
+        }
+        .images__upload-box {
+          flex: 1 1 0%;
+          height: 165px;
+          margin-top: 8px;
+          padding: 0 4px;
+          #images__upload{
+            place-content: center;
+            -webkit-box-align: center;
+            display: flex;
+            height: 100%;
+            background-color: rgb(230, 230, 230);
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            align-items: center;
+            text-align: center;
+            border:dashed 1px rgb(192, 192, 192);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.5s ease-out 0s;
+          }
+        }
+      #image-box {
+        display: block;
+        display: none;
+        #previews {
+          display: block;
+          display: none;
+          .js-file_group {
+            display: block;
+            display: none;
+            .js-file {
+              display: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
-
+}
   .product {
     padding: 30px;
     height: 300px;
@@ -1068,6 +1207,10 @@ body{
         font-weight: 600;
         border-radius: 4px;
         margin-bottom: 20px;
+        input {
+          background-color: #ea352d;
+          color: #F8F8F8;
+        }
       }
       .draft_btn{
         height: 48px;
@@ -1097,6 +1240,38 @@ body{
       }
     }
   }
-        
+}
 }
 
+
+// 詳細ページ購入ボタン売り切れ時の表示
+#soldout-btn{
+  background-color: #848484;
+  cursor: not-allowed;
+  &:hover{
+    opacity:1;
+  }
+}
+
+// 商品削除ページ
+#product_deleteBtn{
+  width:60%;
+  height:60px;
+  line-height: 60px;
+  border-radius: 5px;
+  background-color:#ea352d;
+  margin-top:30px;
+}
+
+#delete_confirmation{
+  height:500px;
+}
+
+#delete_change{
+  text-align: right;
+  padding-right:40px;
+  padding-top:70px;
+  a{
+    color:#3ccace;
+  }
+}
