@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   }
   # deviseにてusersを作成し使用する場合、controllers: {registrations: 'users/registrations'｝が必要
   root to:'products#index'
-  resources :products, only: [:index,:show,:new] do
+  resources :products, only: [:index,:show,:new, :create, :destroy] do
     resources :purchases do
-    resources :products, only: [:index,:show,:new, :create] do
+    # resources :products do
       member do
         get 'confirmation'
         post 'pay'

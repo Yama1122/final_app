@@ -7,7 +7,8 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :seller, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
-
+  
+  # product.rbとproduct_image.rbに保存・更新・削除（allow_destroy: true）を同時にさせる
   accepts_nested_attributes_for :product_images, allow_destroy: true
 
   validates :name,                presence: true,  length: { maximum: 40 }

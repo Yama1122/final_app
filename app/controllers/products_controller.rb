@@ -2,9 +2,9 @@ class ProductsController < ApplicationController
 
   before_action :set_product, only: [:show]
   # before_action :set_adress
+  
  
   def index
-    @products =Product.all
     @products = Product.all
   end
 
@@ -29,12 +29,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+
+  end
+
+  def show
+    @category = @product.category
   end
 private
   def product_params
-    binding.pry
     params.require(:product).permit(:name, :profile, :price, :category_id, :condition_id, :sendingday_id, :prefecture_code_id, :postage_id, :sendingtype_id, product_images_attributes: [:url, :_destroy, :id[0]]).merge(seller_id: current_user.id)
   end
 
@@ -42,16 +44,7 @@ private
     @category = @product.category
   end
 
-
-end
-
-  private
   def set_product
     @product = Product.find(params[:id])
   end
-
-  # def set_adress
-  #   @adress = SendingAddress.find(params[:id])
-  # end
 end
-    end
