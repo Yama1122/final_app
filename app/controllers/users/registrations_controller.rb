@@ -18,8 +18,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       redirect_to   new_user_registration_path, alert: '登録できませんでした'
     end
-    
+  end
 
+
+
+
+  def update
+  
+    if @user.update(user_params)
+      redirect_to user_path(current_user.id),notice: '編集が完了しました'
+    else
+      redirect_to user_path(current_user.id), alert: '編集できませんでした'
+    end
   end
 
   def destroy

@@ -66,7 +66,7 @@
           %p 設定
         .userShow__container__left__config__content
           %ul
-            = link_to "#" do
+            = link_to  edit_user_path do
               %li.userbtn 
                 ユーザー情報更新
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
@@ -93,7 +93,8 @@
       .userShow__container__right__profile
         .userShow__container__right__profile__image
           = image_tag "users/member_thumb.png",class:"userShow__container__right__profile__image--icon"
-        %p.userShow__container__right__profile__name ユーザー名
+        %p.userShow__container__right__profile__name 
+          = current_user.nickname
         .userShow__container__right__profile__product
           .userShow__container__right__profile__product__value 
             .userShow__container__right__profile__product__value--name
