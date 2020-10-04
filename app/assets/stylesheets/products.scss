@@ -161,7 +161,6 @@ body{
 .showMain{
   background-color: #F8F8F8;
   width:100%;
-  height:2300px;
   margin:0 auto;
   padding-top:30px;
   &__container{
@@ -180,13 +179,38 @@ body{
 }
 
 .itemBox{
-  padding-top:20px;
+  padding-top:40px;
   width:100%;
+  border-radius: 2px;
+  &__editArea{
+    display:flex;
+    justify-content: flex-end;
+    margin-left:auto;
+    padding-top:20px;
+    width:150px;
+    &__editBtn{
+      color:#fff;
+      background-color: #EA352E;
+      padding:2px 10px;
+      border-radius: 2px;
+      &:hover{
+        opacity:0.8;
+      }
+    }
+    a{
+      color:#3CCACD;
+      text-decoration: none;
+      text-align: right;
+      padding-right:10px;
+      font-size:14px;
+      font-weight: bold;
+    }
+  }
   &__name{
     text-align: center;
     font-weight:bold;
-    font-size:24px;
-    padding-bottom:20px;
+    font-size:40px;
+    padding-bottom:40px;
   }
   &__body{
     width:100%;
@@ -271,9 +295,14 @@ body{
   &__itemDetail{
     width:90%;
     margin:0 auto;
-    line-height: 1.5;
-    font-size: 18px;
+    line-height: 2;
+    font-size: 20px;
     padding:20px 0;
+    overflow: auto;
+    p{
+      word-wrap: break-word;
+      letter-spacing: 2px;
+    }
   }
 
   &__table{
@@ -1221,5 +1250,28 @@ body{
   cursor: not-allowed;
   &:hover{
     opacity:1;
+  }
+}
+
+// 商品削除ページ
+#product_deleteBtn{
+  width:60%;
+  height:60px;
+  line-height: 60px;
+  border-radius: 5px;
+  background-color:#ea352d;
+  margin-top:30px;
+}
+
+#delete_confirmation{
+  height:500px;
+}
+
+#delete_change{
+  text-align: right;
+  padding-right:40px;
+  padding-top:70px;
+  a{
+    color:#3ccace;
   }
 }

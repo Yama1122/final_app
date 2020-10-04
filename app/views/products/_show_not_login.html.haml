@@ -1,0 +1,199 @@
+.showMain
+  .showMain__container
+    .showMain__container__content
+      .showMain__container__content__topContent
+        .itemBox
+          %h2.itemBox__name
+            = @product.name
+          .itemBox__body
+            .itemBox__body--top
+              = image_tag @image.url,class:"itemBox__body--top--image"
+            .itemBox__body--bottom
+            -# 画像が一枚しかない場合は表示させない
+              - if @images.count >= 2
+                %ul
+                -# 追加画像がある場合は表示
+                  - if @images[0]
+                    %li
+                      = image_tag @images[0].url
+                  - if @images[1]    
+                    %li
+                      = image_tag @images[1].url
+                  - if @images[2]    
+                    %li
+                      = image_tag @images[2].url
+          .itemBox__price
+            %p
+              %span ¥
+              = @product.price 
+            .itemBox__price--detail
+              (税込) 送料込み
+          .itemBox__itemDetail
+            %p
+              = @product.profile
+          .itemBox__purchace
+            -# buyer_idがある場合、売り切れ表示
+            - if @product.buyer_id.present?
+              .itemBox__purchace__btn#soldout-btn
+                売り切れました
+            - else  
+              = link_to confirmation_product_purchase_path(params[:id]) do
+                .itemBox__purchace__btn
+                  購入画面に進む
+          .itemBox__table
+            %table
+              %tbody
+                %tr
+                  %th
+                    出品者
+                  %td
+                    = @product.seller.nickname
+                %tr
+                  %th
+                    カテゴリー
+                  %td
+                    = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do
+                      -# 孫カテゴリが存在しない場合
+                      - if @category.parent.parent != nil  
+                        = @category.parent.parent.name
+                    = link_to category_path(@category.parent),class:"itemBox__table--category" do
+                      = @category.parent.name
+                    = link_to category_path(@category),class:"itemBox__table--category" do
+                      = @category.name
+                %tr
+                  %th
+                    ブランド
+                  %td
+                    = @product.brand.name
+                %tr
+                  %th
+                    商品のサイズ
+                  %td
+                    サイズ仮置
+                %tr
+                  %th
+                    商品の状態
+                  %td
+                    = @product.condition.name
+                %tr
+                  %th
+                    配送料の負担
+                  %td
+                    = @product.postage.name
+                %tr
+                  %th
+                    発送元の地域
+                  %td
+                    = link_to "#" do
+                      = @product.prefecture_code.name  
+                %tr
+                  %th
+                    発送日の目安
+                  %td
+                    = @product.sendingday.name
+          .itemBox__optionalArea
+            .itemBox__optionalArea__like
+              .itemBox__optionalArea__like--name
+                = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
+                %p.itemBox__optionalArea__like--name--content
+                  お気に入り
+              .itemBox__optionalArea__like--count
+                %p
+                  0
+
+            = link_to "#" do   
+              .itemBox__optionalArea--alert
+                .itemBox__optionalArea--alert--logo
+                  = icon("fas","flag")
+                .itemBox__optionalArea--alert--content
+                  %p
+                    不適切な商品の通報
+
+      .commentBox
+        %form
+          %textarea{class:"commentBox__text"}
+          .commentBox__detail
+            %p
+              相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          .commentBox__btn
+            %button{type:"submit",class:"commentBox__btn--submit"}
+              .commentBox__btn--submit--icon
+                = icon("fas","comment")
+                %p
+                  コメントする
+
+      .links
+        =link_to "#" do
+          .links__before
+            = icon("fas","chevron-left",class:"links__before--icon")
+            %p
+              前の商品
+        =link_to "#" do
+          .links__after
+            %p
+              次の商品
+            = icon("fas","chevron-right",class:"links__after--icon")
+        
+      .relatedItems 
+        = link_to category_path(@category) do
+          .relatedItems__link
+            %p
+              %span
+                = @category.name
+              %span
+                をもっとみる
+        .relatedItems__list
+          = link_to "#" do
+            .relatedItems__list__item
+              .relatedItems__list__item__image
+                = image_tag "products/product1.png"
+              .relatedItems__list__item__detail
+                .relatedItems__list__item__detail__left
+                  .relatedItems__list__item__detail__left--name
+                    %p
+                      商品名
+                  .relatedItems__list__item__detail__left--price
+                    %p
+                      ¥3000
+                    %span  
+                      (税込み)
+                .relatedItems__list__item__detail__right
+                  = icon("fas","star")
+                  .relatedItems__list__item__detail__right--count
+                    0
+          = link_to "#" do
+            .relatedItems__list__item
+              .relatedItems__list__item__image
+                = image_tag "products/product1.png"
+              .relatedItems__list__item__detail
+                .relatedItems__list__item__detail__left
+                  .relatedItems__list__item__detail__left--name
+                    %p
+                      商品名
+                  .relatedItems__list__item__detail__left--price
+                    %p
+                      ¥3000
+                    %span  
+                      (税込み)
+                .relatedItems__list__item__detail__right
+                  = icon("fas","star")
+                  .relatedItems__list__item__detail__right--count
+                    0
+          = link_to "#" do
+            .relatedItems__list__item#categoryProduct
+              .relatedItems__list__item__image
+                = image_tag "products/product1.png"
+              .relatedItems__list__item__detail
+                .relatedItems__list__item__detail__left
+                  .relatedItems__list__item__detail__left--name
+                    %p
+                      商品名
+                  .relatedItems__list__item__detail__left--price
+                    %p
+                      ¥3000
+                    %span  
+                      (税込み)
+                .relatedItems__list__item__detail__right
+                  = icon("fas","star")
+                  .relatedItems__list__item__detail__right--count
+                    0

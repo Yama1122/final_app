@@ -1,0 +1,34 @@
+= render "sub_header"
+
+.purchase_detail_wrapper
+  .purchase_detail_wrapper__form#delete_confirmation
+    .top_text
+      以下の商品の削除を行います
+    .hr
+    .purchase-product
+      .purchase-product__wrapper
+        .purchase-product__wrapper__left
+          .purchase-product__wrapper__left__image
+            = image_tag @image.url, class: 'product2'
+        .purchase-product__wrapper__right    
+          .purchase-product__wrapper__right__name
+            %p 
+              = @product.name
+          .purchase-product__wrapper__right__price
+            %p (税込)送料込み
+            %p 
+              %span ¥
+              %p 
+                = @product.price
+    .hr     
+    .itemBox__purchace#product_deleteArea
+      = link_to product_path(params[:id]),method: :delete do
+        .itemBox__purchace__btn#product_deleteBtn
+          削除する 
+
+      .change#delete_change
+        = link_to product_path(params[:id]) do
+          商品ページに戻る
+          = icon("fas","chevron-right")
+
+= render "sub_footer"
