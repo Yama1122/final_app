@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_10_03_013710) do
     t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "deal_closed_day"
+    t.string "status_id", default: "出品中"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"

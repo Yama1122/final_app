@@ -6,6 +6,10 @@ body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 }
 
+.js-file {
+  display: none;
+}
+
 // ヘッダー部分
 .header {
   padding: 0 60px;
@@ -167,6 +171,8 @@ body{
       &__topContent{
         background-color: white;
         width:100%;
+        height:1480px;
+        height:1380px;
       }
       }
   }
@@ -277,6 +283,9 @@ body{
         font-size:40px;
         vertical-align: top;
       }
+    span{
+      font-size:34px;
+      vertical-align: top;
     }
     &--detail{
       font-weight: normal;
@@ -776,9 +785,86 @@ body{
       align-items: center;
       text-align: center;
       border:dashed 1px rgb(192, 192, 192);
+    .image__text {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.4em;
+    }
+    .upload-box {
+      margin-top: 16px;
+      .upload-area{
+        display: flex;
+        flex-wrap: wrap;
+        margin: -8px -4px 0px;
+        .previewimg {
+          width: 20%;
+          padding: 0 4px;
+          margin-top: 8px;
+          background-color: rgb(245,245,245);
+          img {
+            height: 118px;
+            display: block;
+            margin: 0 auto;
+          }
+          .border-style{
+            border-color: rgb(204, 204, 204);
+            border-top-width: 1px;
+            border-left: 0 solid #efefef;
+            border-bottom: 0 solid #efefef;
+            border-right: 0 solid #efefef;
+            border-top-style: solid;
+          }
+          .js-remove {
+            -webkit-box-align: center;
+            align-items: center;
+            color: rgb(0, 149, 238);
+            cursor: pointer;
+            display: flex;
+            height: 32px;
+            -webkit-box-pack: center;
+            justify-content: center;
+          }
+        }
+        .images__upload-box {
+          flex: 1 1 0%;
+          height: 165px;
+          margin-top: 8px;
+          padding: 0 4px;
+          #images__upload{
+            place-content: center;
+            -webkit-box-align: center;
+            display: flex;
+            height: 100%;
+            background-color: rgb(230, 230, 230);
+            flex-wrap: wrap;
+            -webkit-box-pack: center;
+            align-items: center;
+            text-align: center;
+            border:dashed 1px rgb(192, 192, 192);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.5s ease-out 0s;
+          }
+        }
+      #image-box {
+        display: block;
+        display: none;
+        #previews {
+          display: block;
+          display: none;
+          .js-file_group {
+            display: block;
+            display: none;
+            .js-file {
+              display: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
-
+}
   .product {
     padding: 30px;
     height: 300px;
@@ -1121,6 +1207,10 @@ body{
         font-weight: 600;
         border-radius: 4px;
         margin-bottom: 20px;
+        input {
+          background-color: #ea352d;
+          color: #F8F8F8;
+        }
       }
       .draft_btn{
         height: 48px;
@@ -1150,8 +1240,9 @@ body{
       }
     }
   }
-        
 }
+}
+
 
 // 詳細ページ購入ボタン売り切れ時の表示
 #soldout-btn{

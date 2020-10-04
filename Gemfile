@@ -68,6 +68,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   # gem 'chromedriver-helper'
   gem 'webdrivers', '~> 3.0'
+  gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -86,3 +87,6 @@ gem 'jp_prefecture'
 gem 'payjp'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'carrierwave' 
+gem 'mini_magick'
+gem 'fog-aws'
