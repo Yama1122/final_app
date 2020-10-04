@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   
-  before_action :set_product, only: [:show,:destroy,:delete]
-  before_action :set_product_image, except: :index
+  before_action :set_product, only: [:index, :new,:show,:destroy,:delete]
+  before_action :set_product_image, except: [:index, :new]
   
  
   def index
