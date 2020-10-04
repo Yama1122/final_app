@@ -1,0 +1,450 @@
+.edit_user_registration_wrapper{
+  background-color: #f1f1f1;
+  height: 1650px;
+  font-size: 15px;
+  
+  
+
+
+  .hr {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color:  #f1f1f1;
+  }
+  .required {
+    color: rgb(255, 255, 255);
+    background-color: red;
+    padding: 0 5px 0 5px;
+  }
+  .registration-form {
+    background-color: white;
+    height: 1650px;
+    width: 600px;
+    margin: 0 auto;
+  }
+  .top {
+    padding: 10px 100px 10px 100px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .text {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .basic_information {
+    padding: 20px 140px 20px 140px;
+    height: 200px;
+    .nickname-text {
+      padding-bottom: 20px;
+      #user_nickname {
+        border: 1px solid #000000;  /* 枠線 */
+        border-radius: 4px;   /* 角丸 */
+        padding: 0.5em;          /* 内側の余白量 */
+        background-color: rgb(255, 255, 255);  /* 背景色 */
+        width: 100%;             /* 横幅いっぱいにする */
+        box-sizing: border-box;  /* ※これがないと横にはみ出る */
+        height: 40px;           /* 高さ */
+        font-size: 15px;          /* 文字サイズ */
+        line-height: 1.2;        /* 行の高さ */
+        &:focus {
+          outline: none;
+          border: 1px solid #1b6aff;
+        }
+      }
+    }
+    .mail-text {
+      padding-bottom: 20px;
+      #user_email {
+        border: 1px solid #000000;  /* 枠線 */
+        border-radius: 4px;   /* 角丸 */
+        padding: 0.5em;          /* 内側の余白量 */
+        background-color: rgb(255, 255, 255);  /* 背景色 */
+        width: 100%;             /* 横幅いっぱいにする */
+        box-sizing: border-box;  /* ※これがないと横にはみ出る */
+        height: 40px;           /* 高さ */
+        font-size: 15px;          /* 文字サイズ */
+        line-height: 1.2;        /* 行の高さ */
+        &:focus {
+          outline: none;
+          border: 1px solid #1b6aff;
+        }
+      }
+    }
+    
+  }
+  .explanation {
+    padding: 20px 140px 20px 140px;
+    height: 150px;
+  }
+  .private_information {
+    padding: 20px 140px 20px 140px;
+    height: 300px;
+    .chinese_characters {
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        .last_name {
+          
+          #user_family_name {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+        .first_name {
+          padding: 0 5px 0 5px;
+          #user_first_name {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+      }
+    }
+    .hiragana {
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        .last_name {
+          
+          #user_family_name_kana {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+        .first_name {
+          padding: 0 5px 0 5px;
+          #user_first_name_kana {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+      }
+    }
+    .birthday {
+      .wrapper {
+        display: flex;
+        align-items: center;
+        #user_birth_date_1i {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 70px;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 40px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+        
+        
+        #user_birth_date_2i {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 60px;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 40px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          margin-left: 10px;
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+        
+        #user_birth_date_3i {
+          border: 1px solid #000000;  /* 枠線 */
+          border-radius: 4px;   /* 角丸 */
+          padding: 0.5em;          /* 内側の余白量 */
+          background-color: rgb(255, 255, 255);  /* 背景色 */
+          width: 60px;             /* 横幅いっぱいにする */
+          box-sizing: border-box;  /* ※これがないと横にはみ出る */
+          height: 40px;           /* 高さ */
+          font-size: 15px;          /* 文字サイズ */
+          line-height: 1.2;        /* 行の高さ */
+          margin-left: 10px;
+          &:focus {
+            outline: none;
+            border: 1px solid #1b6aff;
+          }
+        }
+        .year-text {
+          padding: 10px 10px 0 5px;
+        }
+        .month-text {
+          padding: 10px 10px 0 5px;
+        }
+        .day-text {
+          padding: 10px 10px 0 5px;
+        }
+      }
+    }
+  }
+  .sending {
+    padding: 10px 100px 10px 100px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .text {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .sending-address {
+    padding: 20px 140px 20px 140px;
+    height: 750px;
+    .label {
+      padding-top: 20px;
+    }
+    
+    #user_sending_address_attributes_post_code {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+
+    #user_sending_address_attributes_prefecture_code_id {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_city {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_house_number {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_building_name {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    #user_sending_address_attributes_phone_number {
+      border: 1px solid #000000;  /* 枠線 */
+      border-radius: 4px;   /* 角丸 */
+      padding: 0.5em;          /* 内側の余白量 */
+      background-color: rgb(255, 255, 255);  /* 背景色 */
+      width: 100%;             /* 横幅いっぱいにする */
+      box-sizing: border-box;  /* ※これがないと横にはみ出る */
+      height: 40px;           /* 高さ */
+      font-size: 15px;          /* 文字サイズ */
+      line-height: 1.2;        /* 行の高さ */
+      &:focus {
+        outline: none;
+        border: 1px solid #1b6aff;
+      }
+    }
+    .chinese_characters {
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        .last_name {
+          
+          #user_sending_address_attributes_family_name {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+        .first_name {
+          padding: 0 5px 0 5px;
+          #user_sending_address_attributes_first_name {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+      }
+    }
+    .hiragana {
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+        .last_name {
+          
+          #user_sending_address_attributes_family_name_kana {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+        .first_name {
+          padding: 0 5px 0 5px;
+          #user_sending_address_attributes_first_name_kana {
+            border: 1px solid #000000;  /* 枠線 */
+            border-radius: 4px;   /* 角丸 */
+            padding: 0.5em;          /* 内側の余白量 */
+            background-color: rgb(255, 255, 255);  /* 背景色 */
+            width: 100%;             /* 横幅いっぱいにする */
+            box-sizing: border-box;  /* ※これがないと横にはみ出る */
+            height: 40px;           /* 高さ */
+            font-size: 15px;          /* 文字サイズ */
+            line-height: 1.2;        /* 行の高さ */
+            &:focus {
+              outline: none;
+              border: 1px solid #1b6aff;
+            }
+          }
+        }
+      }
+    }
+    
+  }
+  .btn-area{
+    display: flex;
+    justify-content: center;
+    a {
+      text-decoration: none;
+    }
+    .btn {
+      height: 50px;
+      width:300px;
+      background-color: rgb(70, 192, 182);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+

@@ -12,6 +12,20 @@ class UsersController < ApplicationController
   def complete
   end
 
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to root
+    # @task = Task.find(params[:id])
+    # @task.update(task_params)
+    # redirect_to @task
+  end
+
   # def set_user
   #   if CreditCard.where(user_id: current_user.id).present?
   #     @card = CreditCard.where(user_id: current_user.id).first
