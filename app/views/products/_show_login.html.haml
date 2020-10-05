@@ -7,7 +7,7 @@
             = @product.name
           .itemBox__body
             .itemBox__body--top
-              = image_tag @image.url,class:"itemBox__body--top--image"
+              = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
             .itemBox__body--bottom
               - if @images.count >= 2
                 %ul
@@ -64,7 +64,8 @@
                   %th
                     ブランド
                   %td
-                    = @product.brand.name
+                    - if @product.brand
+                      = @product.brand.name
                 %tr
                   %th
                     商品のサイズ
