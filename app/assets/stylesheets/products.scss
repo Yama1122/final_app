@@ -171,15 +171,12 @@ body{
       &__topContent{
         background-color: white;
         width:100%;
-        height:1480px;
-        height:1380px;
       }
       }
   }
 }
 
 .itemBox{
-  padding-top:40px;
   width:100%;
   border-radius: 2px;
   &__editArea{
@@ -209,24 +206,29 @@ body{
   &__name{
     text-align: center;
     font-weight:bold;
-    font-size:40px;
-    padding-bottom:40px;
+    font-size:36px;
+    padding:10px 0;
+    letter-spacing: 2px;
+    margin-bottom:40px;
+    border-bottom: solid #F8F8F8 2px;
   }
   &__body{
     width:100%;
     &--top{
       width:95%;
-      height:400px;
       margin:0 auto;
-      padding-bottom:20px;
+      padding-bottom:10px;
       &--image{
         display: block;
         width:80%;
-        height:100%;
         margin:0 auto;
         object-fit: cover;
         border:1px solid #F8F8F8;
         border-radius: 2px;
+        height:350px;
+        img{
+          object-fit: cover;
+        }
       }
     }
     &--bottom{
@@ -236,11 +238,12 @@ body{
         margin:0 auto;
         display: flex;
         justify-content: space-around;
+        width:100%;
         li{
           img{
             display:block;
-            width:95%;
-            height:100px;
+            width:150px;
+            height:120px;
             object-fit: cover;
             border:1px solid #F8F8F8;
             border-radius:2px;
@@ -286,6 +289,7 @@ body{
     span{
       font-size:34px;
       vertical-align: top;
+      }
     }
     &--detail{
       font-weight: normal;
@@ -299,6 +303,11 @@ body{
     font-size: 20px;
     padding:20px 0;
     overflow: auto;
+    background-color: #efefef;
+    padding:10px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border-radius: 4px;
     p{
       word-wrap: break-word;
       letter-spacing: 2px;
@@ -340,6 +349,7 @@ body{
       }
     }
   }
+
   &__optionalArea{
     display:flex;
     justify-content: space-between;
@@ -549,6 +559,7 @@ body{
     }
   }
 }
+
 
 // アプリバーナー部分
 .appBanner {
@@ -1241,7 +1252,7 @@ body{
     }
   }
 }
-}
+// }
 
 
 // 詳細ページ購入ボタン売り切れ時の表示
