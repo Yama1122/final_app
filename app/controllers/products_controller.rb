@@ -29,10 +29,10 @@ class ProductsController < ApplicationController
   def update
   end
 
-  def destroy
-    product = Product.find(params[:id])
-    product.destroy
-  end
+  # def destroy
+  #   product = Product.find(params[:id])
+  #   product.destroy
+  # end
 
   def delete
     unless current_user.id == @product.seller_id

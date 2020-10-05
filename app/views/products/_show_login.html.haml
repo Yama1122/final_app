@@ -13,22 +13,20 @@
                 %ul
                   - if @images[0]
                     %li
-                      = image_tag @images[0].url
+                      = image_tag @product .product_images[0].url.url
                   - if @images[1]    
                     %li
-                      = image_tag @images[1].url
+                      = image_tag @product .product_images[0].url.url
                   - if @images[2]    
                     %li
-                      = image_tag @images[2].url
+                      = image_tag @product .product_images[0].url.url
+                      
           .itemBox__price
             %p
               %span ¥
               = @product.price 
             .itemBox__price--detail
               (税込) 送料込み
-          .itemBox__itemDetail
-            %p
-              = @product.profile
           -# 出品者には購入ボタンを表示させない
           - unless current_user.id == @product.seller_id
             .itemBox__purchace
@@ -40,6 +38,10 @@
                 = link_to confirmation_product_purchase_path(params[:id]) do
                   .itemBox__purchace__btn
                     購入画面に進む
+          .itemBox__itemDetail
+            %p
+              = @product.profile
+          
           .itemBox__table
             %table
               %tbody

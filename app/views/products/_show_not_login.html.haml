@@ -7,30 +7,25 @@
             = @product.name
           .itemBox__body
             .itemBox__body--top
-              = image_tag @image.url,class:"itemBox__body--top--image"
+              = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
             .itemBox__body--bottom
-            -# 画像が一枚しかない場合は表示させない
               - if @images.count >= 2
                 %ul
-                -# 追加画像がある場合は表示
                   - if @images[0]
                     %li
-                      = image_tag @images[0].url
+                      = image_tag @product .product_images[0].url.url
                   - if @images[1]    
                     %li
-                      = image_tag @images[1].url
+                      = image_tag @product .product_images[0].url.url
                   - if @images[2]    
                     %li
-                      = image_tag @images[2].url
+                      = image_tag @product .product_images[0].url.url
           .itemBox__price
             %p
               %span ¥
               = @product.price 
             .itemBox__price--detail
               (税込) 送料込み
-          .itemBox__itemDetail
-            %p
-              = @product.profile
           .itemBox__purchace
             -# buyer_idがある場合、売り切れ表示
             - if @product.buyer_id.present?
@@ -40,6 +35,9 @@
               = link_to confirmation_product_purchase_path(params[:id]) do
                 .itemBox__purchace__btn
                   購入画面に進む
+          .itemBox__itemDetail
+            %p
+              = @product.profile
           .itemBox__table
             %table
               %tbody
