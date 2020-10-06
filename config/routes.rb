@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index,:show,:new, :create, :destroy] do
     member do
       get 'delete'
+      get 'delete_done'
     end
     resources :purchases do
     # resources :products do
