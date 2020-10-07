@@ -276,50 +276,81 @@
         .productList {
           width: 220px;
           display: inline-block;
-          .listimage {
-            background-color: #fff;
-            display: inline-block;
-            .productList--img {
-              width: 220px;
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-              z-index: auto;
-            }
-            .productList--body{
-              background-color: white;
-              color: #333;
-              padding: 16px;
-              .name {
-                overflow:hidden;
-                line-height: 1.5;
-                font-size: 16px;
-                text-align: left;
-              }
-              .details {
-                font-size: 16px;
-                .price {
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  .icon {
-                    display: inline-block;
-                    font: normal;
-                    font-size: inherit;
-                    text-rendering: auto;
-                    -webkit-font-smoothing: antialiased;
-                  }
+            .listimage {
+              background-color: #fff;
+              display: inline-block;
+              .productList--img {
+                width: 220px;
+                height: 150px;
+                position: relative;
+                overflow: hidden;
+                margin: 0;
+                z-index: auto;
+                img {  
+                  position: absolute; 
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  width: 100%;
+                  z-index: auto;
+                  height: 150px;
+                  object-fit: cover;
+                  vertical-align: bottom;
                 }
-                .tax {
-                  font-size: 10px;
+              }
+              .productList__body{
+                background-color: white;
+                color: #333;
+                padding: 16px;
+                .name {
+                  overflow:hidden;
+                  line-height: 1.5;
+                  font-size: 16px;
                   text-align: left;
                 }
+                .details {
+                  font-size: 16px;
+                  .price {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .icon {
+                      display: inline-block;
+                      font: normal;
+                      font-size: inherit;
+                      text-rendering: auto;
+                      -webkit-font-smoothing: antialiased;
+                    }
+                  }
+                  .tax {
+                    font-size: 10px;
+                    text-align: left;
+                  }
+                }
               }
-          }
+              .productList__sold{
+                width: 0;
+                height: 0;
+                border-top: 60px solid #ea352d ;
+                border-right: 60px solid transparent;
+                border-bottom: 60px solid transparent;
+                border-left: 60px solid #ea352d ;
+                z-index:100;
+                position: relative;
+                top:-245px;
+                &__inner{
+                  transform: rotate(-45deg);
+                  font-size: 28px;
+                  margin:-35px 0px 0px -55px;
+                  color: #fff;
+                  letter-spacing: 2px;
+                  font-weight: 600;
+                }
+              }
+            }
         }
       }
     }
-  }
   }
 }

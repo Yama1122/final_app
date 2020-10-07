@@ -1,0 +1,30 @@
+// 商品出品、購入確認フッター
+.sub_footer {
+  height: 150px;
+  padding: 20px;
+  background-color: rgb(241, 241, 241);
+  .wrapper {
+    display:flex;
+    justify-content: center;
+    font-size: 12px;
+    .policy {
+      padding-right: 20px;
+    }
+    .terms {
+      padding-right: 20px;
+    }
+    .notation {
+
+    }
+  }
+  .furima_logo {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    .logo {
+      .logo-white{
+        height: 60px;
+      }
+    }
+  }
+}
