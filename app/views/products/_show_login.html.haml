@@ -114,7 +114,7 @@
       -# 出品者のみ商品の編集/削除が可能に
       - if current_user.id == @product.seller_id
         .itemBox__editArea
-          = link_to "#" do
+          = link_to edit_product_path(params[:id]) do
             .itemBox__editArea__editBtn
               編集
           = link_to delete_product_path(params[:id]) do

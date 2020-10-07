@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
   # deviseにてusersを作成し使用する場合、controllers: {registrations: 'users/registrations'｝が必要
   root to:'products#index'
-  resources :products, only: [:index,:show,:new, :create, :destroy] do
+  resources :products, only: [:index,:show,:new, :create, :destroy,:edit] do
     member do
       get 'delete'
       get 'delete_done'
