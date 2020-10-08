@@ -9,7 +9,8 @@ class CreditCardsController < ApplicationController
 
   def create
     # PAY.JPの秘密鍵をセット（環境変数）
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     # jsにてpayjpTokenをセットできているか
     if params['payjp-token'].blank?
       render :new
@@ -39,7 +40,8 @@ class CreditCardsController < ApplicationController
       redirect_to new_credit_card_path
     else
       # PAY.JPの秘密鍵をセット（環境変数）
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
       # ログインユーザーのクレジットカード情報からpayjpの顧客情報を引き出す
       customer = Payjp::Customer.retrieve(@card.customer_id)
       # 顧客情報からカードの情報を取り出す
@@ -72,7 +74,8 @@ class CreditCardsController < ApplicationController
       redirect_to new_credit_card_path
     else
     # PAY.JPの秘密鍵をセット（環境変数）
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     # ログインユーザーのクレジットカード情報からpayjpの顧客情報を引き出す
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
