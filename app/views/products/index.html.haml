@@ -83,7 +83,7 @@
         - @products.each do |product|
           -if product.buyer_id
             .productList
-              =link_to product_path(product.id), class:"listimage" do
+              =link_to product_path(product.seller_id), class:"listimage" do
                 %figure.productList--img
                   = image_tag product .product_images[0].url.url
                 .productList__body
@@ -102,7 +102,7 @@
                     sold
           - else
             .productList
-              =link_to product_path(product.seller_id), class:"listimage" do
+              =link_to product_path(product.id), class:"listimage" do
                 %figure.productList--img
                   = image_tag product .product_images[0].url.url
                 .productList__body
