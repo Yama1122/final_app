@@ -81,21 +81,41 @@
           %h3.title 新規投稿商品
       .productLists
         - @products.each do |product|
-          .productList
-            =link_to "#", class:"listimage" do
-              %figure.productList--img
-                = image_tag product .product_images[0].url.url
-              .productList__body
-                %h3.name 
-                  = product.name
-                .details
-                  %ul.price
-                    %li 
-                      = product.price
-                      円
-                    %li.icon 
-                      =icon('fa','star')
-                  %p.tax (税込)
+          -if product.buyer_id
+            .productList
+              =link_to product_path(product.seller_id), class:"listimage" do
+                %figure.productList--img
+                  = image_tag product .product_images[0].url.url
+                .productList__body
+                  %h3.name 
+                    = product.name
+                  .details
+                    %ul.price
+                      %li 
+                        = product.price
+                        円
+                      %li.icon 
+                        =icon('fa','star')
+                    %p.tax (税込)
+                .productList__sold
+                  .productList__sold__inner
+                    sold
+          - else
+            .productList
+              =link_to product_path(product.seller_id), class:"listimage" do
+                %figure.productList--img
+                  = image_tag product .product_images[0].url.url
+                .productList__body
+                  %h3.name 
+                    = product.name
+                  .details
+                    %ul.price
+                      %li 
+                        = product.price
+                        円
+                      %li.icon 
+                        =icon('fa','star')
+                    %p.tax (税込)
   %section.pickupContainer
     %h2.head ピックアップブランド
     .productBox

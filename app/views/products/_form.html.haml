@@ -13,9 +13,7 @@
             .images__upload-box
               #images__upload
                 .p__upload
-                ドラッグ&ドロップ
-                %br
-                またはクリックしてファイルをアップロード
+                  =icon('fas','camera')
           #image-box
             #previews
               -# 複数の別のリソースを同時に保存させる
@@ -49,7 +47,7 @@
             商品の説明
             %span.required 必須
           .explanation__field
-            = f.text_field :profile, placeholder: "商品の説明（必須 1,000文字以内)"
+            = f.text_field :profile, placeholder: "商品の説明（必須 1,000文字以内)", class: "textlines"
       .hr  
       .product_details
         .product_details__text

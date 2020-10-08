@@ -1,0 +1,20 @@
+.breadCrumbs{
+  &__category{
+    display:flex;
+    align-content: center;
+    line-height: 50px;
+    padding:0 20px;
+    p{
+      padding:0 5px;
+      font-size:14px;
+      &:hover{
+        color:#3CCACD;
+      }
+    }
+    &--icon{
+      font-size:6px;
+      
+    }
+    
+  }
+}

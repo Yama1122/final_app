@@ -1,0 +1,11 @@
+// 商品出品、購入確認ヘッダー
+.sub_header{
+  background-color: rgb(241, 241, 241);
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .logo {
+    height: 70px;
+  }
+}
