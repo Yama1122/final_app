@@ -13,7 +13,8 @@ class PurchasesController < ApplicationController
       if current_user.credit_card.present?
         # PAY.JPの秘密鍵をセット（環境変数）
         # 秘密鍵等は.envにて保管
-        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
         @card = CreditCard.find_by(user_id: current_user.id)
         # ログインユーザーのクレジットカード情報からpayjpの顧客情報を引き出す
         customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -51,7 +52,8 @@ class PurchasesController < ApplicationController
   def pay
     card = CreditCard.find_by(user_id: current_user.id)
     # PAY.JPの秘密鍵をセット（環境変数）
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    # Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     Payjp::Charge.create(
     :amount => @product.price, #支払金額を入力
     :customer => card.customer_id, #顧客ID
@@ -71,7 +73,8 @@ class PurchasesController < ApplicationController
       # クレジット登録をしているか
       if current_user.credit_card.present?
         # PAY.JPの秘密鍵をセット（環境変数）
-        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        # Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
         @card = CreditCard.find_by(user_id: current_user.id)
         # ログインユーザーのクレジットカード情報からpayjpの顧客情報を引き出す
         customer = Payjp::Customer.retrieve(@card.customer_id)
