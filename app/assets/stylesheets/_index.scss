@@ -273,6 +273,7 @@
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
+        overflow-x: scroll;
         .productList {
           width: 220px;
           display: inline-block;

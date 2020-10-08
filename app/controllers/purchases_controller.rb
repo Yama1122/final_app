@@ -114,7 +114,7 @@ class PurchasesController < ApplicationController
   end
 
   def set_adress
-    @adress = SendingAddress.find(params[:id])
+    @adress = SendingAddress.find(params[:user_id])
   end
 
   def set_product_image
