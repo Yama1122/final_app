@@ -9,7 +9,7 @@
       .purchase-product__wrapper
         .purchase-product__wrapper__left
           .purchase-product__wrapper__left__image
-            = image_tag @image.url, class: 'product2'
+            = image_tag @product .product_images[0].url.url, class: 'product2'
         .purchase-product__wrapper__right    
           .purchase-product__wrapper__right__name
             %p 
@@ -18,7 +18,7 @@
             %p (税込)送料込み
             %p 
               %span ¥
-              %p 
+              %p.purchase-product__wrapper__right__price__value
                 = @product.price
     .hr     
     .itemBox__purchace#product_deleteArea

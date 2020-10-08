@@ -8,27 +8,26 @@
           .itemBox__body
             .itemBox__body--top
               = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
+              -# = image_tag @images.url[0]
             .itemBox__body--bottom
               - if @images.count >= 2
                 %ul
-                  - if @images[0]
+                  -# - if @product .product_images[0]
+                  -#   %li
+                  -#     = image_tag @product .product_images[0].url.url
+                  - if @product .product_images[1]   
                     %li
-                      = image_tag @images[0].url
-                  - if @images[1]    
+                      = image_tag @product .product_images[1].url.url
+                  - if @product .product_images[2]  
                     %li
-                      = image_tag @images[1].url
-                  - if @images[2]    
-                    %li
-                      = image_tag @images[2].url
+                      = image_tag @product .product_images[2].url.url
+                      
           .itemBox__price
             %p
               %span ¥
               = @product.price 
             .itemBox__price--detail
               (税込) 送料込み
-          .itemBox__itemDetail
-            %p
-              = @product.profile
           -# 出品者には購入ボタンを表示させない
           - unless current_user.id == @product.seller_id
             .itemBox__purchace
@@ -40,6 +39,10 @@
                 = link_to confirmation_product_purchase_path(params[:id]) do
                   .itemBox__purchace__btn
                     購入画面に進む
+          .itemBox__itemDetail
+            %p
+              = @product.profile
+          
           .itemBox__table
             %table
               %tbody
@@ -112,7 +115,7 @@
       -# 出品者のみ商品の編集/削除が可能に
       - if current_user.id == @product.seller_id
         .itemBox__editArea
-          = link_to "#" do
+          = link_to edit_product_path(params[:id]) do
             .itemBox__editArea__editBtn
               編集
           = link_to delete_product_path(params[:id]) do

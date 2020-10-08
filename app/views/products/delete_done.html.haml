@@ -1,0 +1,19 @@
+= render "products/sub_header"
+
+.purchase_detail_wrapper#delete_doneArea
+  .purchase_detail_wrapper__form#purchase-done
+    .top_text
+      商品の削除が完了しました！
+          
+    .hr
+
+    %ul.credit_complete__container__btns#purchaseDoneBtn
+      = link_to user_path(current_user.id), class: "my_page_link__btn" do
+        %li.my_page_link
+          マイページに戻る
+      = link_to root_path, class: "credit_cards_index_link__btn" do
+        %li.credit_cards_index_link
+          トップページへ      
+
+
+= render "products/sub_footer"

@@ -44,7 +44,7 @@
           商品の詳細
         -# formの中身を部分テンプレートに切り出すときは変数fを渡す必要がある
         = render "products/products_category", f:f
-        .brand
+        -# .brand
           .brand__text
             ブランド
             %span.any 任意
@@ -132,4 +132,5 @@
           などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
           = link_to '加盟店規約', '#'
           に同意したことになります。
+
 = render "sub_footer"
