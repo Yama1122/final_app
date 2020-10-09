@@ -1,4 +1,11 @@
 = render "layouts/main_header"
+- if @category.root?
+  - breadcrumb :parent_category
+- elsif @category.has_children?
+  - breadcrumb :child_category
+- else
+  - breadcrumb :grandchild_category
+= render "layouts/breadcrumbs"
 
 .categoryShow
   .categoryShow__container

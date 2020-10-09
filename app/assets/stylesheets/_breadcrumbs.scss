@@ -1,0 +1,21 @@
+.breadcrumbs-list{
+  padding:15px;
+  padding-left:50px;
+  border-top: 1px solid #eee;
+  font-size:14px;
+  a{
+    color:black;
+    padding:0 5px;
+    &:hover{
+      color:orange;
+    }
+  }
+  span{
+    padding:0 5px;
+  }
+}
+
+.current{
+  font-weight:bold;
+}
+
