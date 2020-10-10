@@ -90,8 +90,9 @@
           margin:0 auto;
           display: flex;
           justify-content: space-around;
+          height:120px;
           width:100%;
-          overflow-x: scroll;
+          overflow: scroll;
           li{
             img{
               display:block;
@@ -100,6 +101,7 @@
               object-fit: cover;
               border:1px solid #F8F8F8;
               border-radius:2px;
+              padding-right:5px;
             }
           }
         }
