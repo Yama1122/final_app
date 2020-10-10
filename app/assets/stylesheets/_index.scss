@@ -269,14 +269,17 @@
           }
       }
       .productLists {
-        width: 780px;
+        width: 80%;
         margin: 26px auto;
         display: flex;
-        justify-content: space-around;
+        // justify-content: space-around;
+        height:250px;
         overflow-x: scroll;
         .productList {
           width: 220px;
           display: inline-block;
+          display:relative;
+          margin-right:10px;
             .listimage {
               background-color: #fff;
               display: inline-block;
@@ -338,8 +341,8 @@
                 border-bottom: 60px solid transparent;
                 border-left: 60px solid #ea352d ;
                 z-index:100;
-                position: relative;
-                top:-245px;
+                position: absolute;
+                top:0px;
                 &__inner{
                   transform: rotate(-45deg);
                   font-size: 28px;
