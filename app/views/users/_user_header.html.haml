@@ -7,7 +7,7 @@
       .searchbox
         = form_with(class: "search-form") do |f|
           = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
-          %button.submit-btn
+          %button.submit-btn#user-submitBtn
             = icon("fas","search")
       %ul.resultList
 
@@ -24,10 +24,4 @@
         =link_to "ブランド", "#", class: "bland"
         %ul.brandsPulldowndisplayNone
 
-.breadCrumbs
-  .breadCrumbs__category
-    %p FURIMA
-    %span
-      = icon("fas","chevron-right",class:"breadCrumbs__category--icon")
-    %p 
-      マイページ
+

@@ -3,6 +3,11 @@ crumb :root do
   link "トップページ", root_path
 end
 
+# ユーザーマイページ
+crumb :user do
+  link "マイページ",user_path(current_user.id)
+end
+
 # カテゴリ一覧
 crumb :category_index do
   link "カテゴリー一覧", categories_path
