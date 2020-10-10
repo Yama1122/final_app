@@ -19,7 +19,7 @@
               %li.userbtn 
                 やることリスト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
+            = link_to new_product_path do
               %li.userbtn 
                 出品する
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
@@ -87,7 +87,7 @@
                 %li.userbtn 
                   登録クレジットカード一覧/削除
                   = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
+            = link_to logout_user_path(current_user.id) do
               %li.userbtn 
                 ログアウト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")

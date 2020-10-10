@@ -55,9 +55,9 @@
                   %th
                     カテゴリー
                   %td
-                    = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do
-                      -# 孫カテゴリが存在しない場合
-                      - if @category.parent.parent != nil  
+                    -# 孫カテゴリが存在しない場合
+                    - if @category.parent.parent != nil
+                      = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do 
                         = @category.parent.parent.name
                     = link_to category_path(@category.parent),class:"itemBox__table--category" do
                       = @category.parent.name
