@@ -384,6 +384,7 @@
           display:flex;
           align-content: center;
           justify-content: space-between;
+          
           &__left{
             &--name{
               font-weight:bold;
@@ -394,6 +395,9 @@
             &--price{
               p{
                 font-size:18px;
+                span{
+                  font-size: 18px;
+                }
               }
               span{
                 font-size:10px;
