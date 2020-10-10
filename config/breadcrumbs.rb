@@ -14,6 +14,11 @@ crumb :logout do
   parent :user
 end
 
+# クレジット新規登録
+crumb :credit_delete do
+  link "クレジットカード情報削除",delete_credit_cards_path
+  parent :user
+end
 
 # クレジット新規登録
 crumb :credit_new do
