@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
 
   def show
     @category = @product.category
-    @products = Product.where(category_id:@category.id)
+    @products = Product.where(category_id:@category.id).where.not(params[:id])
   end
 
 
