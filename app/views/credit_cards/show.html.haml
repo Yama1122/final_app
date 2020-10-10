@@ -1,6 +1,9 @@
 -# 登録クレジットカード一覧ページ
 = render "users/user_header"
 
+- breadcrumb :credit_index
+= render "layouts/breadcrumbs"
+
 .userShow
   .userShow__container
     .userShow__container__left
@@ -17,7 +20,7 @@
               %li.userbtn 
                 やることリスト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
+            = link_to new_product_path do
               %li.userbtn 
                 出品する
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
@@ -67,7 +70,7 @@
           %p 設定
         .userShow__container__left__config__content
           %ul
-            = link_to "#" do
+            = link_to edit_user_path(current_user.id) do
               %li.userbtn 
                 ユーザー情報更新
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
@@ -75,7 +78,7 @@
               %li.userbtn 
                 発送元・お届け先住所変更
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
+            = link_to logout_user_path(current_user.id) do
               %li.userbtn 
                 ログアウト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
