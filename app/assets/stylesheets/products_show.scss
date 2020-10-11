@@ -40,7 +40,10 @@
       &__editBtn{
         color:#fff;
         background-color: #EA352E;
-        padding:2px 10px;
+        width:300px;
+        height:50px;
+        line-height: 50px;
+        // padding:10px 30px;
         border-radius: 2px;
         width:100%;
         text-align: center;
@@ -56,7 +59,7 @@
         color:#3CCACD;
         text-decoration: none;
         text-align: right;
-        padding-right:10px;
+        // padding-right:10px;
         font-size:14px;
         font-weight: bold;
         width:45%;
@@ -99,7 +102,7 @@
           justify-content: space-around;
           height:120px;
           width:100%;
-          overflow: scroll;
+          overflow-x: scroll;
           li{
             img{
               display:block;
