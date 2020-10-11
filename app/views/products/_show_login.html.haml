@@ -116,6 +116,47 @@
               削除    
 
       .commentBox
+        .commentBox__list
+          .commentBox__list__name
+            %p 〈コメント一覧〉
+          .commentBox__list__contents  
+
+            .commentBox__list__contents__content
+              .commentBox__list__contents__content__user
+                .commentBox__list__contents__content__user__image
+                  = image_tag "users/member_thumb.png"
+                .commentBox__list__contents__content__user__detail  
+                  .commentBox__list__contents__content__user__detail__name
+                    %p ユーザー名
+                  .commentBox__list__contents__content__user__detail__seller
+                    %p 出品者
+              .commentBox__list__contents__content__comment
+                .commentBox__list__contents__content__comment__top
+                  %p こんにちは！おげんきですか？？
+                .commentBox__list__contents__content__comment__bottom
+                  %p 2020年5月22日 20時00分
+              .commentBox__list__contents__content__btns
+                .commentBox__list__contents__content__btns__repairbtn
+                  %p 復元する
+                .commentBox__list__contents__content__btns__deletebtn
+                  %p 削除
+                .commentBox__list__contents__content__btns__deletebtn
+                  %p 完全に削除
+
+            .commentBox__list__contents__other-content
+              .commentBox__list__contents__other-content__comment
+                .commentBox__list__contents__other-content__comment__top
+                  %p こんにちは！おげんきですか？？
+                .commentBox__list__contents__other-content__comment__bottom
+                  %p 2020年5月22日 20時00分
+              .commentBox__list__contents__other-content__btns
+                .commentBox__list__contents__other-content__btns__repairbtn
+                  %p 復元する  
+                .commentBox__list__contents__other-content__btns__deletebtn
+                  %p 削除
+                .commentBox__list__contents__other-content__btns__deletebtn
+                  %p 完全に削除
+
         %form
           %textarea{class:"commentBox__text"}
           .commentBox__detail
