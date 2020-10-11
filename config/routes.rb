@@ -19,6 +19,12 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :comments, only: [:create,:update,:destroy] do
+    member do
+      get 'restore'
+    end
+  end
+
   resources :users, only: [:show, :edit, :update] do
     member do
       get 'logout'
