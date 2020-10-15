@@ -22,7 +22,6 @@ $(function(){
     content = $(`.commentBox__list__contents__other-content[data-index=${index}]`).find(".commentBox__list__contents__other-content__comment");
     content.empty();
     content.append(pleDelete(index));
-    $(`.commentBox__list__contents__other-content[data-index=${index}]`).find(".commentBox__list__contents__other-content__btns").append(pleDeleteBtn(index));
     url = '/comments/' + index;
     $.ajax({
       url: url,
