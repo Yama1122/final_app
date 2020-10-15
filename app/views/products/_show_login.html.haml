@@ -96,14 +96,27 @@
                   %td
                     = @product.sendingday.name
           .itemBox__optionalArea
-            .itemBox__optionalArea__like
-              .itemBox__optionalArea__like--name
-                = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
-                %p.itemBox__optionalArea__like--name--content
-                  お気に入り
-              .itemBox__optionalArea__like--count
-                %p
-                  0
+            - if !Favorite.exists?(user_id:current_user.id,product_id:@product.id)
+              = link_to product_add_path(@product),method: :post do
+                .itemBox__optionalArea__like
+                  .itemBox__optionalArea__like--name
+                    = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
+                    %p.itemBox__optionalArea__like--name--content
+                      お気に入り
+                  .itemBox__optionalArea__like--count
+                    %p
+                      0
+            - else
+              = link_to product_add_path(@product),method: :delete do
+                .itemBox__optionalArea2__like
+                  .itemBox__optionalArea2__like--name
+                    = icon("fas","star",class:"itemBox__optionalArea2__like--name--icon")
+                    %p.itemBox__optionalArea2__like--name--content
+                      お気に入り
+                  .itemBox__optionalArea2__like--count
+                    %p
+                      0
+
 
             = link_to "#" do   
               .itemBox__optionalArea--alert

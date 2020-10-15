@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :comments
   has_many :favorites
+  has_many :products, through: :favorites
   has_many :products, dependent: :destroy
   has_one  :sending_address, dependent: :destroy
   has_one  :credit_card, dependent: :destroy
