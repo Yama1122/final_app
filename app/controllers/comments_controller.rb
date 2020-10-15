@@ -1,30 +1,25 @@
 class CommentsController < ApplicationController
-before_action :set_comment, only: [:update,:restore,:destroy]
-before_action :check_user, only: [:update,:restore,:destroy]
+before_action :set_comment, only: :update
+before_action :check_user, only: :update
 
   # コメント作成
   def create
     @comment = Comment.new(comment_params)
     @seller_of_product = User.find(@comment.product.seller_id)
-    @comment.save
-    redirect_to product_path(@comment.product.id)
+    if @comment.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      flash[:alert] = "保存できていません"
+      redirect_to product_path(@comment.product.id)
+    end
   end
 
-  # 仮削除
+  # 削除
   def update
     @comment.update(delete_check:1)
-    redirect_to product_path(@comment.product.id)
-  end
-
-  # 復元
-  def restore
-    @comment.update(delete_check:0)
-    redirect_to product_path(@comment.product.id)
-  end
-
-  def destroy
-    @comment.destroy
-    redirect_to product_path(@comment.product.id)
+    @seller_of_product = User.find(@comment.product.seller_id)
   end
 
   private

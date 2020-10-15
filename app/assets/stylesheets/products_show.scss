@@ -487,6 +487,9 @@
       margin:0 auto;
       height:100px;
       margin-bottom:20px;
+      &:focus{
+        outline:0;
+      }
     }
     &__detail{
       background-color:#F8F8F8;
@@ -509,6 +512,10 @@
         line-height: 50px;
         text-align:center;
         font-size:18px;
+        &:focus{
+          border:none;
+          outline:0;
+        }
         &:hover{
           opacity:0.8;
         }
@@ -643,4 +650,8 @@
   &:hover{
     opacity:1;
   }
+}
+
+.comment_delete{
+  color:#848484;
 }

@@ -116,86 +116,71 @@
               削除    
 
       .commentBox
-        .commentBox__list
-          .commentBox__list__name
-            %p 〈コメント一覧〉
-          .commentBox__list__contents  
-            - @comments.each do |comment|
-              -# ログインユーザーの場合、ピンク色で表示
-              - if comment.user_id == current_user.id
-                .commentBox__list__contents__other-content
-                  .commentBox__list__contents__other-content__comment
-                    .commentBox__list__contents__other-content__comment__top
-                      -#  仮削除状態かどうかのチェック
-                      - if comment.delete_check == 1
-                        %p 出品者によりこのコメントは削除されました。
-                      - else
-                        %p 
-                          = comment.body
-                    .commentBox__list__contents__other-content__comment__bottom
-                      %p 
-                        = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
-                  -# 自分が出品者の場合ボタンを表示
-                  - if comment.product.seller == current_user
-                    .commentBox__list__contents__other-content__btns 
+        - if @comments.present?
+          .commentBox__list
+            .commentBox__list__name
+              %p 〈コメント一覧〉
+            .commentBox__list__contents  
+              - @comments.each do |comment|
+                -# ログインユーザーの場合、ピンク色で表示
+                - if comment.user_id == current_user.id
+                  .commentBox__list__contents__other-content{data:{index: comment.id}} 
+                    .commentBox__list__contents__other-content__comment
+                      .commentBox__list__contents__other-content__comment__top
+                        -#  仮削除状態かどうかのチェック
+                        - if comment.delete_check == 1
+                          %p.comment_delete 出品者によりこのコメントは削除されました。
+                        - else
+                          %p 
+                            = comment.body
                       - if comment.delete_check == 0
-                        -# updateアクションへ
-                        = link_to comment_path(comment.id) ,method: :patch do
-                          .commentBox__list__contents__other-content__btns__deletebtn
+                        .commentBox__list__contents__other-content__comment__bottom
+                          %p 
+                            = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                    -# 自分が出品者の場合ボタンを表示
+                    - if comment.product.seller == current_user
+                      .commentBox__list__contents__other-content__btns 
+                        - if comment.delete_check == 0
+                          .commentBox__list__contents__other-content__btns__deletebtn.me_pre_delete{data:{index: comment.id}}
                             %p 削除
-                      - else
-                        = link_to restore_comment_path(comment.id) do
-                          .commentBox__list__contents__other-content__btns__repairbtn
-                            %p 復元する 
-                        = link_to comment_path(comment.id) ,method: :delete do
-                          .commentBox__list__contents__other-content__btns__deletebtn
-                            %p 完全に削除
-              - else  
-                .commentBox__list__contents__content
-                  .commentBox__list__contents__content__user
-                    .commentBox__list__contents__content__user__image
-                      -# ユーザー画像の表示
-                      - if comment.user.image
-                        = image_tag "users/member_thumb.png"
-                      - else
-                        = image_tag "users/member_thumb.png"
-                    .commentBox__list__contents__content__user__detail  
-                      .commentBox__list__contents__content__user__detail__name
-                        %p
-                          = comment.user.nickname
-                      -# 出品者の場合、出品者アイコンの表示
-                      - if comment.user == comment.product.seller
-                        .commentBox__list__contents__content__user__detail__seller
-                          %p 出品者
-                  .commentBox__list__contents__content__comment
-                    .commentBox__list__contents__content__comment__top
-                      -#  仮削除状態かどうかのチェック
-                      - if comment.delete_check == 1
-                        %p 出品者によりこのコメントは削除されました。
-                      - else
-                        %p
-                          = comment.body
-                    .commentBox__list__contents__content__comment__bottom
-                      %p 
-                        = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
-                  -# 自分が出品者の場合ボタンを表示
-                  - if comment.product.seller == current_user
-                    .commentBox__list__contents__content__btns
-                      - if comment.delete_check == 0
-                        -# updateアクションへ
-                        = link_to comment_path(comment.id) ,method: :patch do
-                          .commentBox__list__contents__content__btns__deletebtn
-                            %p 削除
-                      - else
-                        = link_to restore_comment_path(comment.id) do
-                          .commentBox__list__contents__content__btns__repairbtn
-                            %p 復元する
-                        = link_to comment_path(comment.id) ,method: :delete do
-                          .commentBox__list__contents__content__btns__deletebtn
-                            %p 完全に削除
-              
 
-        = form_with model:@comment, local:true do |f|
+                - else  
+                  .commentBox__list__contents__content{data:{index: comment.id}} 
+                    .commentBox__list__contents__content__user
+                      .commentBox__list__contents__content__user__image
+                        -# ユーザー画像の表示
+                        - if comment.user.image
+                          = image_tag "users/member_thumb.png"
+                        - else
+                          = image_tag "users/member_thumb.png"
+                      .commentBox__list__contents__content__user__detail  
+                        .commentBox__list__contents__content__user__detail__name
+                          %p
+                            = comment.user.nickname
+                        -# 出品者の場合、出品者アイコンの表示
+                        - if comment.user == comment.product.seller
+                          .commentBox__list__contents__content__user__detail__seller
+                            %p 出品者
+                    .commentBox__list__contents__content__comment
+                      .commentBox__list__contents__content__comment__top
+                        -#  仮削除状態かどうかのチェック
+                        - if comment.delete_check == 1
+                          %p.comment_delete 出品者によりこのコメントは削除されました。
+                        - else
+                          %p
+                            = comment.body
+                      - if comment.delete_check == 0
+                        .commentBox__list__contents__content__comment__bottom
+                          %p 
+                            = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                    -# 自分が出品者の場合ボタンを表示
+                    - if comment.product.seller == current_user
+                      .commentBox__list__contents__content__btns
+                        - if comment.delete_check == 0
+                          .commentBox__list__contents__content__btns__deletebtn.other_pre_delete{data:{index: comment.id}}
+                            %p 削除
+
+        = form_with model:@comment, id: "comment_form",local:true do |f|
           = f.text_area :body,class:"commentBox__text"
           = f.hidden_field :product_id, value:@product.id
           .commentBox__detail
