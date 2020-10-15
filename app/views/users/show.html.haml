@@ -11,7 +11,7 @@
           %p マイページ
         .userShow__container__left__index__content
           %ul
-            = link_to "#" do
+            = link_to favorites_user_path(current_user) do
               %li.userbtn 
                 お知らせ
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
@@ -113,46 +113,21 @@
         .userShow__container__right__list__name
           %p いいね！一覧
         .userShow__container__right__list__inner
-          .userShow__container__right__list__inner__content
-            .userShow__container__right__list__inner__content__image
-              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
-            .userShow__container__right__list__inner__content__detail
-              .userShow__container__right__list__inner__content__detail__name
-                %p 商品名
-              .userShow__container__right__list__inner__content__detail__price
-                %p ¥30000
-            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
+          - if @favorite_list.present?
+            - @favorite_list.each do |product|
+              =link_to product_path(product.id) do
+                .userShow__container__right__list__inner__content
+                  .userShow__container__right__list__inner__content__image
+                    = image_tag product .product_images[0].url.url
+                  .userShow__container__right__list__inner__content__detail
+                    .userShow__container__right__list__inner__content__detail__name
+                      = product.name
+                    .userShow__container__right__list__inner__content__detail__price
+                      = product.price
+                      円
+                  = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
 
-          .userShow__container__right__list__inner__content
-            .userShow__container__right__list__inner__content__image
-              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
-            .userShow__container__right__list__inner__content__detail
-              .userShow__container__right__list__inner__content__detail__name
-                %p 商品名
-              .userShow__container__right__list__inner__content__detail__price
-                %p ¥30000
-            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
-
-          .userShow__container__right__list__inner__content
-            .userShow__container__right__list__inner__content__image
-              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
-            .userShow__container__right__list__inner__content__detail
-              .userShow__container__right__list__inner__content__detail__name
-                %p 商品名
-              .userShow__container__right__list__inner__content__detail__price
-                %p ¥30000
-            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
-
-          .userShow__container__right__list__inner__content
-            .userShow__container__right__list__inner__content__image
-              = image_tag "products/product1.png",class:"userShow__container__right__list__inner__content__image--icon"
-            .userShow__container__right__list__inner__content__detail
-              .userShow__container__right__list__inner__content__detail__name
-                %p 商品名
-              .userShow__container__right__list__inner__content__detail__price
-                %p ¥30000
-            = icon("fas","chevron-right",class:"userShow__container__right__list__inner__content--icon")
-
+          
 = render "layouts/appBanner" 
 
 = render "layouts/footer"
