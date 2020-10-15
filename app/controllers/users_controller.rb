@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   # before_action :set_user
   def show
+    @user = current_user
+    favorites = Favorite.where(user_id: current_user.id).pluck(:product_id) 
+    @favorite_list = Product.find(favorites)  
   end
 
   def logout
@@ -31,5 +34,9 @@ class UsersController < ApplicationController
   #     @card = CreditCard.where(user_id: current_user.id).first
   #   end 
   # end
+
+  def favorites
+    
+  end
 
 end
