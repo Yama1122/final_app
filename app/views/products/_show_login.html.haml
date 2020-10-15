@@ -8,19 +8,12 @@
           .itemBox__body
             .itemBox__body--top
               = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
-              -# = image_tag @images.url[0]
             .itemBox__body--bottom
               - if @images.count >= 2
                 %ul
-                  -# - if @product .product_images[0]
-                  -#   %li
-                  -#     = image_tag @product .product_images[0].url.url
-                  - if @product .product_images[1]   
+                  - @product.product_images.each do |image|
                     %li
-                      = image_tag @product .product_images[1].url.url
-                  - if @product .product_images[2]  
-                    %li
-                      = image_tag @product .product_images[2].url.url
+                      = image_tag image.url.url
                       
           .itemBox__price
             %p
@@ -55,9 +48,9 @@
                   %th
                     カテゴリー
                   %td
-                    = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do
-                      -# 孫カテゴリが存在しない場合
-                      - if @category.parent.parent != nil  
+                    -# 孫カテゴリが存在しない場合
+                    - if @category.parent.parent != nil
+                      = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do 
                         = @category.parent.parent.name
                     = link_to category_path(@category.parent),class:"itemBox__table--category" do
                       = @category.parent.name
@@ -169,57 +162,26 @@
               %span
                 をもっとみる
         .relatedItems__list
-          = link_to "#" do
-            .relatedItems__list__item
-              .relatedItems__list__item__image
-                = image_tag "products/product1.png"
-              .relatedItems__list__item__detail
-                .relatedItems__list__item__detail__left
-                  .relatedItems__list__item__detail__left--name
-                    %p
-                      商品名
-                  .relatedItems__list__item__detail__left--price
-                    %p
-                      ¥3000
-                    %span  
-                      (税込み)
-                .relatedItems__list__item__detail__right
-                  = icon("fas","star")
-                  .relatedItems__list__item__detail__right--count
-                    0
-          = link_to "#" do
-            .relatedItems__list__item
-              .relatedItems__list__item__image
-                = image_tag "products/product1.png"
-              .relatedItems__list__item__detail
-                .relatedItems__list__item__detail__left
-                  .relatedItems__list__item__detail__left--name
-                    %p
-                      商品名
-                  .relatedItems__list__item__detail__left--price
-                    %p
-                      ¥3000
-                    %span  
-                      (税込み)
-                .relatedItems__list__item__detail__right
-                  = icon("fas","star")
-                  .relatedItems__list__item__detail__right--count
-                    0
-          = link_to "#" do
-            .relatedItems__list__item#categoryProduct
-              .relatedItems__list__item__image
-                = image_tag "products/product1.png"
-              .relatedItems__list__item__detail
-                .relatedItems__list__item__detail__left
-                  .relatedItems__list__item__detail__left--name
-                    %p
-                      商品名
-                  .relatedItems__list__item__detail__left--price
-                    %p
-                      ¥3000
-                    %span  
-                      (税込み)
-                .relatedItems__list__item__detail__right
-                  = icon("fas","star")
-                  .relatedItems__list__item__detail__right--count
-                    0
+          - @products.each do |product|
+            = link_to product_path(product) do
+              .relatedItems__list__item
+                .relatedItems__list__item__image
+                  = image_tag product .product_images[0].url.url
+                .relatedItems__list__item__detail
+                  .relatedItems__list__item__detail__left
+                    .relatedItems__list__item__detail__left--name
+                      %p
+                        = product.name
+                    .relatedItems__list__item__detail__left--price
+                      %p
+                        %span
+                          ¥
+                        %span
+                          = product.price
+                      %span  
+                        (税込み)
+                  .relatedItems__list__item__detail__right
+                    = icon("fas","star")
+                    .relatedItems__list__item__detail__right--count
+                      0
+          

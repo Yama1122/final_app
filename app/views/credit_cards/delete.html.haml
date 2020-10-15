@@ -1,6 +1,9 @@
 -# クレジットカード削除完了ページ
 = render "users/user_header"
 
+- breadcrumb :credit_delete
+= render "layouts/breadcrumbs"
+
 .userShow
   .userShow__container
     .userShow__container__left
@@ -17,7 +20,7 @@
               %li.userbtn 
                 やることリスト
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
+            = link_to new_product_path do
               %li.userbtn 
                 出品する
                 = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
