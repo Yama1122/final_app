@@ -30,4 +30,8 @@ class Product < ApplicationRecord
   belongs_to_active_hash :postage
   belongs_to_active_hash :sendingtype
   belongs_to_active_hash :prefecture_code
+
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end

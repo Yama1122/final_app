@@ -64,5 +64,8 @@ class ProductsController < ApplicationController
     @image = ProductImage.find(params[:id])
     @images = ProductImage.where(params[:id])
   end
+
+  def favorites
+    @products = current_user.favorite_products.includes(:user).recent
+  end
 end
-  
