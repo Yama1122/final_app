@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     member do
       get 'logout'
       get 'favorites'
+      get 'myproducts'
+      get 'sold_myproducts'
+      get 'buy_myproducts'
+
     end
     collection do
       get 'registration_select'

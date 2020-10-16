@@ -8,16 +8,16 @@
     .userShow__container__left
       = render "user_links_top"
       = render "user_links_bottom"
-      
+    
     .userShow__container__right
       =render "user_profile"
- 
+      
       .userShow__container__right__list
         .userShow__container__right__list__name
-          %p いいね！一覧
+          %p 出品した商品 (出品中)
         .userShow__container__right__list__inner
-          - if @favorite_list.present?
-            - @favorite_list.each do |product|
+          - @products.each do |product|
+            - if product.buyer == nil
               =link_to product_path(product.id) do
                 .userShow__container__right__list__inner__content
                   .userShow__container__right__list__inner__content__image

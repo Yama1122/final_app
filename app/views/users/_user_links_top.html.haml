@@ -1,0 +1,58 @@
+.userShow__container__left__index
+  .userShow__container__left__index__name
+    %p マイページ
+  .userShow__container__left__index__content
+    %ul
+      = link_to favorites_user_path(current_user) do
+        %li.userbtn 
+          お知らせ
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to "#" do
+        %li.userbtn 
+          やることリスト
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to new_product_path do
+        %li.userbtn 
+          出品する
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to "#" do
+        %li.userbtn 
+          下書き一覧
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to myproducts_user_path(current_user) do
+        %li.userbtn 
+          出品した商品-出品中
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      -# = link_to "#" do
+      -#   %li.userbtn 
+      -#     出品した商品-取引中
+      -#     = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to sold_myproducts_user_path(current_user) do
+        %li.userbtn 
+          出品した商品-売却済み
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      -# = link_to "#" do
+      -#   %li.userbtn 
+      -#     購入した商品-取引中
+      -#     = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to buy_myproducts_user_path(current_user) do
+        %li.userbtn 
+          購入した商品
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to "#" do
+        %li.userbtn 
+          ニュース一覧
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to user_path(current_user) do
+        %li.userbtn 
+          いいね！一覧
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to "#" do
+        %li.userbtn 
+          ガイド
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = link_to "#" do
+        %li.userbtn 
+          お問い合わせ
+          = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      

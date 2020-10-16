@@ -15,6 +15,18 @@ class UsersController < ApplicationController
   def complete
   end
 
+  def myproducts
+    @products = Product.where(seller_id: current_user.id)
+  end
+
+  def sold_myproducts
+    @products = Product.where(seller_id: current_user.id)
+  end
+
+  def buy_myproducts
+    @products = Product.where(buyer_id: current_user.id)
+  end
+
 
   def edit
     @user = User.find(params[:id])

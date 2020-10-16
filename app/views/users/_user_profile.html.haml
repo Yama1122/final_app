@@ -1,0 +1,18 @@
+.userShow__container__right__profile
+  .userShow__container__right__profile__image
+    = image_tag "users/member_thumb.png",class:"userShow__container__right__profile__image--icon"
+  %p.userShow__container__right__profile__name 
+    = current_user.nickname
+  .userShow__container__right__profile__product
+    .userShow__container__right__profile__product__value 
+      .userShow__container__right__profile__product__value--name
+        %p 評価
+      .userShow__container__right__profile__product__value--count
+        %p
+          0
+    .userShow__container__right__profile__product__sell
+      .userShow__container__right__profile__product__sell--name
+        %p 出品数
+      .userShow__container__right__profile__product__sell--count
+        %p 
+          = @products.where(seller_id:current_user.id).count
