@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
 
   // 削除コメント表示用
   function pleDelete(index){
