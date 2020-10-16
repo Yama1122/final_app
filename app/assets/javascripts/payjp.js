@@ -1,5 +1,5 @@
 // 新規クレジットカード登録処理
-$(function(){
+$(document).on('turbolinks:load',function(){
   $("#charge-form").on("submit",function(e){
     // 送信をキャンセルしてPAY.JPの登録に必要な処理を行う
     e.preventDefault();

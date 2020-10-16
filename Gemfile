@@ -91,3 +91,4 @@ gem 'dotenv-rails'
 gem 'carrierwave' 
 gem 'mini_magick'
 gem 'fog-aws'
+gem "gretel"

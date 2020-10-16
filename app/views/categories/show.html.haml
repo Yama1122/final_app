@@ -1,4 +1,11 @@
 = render "layouts/main_header"
+- if @category.root?
+  - breadcrumb :parent_category
+- elsif @category.has_children?
+  - breadcrumb :child_category
+- else
+  - breadcrumb :grandchild_category
+= render "layouts/breadcrumbs"
 
 .categoryShow
   .categoryShow__container
@@ -8,95 +15,28 @@
         %span
           の商品一覧
     .categoryShow__container__list
-      .relatedItems__list__item#categoryProduct
-        .relatedItems__list__item__image
-          = image_tag "products/product1.png"
-        .relatedItems__list__item__detail
-          .relatedItems__list__item__detail__left
-            .relatedItems__list__item__detail__left--name
-              %p
-                商品名
-            .relatedItems__list__item__detail__left--price
-              %p
-                ¥3000
-              %span  
-                (税込み)
-          .relatedItems__list__item__detail__right
-            = icon("fas","star")
-            .relatedItems__list__item__detail__right--count
-              0
+      - @products.each do |product|
+        = link_to product_path(product.id) do
+          .relatedItems__list__item#categoryProduct
+            .relatedItems__list__item__image
+              = image_tag product .product_images[0].url.url
+            .relatedItems__list__item__detail
+              .relatedItems__list__item__detail__left
+                .relatedItems__list__item__detail__left--name
+                  %p
+                    = product.name
+                .relatedItems__list__item__detail__left--price
+                  %p
+                    %span
+                      ¥
+                    %span
+                      = product.price
+
+                  %span  
+                    (税込み)
+              .relatedItems__list__item__detail__right
+                = icon("fas","star")
+                .relatedItems__list__item__detail__right--count
+                  0
       
-      .relatedItems__list__item#categoryProduct
-        .relatedItems__list__item__image
-          = image_tag "products/product1.png"
-        .relatedItems__list__item__detail
-          .relatedItems__list__item__detail__left
-            .relatedItems__list__item__detail__left--name
-              %p
-                商品名
-            .relatedItems__list__item__detail__left--price
-              %p
-                ¥3000
-              %span  
-                (税込み)
-          .relatedItems__list__item__detail__right
-            = icon("fas","star")
-            .relatedItems__list__item__detail__right--count
-              0
-
-      .relatedItems__list__item#categoryProduct
-        .relatedItems__list__item__image
-          = image_tag "products/product1.png"
-        .relatedItems__list__item__detail
-          .relatedItems__list__item__detail__left
-            .relatedItems__list__item__detail__left--name
-              %p
-                商品名
-            .relatedItems__list__item__detail__left--price
-              %p
-                ¥3000
-              %span  
-                (税込み)
-          .relatedItems__list__item__detail__right
-            = icon("fas","star")
-            .relatedItems__list__item__detail__right--count
-              0
-      
-      .relatedItems__list__item#categoryProduct
-        .relatedItems__list__item__image
-          = image_tag "products/product1.png"
-        .relatedItems__list__item__detail
-          .relatedItems__list__item__detail__left
-            .relatedItems__list__item__detail__left--name
-              %p
-                商品名
-            .relatedItems__list__item__detail__left--price
-              %p
-                ¥3000
-              %span  
-                (税込み)
-          .relatedItems__list__item__detail__right
-            = icon("fas","star")
-            .relatedItems__list__item__detail__right--count
-              0
-        
-      .relatedItems__list__item#categoryProduct
-        .relatedItems__list__item__image
-          = image_tag "products/product1.png"
-        .relatedItems__list__item__detail
-          .relatedItems__list__item__detail__left
-            .relatedItems__list__item__detail__left--name
-              %p
-                商品名
-            .relatedItems__list__item__detail__left--price
-              %p
-                ¥3000
-              %span  
-                (税込み)
-          .relatedItems__list__item__detail__right
-            = icon("fas","star")
-            .relatedItems__list__item__detail__right--count
-              0
-
-
 = render "layouts/footer"

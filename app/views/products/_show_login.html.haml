@@ -11,12 +11,9 @@
             .itemBox__body--bottom
               - if @images.count >= 2
                 %ul
-                  - if @product .product_images[1]   
+                  - @product.product_images.each do |image|
                     %li
-                      = image_tag @product .product_images[1].url.url
-                  - if @product .product_images[2]  
-                    %li
-                      = image_tag @product .product_images[2].url.url
+                      = image_tag image.url.url
                       
           .itemBox__price
             %p
@@ -51,9 +48,9 @@
                   %th
                     カテゴリー
                   %td
-                    = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do
-                      -# 孫カテゴリが存在しない場合
-                      - if @category.parent.parent != nil  
+                    -# 孫カテゴリが存在しない場合
+                    - if @category.parent.parent != nil
+                      = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do 
                         = @category.parent.parent.name
                     = link_to category_path(@category.parent),class:"itemBox__table--category" do
                       = @category.parent.name
@@ -92,14 +89,27 @@
                   %td
                     = @product.sendingday.name
           .itemBox__optionalArea
-            .itemBox__optionalArea__like
-              .itemBox__optionalArea__like--name
-                = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
-                %p.itemBox__optionalArea__like--name--content
-                  お気に入り
-              .itemBox__optionalArea__like--count
-                %p
-                  0
+            - if !Favorite.exists?(user_id:current_user.id,product_id:@product.id)
+              = link_to product_add_path(@product),method: :post do
+                .itemBox__optionalArea__like
+                  .itemBox__optionalArea__like--name
+                    = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
+                    %p.itemBox__optionalArea__like--name--content
+                      お気に入り
+                  .itemBox__optionalArea__like--count
+                    %p
+                      0
+            - else
+              = link_to product_add_path(@product),method: :delete do
+                .itemBox__optionalArea2__like
+                  .itemBox__optionalArea2__like--name
+                    = icon("fas","star",class:"itemBox__optionalArea2__like--name--icon")
+                    %p.itemBox__optionalArea2__like--name--content
+                      お気に入り
+                  .itemBox__optionalArea2__like--count
+                    %p
+                      0
+
 
             = link_to "#" do   
               .itemBox__optionalArea--alert
@@ -119,8 +129,72 @@
               削除    
 
       .commentBox
-        %form
-          %textarea{class:"commentBox__text"}
+        .commentBox__list
+          .commentBox__list__name
+            %p 〈コメント一覧〉
+          .commentBox__list__contents  
+            - @comments.each do |comment|
+              -# ログインユーザーの場合、ピンク色で表示
+              - if comment.user_id == current_user.id
+                .commentBox__list__contents__other-content{data:{index: comment.id}} 
+                  .commentBox__list__contents__other-content__comment
+                    .commentBox__list__contents__other-content__comment__top
+                      -#  仮削除状態かどうかのチェック
+                      - if comment.delete_check == 1
+                        %p.comment_delete 出品者によりこのコメントは削除されました。
+                      - else
+                        %p 
+                          = comment.body
+                    - if comment.delete_check == 0
+                      .commentBox__list__contents__other-content__comment__bottom
+                        %p 
+                          = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                  -# 自分が出品者の場合ボタンを表示
+                  - if comment.product.seller == current_user
+                    .commentBox__list__contents__other-content__btns 
+                      - if comment.delete_check == 0
+                        .commentBox__list__contents__other-content__btns__deletebtn.me_pre_delete{data:{index: comment.id}}
+                          %p 削除
+
+              - else  
+                .commentBox__list__contents__content{data:{index: comment.id}} 
+                  .commentBox__list__contents__content__user
+                    .commentBox__list__contents__content__user__image
+                      -# ユーザー画像の表示
+                      - if comment.user.image
+                        = image_tag "users/member_thumb.png"
+                      - else
+                        = image_tag "users/member_thumb.png"
+                    .commentBox__list__contents__content__user__detail  
+                      .commentBox__list__contents__content__user__detail__name
+                        %p
+                          = comment.user.nickname
+                      -# 出品者の場合、出品者アイコンの表示
+                      - if comment.user == comment.product.seller
+                        .commentBox__list__contents__content__user__detail__seller
+                          %p 出品者
+                  .commentBox__list__contents__content__comment
+                    .commentBox__list__contents__content__comment__top
+                      -#  仮削除状態かどうかのチェック
+                      - if comment.delete_check == 1
+                        %p.comment_delete 出品者によりこのコメントは削除されました。
+                      - else
+                        %p
+                          = comment.body
+                    - if comment.delete_check == 0
+                      .commentBox__list__contents__content__comment__bottom
+                        %p 
+                          = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                  -# 自分が出品者の場合ボタンを表示
+                  - if comment.product.seller == current_user
+                    .commentBox__list__contents__content__btns
+                      - if comment.delete_check == 0
+                        .commentBox__list__contents__content__btns__deletebtn.other_pre_delete{data:{index: comment.id}}
+                          %p 削除
+
+        = form_with model:@comment, id: "comment_form",local:true do |f|
+          = f.text_area :body,class:"commentBox__text"
+          = f.hidden_field :product_id, value:@product.id
           .commentBox__detail
             %p
               相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -152,57 +226,26 @@
               %span
                 をもっとみる
         .relatedItems__list
-          = link_to "#" do
-            .relatedItems__list__item
-              .relatedItems__list__item__image
-                = image_tag "products/product1.png"
-              .relatedItems__list__item__detail
-                .relatedItems__list__item__detail__left
-                  .relatedItems__list__item__detail__left--name
-                    %p
-                      商品名
-                  .relatedItems__list__item__detail__left--price
-                    %p
-                      ¥3000
-                    %span  
-                      (税込み)
-                .relatedItems__list__item__detail__right
-                  = icon("fas","star")
-                  .relatedItems__list__item__detail__right--count
-                    0
-          = link_to "#" do
-            .relatedItems__list__item
-              .relatedItems__list__item__image
-                = image_tag "products/product1.png"
-              .relatedItems__list__item__detail
-                .relatedItems__list__item__detail__left
-                  .relatedItems__list__item__detail__left--name
-                    %p
-                      商品名
-                  .relatedItems__list__item__detail__left--price
-                    %p
-                      ¥3000
-                    %span  
-                      (税込み)
-                .relatedItems__list__item__detail__right
-                  = icon("fas","star")
-                  .relatedItems__list__item__detail__right--count
-                    0
-          = link_to "#" do
-            .relatedItems__list__item#categoryProduct
-              .relatedItems__list__item__image
-                = image_tag "products/product1.png"
-              .relatedItems__list__item__detail
-                .relatedItems__list__item__detail__left
-                  .relatedItems__list__item__detail__left--name
-                    %p
-                      商品名
-                  .relatedItems__list__item__detail__left--price
-                    %p
-                      ¥3000
-                    %span  
-                      (税込み)
-                .relatedItems__list__item__detail__right
-                  = icon("fas","star")
-                  .relatedItems__list__item__detail__right--count
-                    0
+          - @products.each do |product|
+            = link_to product_path(product) do
+              .relatedItems__list__item
+                .relatedItems__list__item__image
+                  = image_tag product .product_images[0].url.url
+                .relatedItems__list__item__detail
+                  .relatedItems__list__item__detail__left
+                    .relatedItems__list__item__detail__left--name
+                      %p
+                        = product.name
+                    .relatedItems__list__item__detail__left--price
+                      %p
+                        %span
+                          ¥
+                        %span
+                          = product.price
+                      %span  
+                        (税込み)
+                  .relatedItems__list__item__detail__right
+                    = icon("fas","star")
+                    .relatedItems__list__item__detail__right--count
+                      0
+          

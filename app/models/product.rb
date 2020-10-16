@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :product_images, dependent: :destroy
   has_many :favorites
+  has_many :users, through: :favorites
   # belongs_to :user, dependent: :destroy
   belongs_to :brand, optional: true
   belongs_to :category
@@ -29,4 +30,8 @@ class Product < ApplicationRecord
   belongs_to_active_hash :postage
   belongs_to_active_hash :sendingtype
   belongs_to_active_hash :prefecture_code
+
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end

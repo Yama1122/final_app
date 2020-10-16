@@ -23,7 +23,8 @@
         %li.listsRight__item--login
           = link_to "マイページ", user_path(current_user.id), class: "login"
         %li.listsRight__item--new
-          =link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'new'
+          -# =link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'new'
+          =link_to "ログアウト", logout_user_path(current_user.id), class: 'new'
     - else
       %ul.listsRight
         %li.listsRight__item--login

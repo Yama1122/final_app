@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_111118) do
+ActiveRecord::Schema.define(version: 2020_10_11_060250) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_111118) do
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "delete_check", default: 0
     t.index ["product_id"], name: "index_comments_on_product_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_09_22_111118) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_favorites_on_product_id"
+    t.index ["user_id", "product_id"], name: "index_favorites_on_user_id_and_product_id", unique: true
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
@@ -77,7 +79,6 @@ ActiveRecord::Schema.define(version: 2020_09_22_111118) do
     t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "deal_closed_day"
-    t.string "status_id", default: "出品中"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"

@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load',function(){
 // ---topページここから---
 
   // カテゴリアイコンをホバーするとメニュ-を表示

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   #   resources :searches, only: :index
   # end
   resources :products, only: [:index,:show,:new, :create, :destroy,:edit,:update] do
+    post 'add' => 'favorites#create'
+    delete '/add' => 'favorites#destroy'
     member do
       get 'delete'
       get 'delete_done'
@@ -21,9 +23,16 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :comments, only: [:create,:update,:destroy] do
+    member do
+      get 'restore'
+    end
+  end
+
   resources :users, only: [:show, :edit, :update] do
     member do
       get 'logout'
+      get 'favorites'
     end
     collection do
       get 'registration_select'

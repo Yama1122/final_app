@@ -2,8 +2,6 @@ class ProductsController < ApplicationController
 
   before_action :set_product, only: [:show,:destroy,:delete,:edit]
   before_action :set_product_image, except: [:index,:new,:create,:delete_done]
-  
- 
   def index
     @products = Product.all
   end
@@ -60,6 +58,12 @@ class ProductsController < ApplicationController
 
   def show
     @category = @product.category
+
+    @product = Product.find(params[:id])
+
+    @products = Product.where(category_id:@category.id).where.not(params[:id])
+    @comment = Comment.new
+    @comments = @product.comments
   end
 
 
@@ -76,5 +80,8 @@ class ProductsController < ApplicationController
     @image = ProductImage.find(params[:id])
     @images = ProductImage.where(params[:id])
   end
+
+  def favorites
+    @products = current_user.favorite_products.includes(:user).recent
+  end
 end
-  

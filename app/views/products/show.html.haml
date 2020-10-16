@@ -1,11 +1,7 @@
 = render "layouts/main_header"
 
-.breadCrumbs
-  .breadCrumbs__category
-    %p FURIMA
-    %span
-      = icon("fas","chevron-right",class:"breadCrumbs__category--icon")
-    %p ベビー・キッズ
+- breadcrumb :product
+= render "layouts/breadcrumbs"
     
 - if current_user
   = render "products/show_login"
