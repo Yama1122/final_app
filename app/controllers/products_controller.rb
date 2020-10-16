@@ -49,7 +49,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     @products = Product.where(category_id:@category.id).where.not(params[:id])
-
+    @comment = Comment.new
+    @comments = @product.comments
   end
 
 
