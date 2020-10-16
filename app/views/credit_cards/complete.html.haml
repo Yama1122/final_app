@@ -7,85 +7,8 @@
 .userShow
   .userShow__container
     .userShow__container__left
-      .userShow__container__left__index
-        .userShow__container__left__index__name
-          %p マイページ
-        .userShow__container__left__index__content
-          %ul
-            = link_to "#" do
-              %li.userbtn 
-                お知らせ
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                やることリスト
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to new_product_path do
-              %li.userbtn 
-                出品する
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                下書き一覧
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                出品した商品-出品中
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                出品した商品-取引中
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                出品した商品-売却済み
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                購入した商品-取引中
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                購入した商品-過去の取引
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                ニュース一覧
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                評価一覧
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                ガイド
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                お問い合わせ
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-
-      .userShow__container__left__config
-        .userShow__container__left__config__name
-          %p 設定
-        .userShow__container__left__config__content
-          %ul
-            = link_to "#" do
-              %li.userbtn 
-                ユーザー情報更新
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to "#" do
-              %li.userbtn 
-                発送元・お届け先住所変更
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to credit_card_path(current_user.id) do
-              %li.userbtn 
-                クレジットカード一覧/削除
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
-            = link_to logout_user_path(current_user.id) do
-              %li.userbtn 
-                ログアウト
-                = icon("fas","chevron-right",class:"userShow__container__left__index__content--icon")
+      = render "users/user_links_top"
+      = render "users/user_links_bottom"
 
     .credit_complete
       .credit_complete__container
