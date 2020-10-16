@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = current_user
     favorites = Favorite.where(user_id: current_user.id).pluck(:product_id) 
     @favorite_list = Product.find(favorites)  
+    @products = Product.where(seller_id: current_user.id)
   end
 
   def logout

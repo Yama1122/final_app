@@ -9,10 +9,10 @@
         %p 評価
       .userShow__container__right__profile__product__value--count
         %p
-          0
+          = current_user.favorites.count
     .userShow__container__right__profile__product__sell
       .userShow__container__right__profile__product__sell--name
         %p 出品数
       .userShow__container__right__profile__product__sell--count
         %p 
-          = @products.where(seller_id:current_user.id).count
+          = @products.count
