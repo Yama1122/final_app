@@ -1,0 +1,111 @@
+-# = render "sub_header"
+-# .showMain
+-#   .showMain__container
+-#     .showMain__container__content
+-#       .showMain__container__content__topContent
+-#         .itemBox
+-#           %h2.itemBox__name
+-#             = @product.name
+-#           .itemBox__body
+-#             .itemBox__body--top
+-#               = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
+-#             .itemBox__body--bottom
+-#               - if @images.count >= 2
+-#                 %ul
+-#                   - if @product .product_images[1]   
+-#                     %li
+-#                       = image_tag @product .product_images[1].url.url
+-#                   - if @product .product_images[2]  
+-#                     %li
+-#                       = image_tag @product .product_images[2].url.url
+-#           .itemBox__price
+-#             %p
+-#               %span ¥
+-#               = @product.price 
+-#             .itemBox__price--detail
+-#               (税込) 送料込み
+-#           -# 出品者には購入ボタンを表示させない
+-#           - unless current_user.id == @product.seller_id
+-#             .itemBox__purchace
+-#               -# buyer_idがある場合、売り切れ表示
+-#               - if @product.buyer_id.present?
+-#                 .itemBox__purchace__btn#soldout-btn
+-#                   売り切れました
+-#               - else  
+-#                 = link_to confirmation_product_purchase_path(params[:id]) do
+-#                   .itemBox__purchace__btn
+-#                     購入画面に進む
+-#           .itemBox__itemDetail
+-#             %p
+-#               = @product.profile
+          
+-#           .itemBox__table
+-#             %table
+-#               %tbody
+-#                 %tr
+-#                   %th
+-#                     出品者
+-#                   %td
+-#                     = @product.seller.nickname
+-#                 %tr
+-#                   %th
+-#                     カテゴリー
+-#                   %td
+-#                     = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do
+-#                       -# 孫カテゴリが存在しない場合
+-#                       - if @category.parent.parent != nil  
+-#                         = @category.parent.parent.name
+-#                     = link_to category_path(@category.parent),class:"itemBox__table--category" do
+-#                       = @category.parent.name
+-#                     = link_to category_path(@category),class:"itemBox__table--category" do
+-#                       = @category.name
+-#                 %tr
+-#                   %th
+-#                     ブランド
+-#                   %td
+-#                     - if @product.brand
+-#                       = @product.brand.name
+-#                 %tr
+-#                   %th
+-#                     商品のサイズ
+-#                   %td
+-#                     サイズ仮置
+-#                 %tr
+-#                   %th
+-#                     商品の状態
+-#                   %td
+-#                     = @product.condition.name
+-#                 %tr
+-#                   %th
+-#                     配送料の負担
+-#                   %td
+-#                     = @product.postage.name
+-#                 %tr
+-#                   %th
+-#                     発送元の地域
+-#                   %td
+-#                     = link_to "#" do
+-#                       = @product.prefecture_code.name  
+-#                 %tr
+-#                   %th
+-#                     発送日の目安
+-#                   %td
+-#                     = @product.sendingday.name
+-#           .itemBox__optionalArea
+-#             .itemBox__optionalArea__like
+-#               .itemBox__optionalArea__like--name
+-#                 = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
+-#                 %p.itemBox__optionalArea__like--name--content
+-#                   お気に入り
+-#               .itemBox__optionalArea__like--count
+-#                 %p
+-#                   0
+
+-#             = link_to "#" do   
+-#               .itemBox__optionalArea--alert
+-#                 .itemBox__optionalArea--alert--logo
+-#                   = icon("fas","flag")
+-#                 .itemBox__optionalArea--alert--content
+-#                   %p
+-#                     不適切な商品の通報
+-# = render "sub_footer"

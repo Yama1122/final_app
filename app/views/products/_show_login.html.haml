@@ -8,13 +8,9 @@
           .itemBox__body
             .itemBox__body--top
               = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
-              -# = image_tag @images.url[0]
             .itemBox__body--bottom
               - if @images.count >= 2
                 %ul
-                  -# - if @product .product_images[0]
-                  -#   %li
-                  -#     = image_tag @product .product_images[0].url.url
                   - if @product .product_images[1]   
                     %li
                       = image_tag @product .product_images[1].url.url

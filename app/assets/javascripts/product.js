@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function(){
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
@@ -25,6 +25,7 @@ $(document).on('turbolinks:load', ()=> {
   fileIndex.splice(0, lastIndex);
 　//クリックされた時に発火させる 
   $("#images__upload").on("click", function(e){
+    // js-fileの最後に追加
     let last_field = $(`.js-file`).last();
     // トリガーメソッドを使用して
     last_field.trigger("click");
