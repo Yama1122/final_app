@@ -6,11 +6,12 @@
     %script{src: "https://js.pay.jp/v1/", type: "text/javascript"}
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    -# turbolinks関連の記述をアプリ全体に反映させない
+    -# = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
     %script{ src:"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
     = javascript_include_tag 'application'
   %body
     - flash.each do |message_type, message|
       = content_tag :div, message, class: message_type
-    
     = yield

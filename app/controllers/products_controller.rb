@@ -1,8 +1,6 @@
 class ProductsController < ApplicationController
-  
 
-
-  before_action :set_product, only: [:show,:destroy,:delete]
+  before_action :set_product, only: [:show,:destroy,:delete,:edit,:update]
   before_action :set_product_image, except: [:index,:new,:create,:delete_done]
   def index
     @products = Product.all
@@ -15,17 +13,30 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save!
-      redirect_to root_path
+    # エラーハンドリング
+    if @product.save
+      redirect_to root_path, notice: '商品が出品されました。'
     else
+      flash.now[:alert]= '必須項目を入力してください。'
       render :new
     end
   end
 
   def edit
+    # editアクションで編集画面を表示させ、@productに画像を新規で追加させる
+    @product.product_images.new
+    @category = @product.category
   end
 
   def update
+    @category = @product.category
+    # エラーハンドリング
+    if @product.update(product_params)
+      redirect_to root_path, notice: '商品が編集されました。'
+    else
+      flash.now[:alert]= '必須項目を入力してください。'
+      render :edit
+    end
   end
 
   def delete
@@ -56,7 +67,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :profile, :price, :category_id, :condition_id, :sendingday_id, :prefecture_code_id, :postage_id, :sendingtype_id, product_images_attributes: [:url, :_destroy, :id[0]]).merge(seller_id: current_user.id)
+    params.require(:product).permit(:name, :profile, :price, :category_id, :condition_id, :sendingday_id, :prefecture_code_id, :postage_id, :sendingtype_id, product_images_attributes: [:url, :_destroy, :id]).merge(seller_id: current_user.id)
   end
   
   def set_product

@@ -5,13 +5,10 @@
         =link_to root_path do
           = image_tag "products/logo.svg"
       .searchbox
-        = form_with(class: "search-form") do |f|
+        = form_with url: products_searches_path, local: true, method: :get, class: "search-form" do |f|
           = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
-          %button.submit-btn
-            =link_to "#" do
-              = image_tag "products/icon-search 1.png"
-      %ul.resultList
-
+          = f.button type: "submit", class: "search-btn" do
+            = image_tag "products/icon-search 1.png", class:"submit-icon"
   .nav
     %ul.listsleft
       %li.listsleft__item--first

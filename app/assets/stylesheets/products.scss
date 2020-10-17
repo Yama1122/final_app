@@ -400,7 +400,7 @@ a {
         
       }
       &__listbox {
-          border: 1px solid #000000;  /* 枠線 */
+        .price{border: 1px solid #000000;  /* 枠線 */
           border-radius: 4px;   /* 角丸 */
           padding: 0.5em;          /* 内側の余白量 */
           background-color: rgb(255, 255, 255);  /* 背景色 */
@@ -413,6 +413,7 @@ a {
           &:focus {
             outline: none;
             border: 1px solid #1b6aff;
+          }
         }
       }
 
@@ -462,9 +463,18 @@ a {
         border-radius: 4px;
         margin-bottom: 20px;
         input {
+          position: relative;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+          pointer-events: auto;
+          content: "";
           background-color: #ea352d;
           color: #F8F8F8;
           border-style: none;
+          cursor: pointer;
         }
       }
       .draft_btn{

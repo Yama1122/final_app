@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   }
   # deviseにてusersを作成し使用する場合、controllers: {registrations: 'users/registrations'｝が必要
   root to:'products#index'
-  resources :products, only: [:index,:show,:new, :create, :destroy,:edit] do
+  namespace :products do
+    resources :searches, only: :index
+  end
+  resources :products, only: [:index,:show,:new, :create, :destroy,:edit,:update] do
     post 'add' => 'favorites#create'
     delete '/add' => 'favorites#destroy'
     member do
@@ -12,7 +15,6 @@ Rails.application.routes.draw do
       get 'delete_done'
     end
     resources :purchases do
-    # resources :products do
       member do
         get 'confirmation'
         post 'pay'
@@ -55,6 +57,5 @@ Rails.application.routes.draw do
     end
   end
   resources :credit_cards, only: :new
-  resources 'searches', only: :index
 end
 

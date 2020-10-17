@@ -39,20 +39,20 @@
             height: 36px;
             padding: 0 0 0 5px;
           }
-        }
-        .submit-btn {
-          width: 36px;
-          border: 0;
-          cursor: pointer;
-          background-color: #3ccace;
-          padding: 8px;
-          img {
-            width: 100%;
-            vertical-align: bottom;
-          }
-          .submit-icon {
-            width: 100%;
-            vertical-align: bottom;
+          .search-btn {
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3ccace;
+            padding: 8px;
+            img {
+              width: 100%;
+              vertical-align: bottom;
+            }
+            .submit-icon {
+              width: 100%;
+              vertical-align: bottom;
+            }
           }
         }
         .resultList{
