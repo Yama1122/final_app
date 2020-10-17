@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show,:destroy,:delete,:edit,:update]
   before_action :set_product_image, except: [:index,:new,:create,:delete_done]
   def index
-    @products = Product.all
   end
 
   def new
