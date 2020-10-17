@@ -34,4 +34,9 @@ class Product < ApplicationRecord
   def favorite_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+  def self.search(search)
+    if search
+      Search.where('text LIKE(?)', "%#{search}%")
+    end
+  end
 end

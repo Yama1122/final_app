@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:show,:destroy,:delete,:edit]
+  before_action :set_product, only: [:show,:destroy,:delete,:edit,:update]
   before_action :set_product_image, except: [:index,:new,:create,:delete_done]
   def index
     @products = Product.all
@@ -25,12 +25,10 @@ class ProductsController < ApplicationController
   def edit
     # editアクションで編集画面を表示させ、@productに画像を新規で追加させる
     @product.product_images.new
-    @product = Product.find(params[:id])
     @category = @product.category
   end
 
   def update
-    @product = Product.find(params[:id])
     @category = @product.category
     # エラーハンドリング
     if @product.update(product_params)

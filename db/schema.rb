@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_10_11_060250) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_favorites_on_product_id"
-    t.index ["user_id", "product_id"], name: "index_favorites_on_user_id_and_product_id", unique: true
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
@@ -79,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_10_11_060250) do
     t.bigint "seller_id"
     t.bigint "buyer_id"
     t.datetime "deal_closed_day"
+    t.string "status_id", default: "出品中"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
