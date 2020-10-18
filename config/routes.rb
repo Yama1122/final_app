@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
   # deviseにてusersを作成し使用する場合、controllers: {registrations: 'users/registrations'｝が必要
   root to:'products#index'
+  # productcpntrollerの直下にsearchescontorollerを作成した為namespaceメソッドを使用
   namespace :products do
     resources :searches, only: :index
   end

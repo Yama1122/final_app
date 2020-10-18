@@ -1,34 +1,36 @@
 = render "products/sub_header" 
+-# searches controllerで定義した変数@productsをeachで表示させる
 .showMain
   .showMain__container
     .showMain__container__content
       .showMain__container__content__topContent
         .itemBox
+        - @products.each do |product|
           %h2.itemBox__name
-            = @product.name
+            = product.name
           .itemBox__body
             .itemBox__body--top
-              = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
+              = image_tag product.product_images[0].url.url,class:"itemBox__body--top--image"
             .itemBox__body--bottom
-              - if @images.count >= 2
+              - if product.product_images.count >= 2
                 %ul
-                  - if @product .product_images[1]   
+                  - if product.product_images[1]   
                     %li
-                      = image_tag @product .product_images[1].url.url
-                  - if @product .product_images[2]  
+                      = image_tag product.product_images[1].url.url
+                  - if product.product_images[2]  
                     %li
-                      = image_tag @product .product_images[2].url.url
+                      = image_tag product.product_images[2].url.url
           .itemBox__price
             %p
               %span ¥
-              = @product.price 
+              = product.price 
             .itemBox__price--detail
               (税込) 送料込み
           -# 出品者には購入ボタンを表示させない
-          - unless current_user.id == @product.seller_id
+          - unless current_user.id == product.seller_id
             .itemBox__purchace
               -# buyer_idがある場合、売り切れ表示
-              - if @product.buyer_id.present?
+              - if product.buyer_id.present?
                 .itemBox__purchace__btn#soldout-btn
                   売り切れました
               - else  
@@ -37,7 +39,7 @@
                     購入画面に進む
           .itemBox__itemDetail
             %p
-              = @product.profile
+              = product.profile
           
           .itemBox__table
             %table
@@ -46,25 +48,25 @@
                   %th
                     出品者
                   %td
-                    = @product.seller.nickname
+                    = product.seller.nickname
                 %tr
                   %th
                     カテゴリー
                   %td
-                    = link_to category_path(@category.parent.parent),class:"itemBox__table--category" do
+                    = link_to category_path(product.category.ancestors),class:"itemBox__table--category" do
                       -# 孫カテゴリが存在しない場合
-                      - if @category.parent.parent != nil  
-                        = @category.parent.parent.name
-                    = link_to category_path(@category.parent),class:"itemBox__table--category" do
-                      = @category.parent.name
-                    = link_to category_path(@category),class:"itemBox__table--category" do
-                      = @category.name
+                      - if product.category.ancestors != nil  
+                        = product.category.parent.parent.name
+                    = link_to category_path(product.category.parent),class:"itemBox__table--category" do
+                      = product.category.parent.name
+                    = link_to category_path(product.category),class:"itemBox__table--category" do
+                      = product.category.name
                 %tr
                   %th
                     ブランド
                   %td
-                    - if @product.brand
-                      = @product.brand.name
+                    - if product.brand
+                      = product.brand.name
                 %tr
                   %th
                     商品のサイズ
@@ -74,23 +76,23 @@
                   %th
                     商品の状態
                   %td
-                    = @product.condition.name
+                    = product.condition.name
                 %tr
                   %th
                     配送料の負担
                   %td
-                    = @product.postage.name
+                    = product.postage.name
                 %tr
                   %th
                     発送元の地域
                   %td
                     = link_to "#" do
-                      = @product.prefecture_code.name  
+                      = product.prefecture_code.name  
                 %tr
                   %th
                     発送日の目安
                   %td
-                    = @product.sendingday.name
+                    = product.sendingday.name
           .itemBox__optionalArea
             .itemBox__optionalArea__like
               .itemBox__optionalArea__like--name

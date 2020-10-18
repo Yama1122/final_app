@@ -31,8 +31,16 @@
     =link_to "#" do
       = image_tag "products/logo-white.svg", class:"logo-link"
     %p.copyright  ©︎ FURIMA
-  =link_to new_product_path do
-    .purchaseBtn
-      %span.purchaseBtn__text
-        出品する
-        = image_tag src="products/icon_camera.png",class:'purchaseBtn__text__icon'
+    -# ログインしていない場合、出品ボタンを押すと会員登録ページへ遷移する
+  -if user_signed_in? 
+    =link_to new_product_path do
+      .purchaseBtn
+        %span.purchaseBtn__text
+          出品する
+          = image_tag src="products/icon_camera.png",class:'purchaseBtn__text__icon'
+  -else 
+    =link_to new_user_session_path do
+      .purchaseBtn
+        %span.purchaseBtn__text
+          出品する
+          = image_tag src="products/icon_camera.png",class:'purchaseBtn__text__icon'
