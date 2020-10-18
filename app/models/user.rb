@@ -10,8 +10,12 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :sending_address
   # 親モデルを通じてネストしたモデルの関連レコードの登録・更新を可能にする
 
-  validates :nickname, :email, :password, :family_name, :first_name, :first_name_kana, :family_name_kana, :birth_date, presence: true, on: :create
-  validates :nickname, :email, :family_name, :first_name, :first_name_kana, :family_name_kana, :birth_date, presence: true, on: :update
+  validates :nickname, :email, :family_name, :first_name, :birth_date, presence: true
+  validates :first_name_kana, :family_name_kana, presence: true, 
+            format: { with: /\A([ァ-ン]|ー)+\z/ }
+  validates :password, presence: true, on: :create
+  # validates :nickname, :email, :password, :family_name, :first_name, :first_name_kana, :family_name_kana, :birth_date, presence: true, on: :create
+  # validates :nickname, :email, :family_name, :first_name, :first_name_kana, :family_name_kana, :birth_date, presence: true
   # updateの場合はこちらのバリーテーションが動く
   
   devise :database_authenticatable, :registerable,

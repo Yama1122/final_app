@@ -1,5 +1,25 @@
 ja:
   activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: Eメール
+        family_name: 【本人確認】名前（性）
+        first_name: 【本人確認】名前（名）
+        birth_date: 生年月日
+        family_name_kana: 【本人確認】名前カナ（性）
+        first_name_kana: 【本人確認】名前カナ（名）
+      sending_address:
+        family_name: 【商品送付先】名前（性）
+        first_name: 【商品送付先】名前（名）
+        family_name_kana: 【商品送付先】名前カナ（性）
+        first_name_kana: 【商品送付先】名前カナ（名）
+        post_code: 郵便番号
+        city: 市区町村
+        house_number: 番地
+        phone_number: 電話番号
+
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

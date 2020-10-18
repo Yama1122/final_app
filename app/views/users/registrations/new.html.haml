@@ -1,5 +1,15 @@
 = render 'products/sub_header'
 
+-if @user.errors.any? 
+  .alert_user
+    %ul
+      エラーが
+      =@user.errors.count
+      件あります
+      -@user.errors.full_messages.each do |message| 
+        %li= message
+
+
 .new_user_registration_wrapper
   .registration-form
     .top
@@ -7,6 +17,7 @@
         会員情報入力
     .hr
     = form_for(@user, url: user_registration_path) do |f|
+
       .basic_information
         .nickname-label
           ニックネーム
