@@ -5,6 +5,7 @@
         =link_to root_path do
           = image_tag "products/logo.svg"
       .searchbox
+        -# 遷移先の指定、クラス名変更
         = form_with url: products_searches_path, local: true, method: :get, class: "search-form" do |f|
           = f.text_field :keyword, placeholder:"キーワードから検索する", class: "search-input"
           = f.button type: "submit", class: "search-btn" do
