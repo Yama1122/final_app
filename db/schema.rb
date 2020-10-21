@@ -82,8 +82,6 @@ ActiveRecord::Schema.define(version: 2020_10_11_060250) do
     t.string "status_id", default: "出品中"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "audition_id"
-    t.index ["audition_id"], name: "index_products_on_audition_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["buyer_id"], name: "index_products_on_buyer_id"
     t.index ["category_id"], name: "index_products_on_category_id"
