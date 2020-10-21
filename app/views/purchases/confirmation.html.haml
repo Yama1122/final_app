@@ -69,7 +69,8 @@
         .address
           %p 
             %span
-              = @product.prefecture_code.name
+              -# = @product.prefecture_code.name
+              = @adress.prefecture_code.name
             %span
               = @adress.city
             %span

@@ -56,17 +56,17 @@
                       = @category.parent.name
                     = link_to category_path(@category),class:"itemBox__table--category" do
                       = @category.name
-                %tr
-                  %th
-                    ブランド
-                  %td
-                    - if @product.brand
-                      = @product.brand.name
-                %tr
-                  %th
-                    商品のサイズ
-                  %td
-                    サイズ仮置
+                -# %tr
+                -#   %th
+                -#     ブランド
+                -#   %td
+                -#     - if @product.brand
+                -#       = @product.brand.name
+                -# %tr
+                -#   %th
+                -#     商品のサイズ
+                -#   %td
+                -#     サイズ仮置
                 %tr
                   %th
                     商品の状態
