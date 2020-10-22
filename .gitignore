@@ -28,3 +28,4 @@
 
 secrets.yml
 /.env
+/public/uploads/
