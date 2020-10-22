@@ -713,3 +713,13 @@
 .comment_delete{
   color:#848484;
 }
+
+// 商品検索、検索結果がない場合の表示
+.serch-result {
+  margin: 16px 0 8px;
+  font-size: 12px;
+  font-weight: 300;
+  background-color: #F8F8F8;
+  width:100%;
+  text-align: center;
+}

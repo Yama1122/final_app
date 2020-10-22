@@ -1,7 +1,7 @@
 = render 'products/sub_header'
 
 -if @user.errors.any? 
-  .alert_user
+  .alert
     %ul
       エラーが
       =@user.errors.count
@@ -111,7 +111,7 @@
               都道府県
               %span.required 必須
             .prefecture
-              = i.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name
+              = i.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name, {include_blank: "選択してください"}
           .city
             .label
               市区町村
