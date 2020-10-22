@@ -21,6 +21,10 @@
         %ul.brandsPulldowndisplayNone
     - if user_signed_in?
       %ul.listsRight
+        %li.listsRight__item--nickname
+          ようこそ、
+          = current_user.nickname
+          さん
         %li.listsRight__item--login
           = link_to "マイページ", user_path(current_user.id), class: "login"
         %li.listsRight__item--new

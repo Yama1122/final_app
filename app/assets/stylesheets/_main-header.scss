@@ -127,6 +127,11 @@
       .listsRight {
         margin-left: auto;
         display: flex;
+        &__item--nickname {
+          color: #333;
+          line-height: 32px;
+          padding: 0 0 0 16px;
+        }
         &__item--login {
           color: #333;
           line-height: 38px;
