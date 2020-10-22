@@ -1,3 +1,6 @@
+<img width="890" alt="スクリーンショット 2020-10-22 22 13 47" src="https://user-images.githubusercontent.com/62942995/96877471-a6cc2e80-14b4-11eb-9164-b31ea1e0d4d3.png">
+
+
 ## Users table
 
 |Column|Type|Options|
