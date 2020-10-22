@@ -84,14 +84,15 @@
                   %td
                     = @product.sendingday.name
           .itemBox__optionalArea
-            .itemBox__optionalArea__like
-              .itemBox__optionalArea__like--name
-                = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
-                %p.itemBox__optionalArea__like--name--content
-                  お気に入り
-              .itemBox__optionalArea__like--count
-                %p
-                  0
+            .change_area
+              .itemBox__optionalArea__like
+                .itemBox__optionalArea__like--name
+                  = icon("fas","star",class:"itemBox__optionalArea__like--name--icon")
+                  %p.itemBox__optionalArea__like--name--content
+                    お気に入り
+                .itemBox__optionalArea__like--count
+                  %p
+                    = @product.favorites.count
 
             = link_to "#" do   
               .itemBox__optionalArea--alert
