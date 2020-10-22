@@ -14,9 +14,7 @@ class User < ApplicationRecord
   validates :first_name_kana, :family_name_kana, presence: true, 
             format: { with: /\A([ァ-ン]|ー)+\z/ }
   validates :password, presence: true, on: :create
-  # validates :nickname, :email, :password, :family_name, :first_name, :first_name_kana, :family_name_kana, :birth_date, presence: true, on: :create
-  # validates :nickname, :email, :family_name, :first_name, :first_name_kana, :family_name_kana, :birth_date, presence: true
-  # updateの場合はこちらのバリーテーションが動く
+
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
