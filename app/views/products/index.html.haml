@@ -74,7 +74,7 @@
         %h3.item__subtitlle 様々な支払いに対応
         %p.item__detail お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります！
   %section.pickupContainer
-    %h2.head ピックアップカテゴリー
+    %h2.head 商品一覧
     .productBox
       .productHead
         =link_to "#", class:"product" do
@@ -116,24 +116,24 @@
                       %li.icon 
                         =icon('fa','star')
                     %p.tax (税込)
-  %section.pickupContainer
-    %h2.head ピックアップブランド
-    .productBox
-      .productHead
-        =link_to "#", class:"product" do
-          %h3.title アーカイバー
-      .productLists
-        .productList
-          =link_to "#", class:"listimage" do
-            %figure.priductList--img
-            .productList--body
-              %h3.name テスト
-              .details
-                %ul.price
-                  %li 10000円
-                  %li.icon 
-                    =icon('fa','star')
-                %p.tax (税込)
+  -# %section.pickupContainer
+    -# %h2.head ピックアップブランド
+    -# .productBox
+    -#   .productHead
+    -#     =link_to "#", class:"product" do
+    -#       %h3.title アーカイバー
+    -#   .productLists
+    -#     .productList
+    -#       =link_to "#", class:"listimage" do
+    -#         %figure.priductList--img
+    -#         .productList--body
+    -#           %h3.name テスト
+    -#           .details
+    -#             %ul.price
+    -#               %li 10000円
+    -#               %li.icon 
+    -#                 =icon('fa','star')
+    -#             %p.tax (税込)
 
 = render "layouts/appBanner"
 = render "layouts/footer"
