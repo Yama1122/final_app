@@ -274,11 +274,12 @@
         display: flex;
         flex-wrap: wrap;
         // justify-content: space-around;
-        height:250px;
-        overflow-x: scroll;
+        margin-top:30px;
+        // height:250px;
+        // overflow-x: scroll;
         .productList {
           width: 220px;
-          display: inline-block;
+          // display: inline-block;
           position:relative;
           margin-right:10px;
           margin-bottom:30px;
