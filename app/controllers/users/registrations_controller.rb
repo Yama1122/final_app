@@ -16,7 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       sign_in(:user, @user) #登録後ログイン状態になるようにしている
       redirect_to complete_users_path, notice: '登録が完了しました'
     else
-      flash.now[:alert]= '必須項目を入力してください。'
       render :new
     end
   end
@@ -27,9 +26,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
   
     if @user.update(user_params)
-      redirect_to edit_user_path(current_user.id),notice: '編集が完了しました'
+      flash.now[:notice]= '編集が完了しました'
+      render :edit
+      
     else
-      redirect_to edit_user_path(current_user.id), alert: '編集できませんでした'
+      flash.now[:alert]= '必須項目を入力してください。'
+      render :edit
     end
   end
 
