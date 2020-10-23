@@ -27,9 +27,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
   
     if @user.update(user_params)
-      redirect_to user_path(current_user.id),notice: '編集が完了しました'
+      redirect_to edit_user_path(current_user.id),notice: '編集が完了しました'
     else
-      redirect_to user_path(current_user.id), alert: '編集できませんでした'
+      redirect_to edit_user_path(current_user.id), alert: '編集できませんでした'
     end
   end
 

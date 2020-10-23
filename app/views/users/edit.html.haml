@@ -1,5 +1,14 @@
 = render 'products/sub_header'
 
+-if @user.errors.any? 
+  .alert_user
+    %ul
+      エラーが
+      =@user.errors.count
+      件あります
+      -@user.errors.full_messages.each do |message| 
+        %li= message
+
 .edit_user_registration_wrapper
   .registration-form
     .top
@@ -114,4 +123,7 @@
               = i.text_field :phone_number
       .btn-area
         = f.submit "変更を保存", class: "btn"
+      .btn-back
+        =link_to user_path(current_user.id) do
+          もどる
 = render 'products/sub_footer'
