@@ -273,7 +273,6 @@
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
-        margin-bottom:30px;
         // justify-content: space-around;
         height:250px;
         overflow-x: scroll;
@@ -282,6 +281,7 @@
           display: inline-block;
           position:relative;
           margin-right:10px;
+          margin-bottom:30px;
             .listimage {
               background-color: #fff;
               display: inline-block;
