@@ -99,11 +99,12 @@
         ul{
           margin:0 auto;
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           height:120px;
           width:100%;
           overflow: scroll;
           li{
+            margin: 0 auto;
             img{
               display:block;
               width:150px;
