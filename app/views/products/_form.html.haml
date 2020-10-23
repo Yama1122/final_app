@@ -1,4 +1,14 @@
 = render "sub_header"
+-# エラーメッセージ
+-if @product.errors.any? 
+  .alert
+    %ul
+      エラーが
+      =@product.errors.count
+      件あります
+      -@product.errors.full_messages.each do |message| 
+        %li= message
+-# 商品出品
 .Exhibition-wrapper
   = form_with model: @product, local: true do |f|
     .Exhibition-form
@@ -56,7 +66,8 @@
             商品の状態
             %span.required 必須
           .condition__list_box
-            = f.collection_select :condition_id, Condition.all, :id, :name
+            -# include_blank : 先頭を空の選択肢にする
+            = f.collection_select :condition_id, Condition.all, :id, :name, {include_blank: "選択してください"}
       .hr  
       .sending
         .sending__text
@@ -66,24 +77,24 @@
             配送料の負担
             %span.required 必須
           .burden__list_box
-            = f.collection_select :postage_id, Postage.all, :id, :name
+            = f.collection_select :postage_id, Postage.all, :id, :name, {include_blank: "選択してください"}
         .sending_type
           .sending_type__text
             配送料の方法
             %span.required 必須
           .sending_type__list_box
-            = f.collection_select :sendingtype_id, Sendingtype.all, :id, :name
+            = f.collection_select :sendingtype_id, Sendingtype.all, :id, :name,{include_blank: "選択してください"}
         .sending_preficture
           .sending_preficture__text
             発送元の地域
             %span.required 必須
           .sending_preficture__list_box
-            = f.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name
+            = f.collection_select :prefecture_code_id, PrefectureCode.all, :id, :name,{include_blank: "選択してください"}
         .sending_day
           .sending_day__text
             発送までの日数
           .sending_day__list_box
-            = f.collection_select :sendingday_id, Sendingday.all, :id, :name
+            = f.collection_select :sendingday_id, Sendingday.all, :id, :name,{include_blank: "選択してください"}
       .hr
 
       .price
