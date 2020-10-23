@@ -270,9 +270,10 @@
       }
       .productLists {
         // width: 100%;
-        margin: 26px auto;
+        margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
+        margin-bottom:30px;
         // justify-content: space-around;
         height:250px;
         overflow-x: scroll;
