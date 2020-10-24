@@ -97,14 +97,12 @@
         margin:0 auto;
         width:85%;
         ul{
-          margin:0 auto;
           display: flex;
-          justify-content: space-around;
+          // justify-content: center;
           height:120px;
           width:100%;
           overflow: scroll;
           li{
-            margin: 0 auto;
             img{
               display:block;
               width:150px;
