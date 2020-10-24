@@ -114,7 +114,8 @@
                         = product.price
                         円
                       %li.icon 
-                        =icon('fa','star')
+                        = icon('fa','star')
+                        = product.favorites.count
                     %p.tax (税込)
   -# %section.pickupContainer
     -# %h2.head ピックアップブランド

@@ -37,6 +37,6 @@
               .relatedItems__list__item__detail__right
                 = icon("fas","star")
                 .relatedItems__list__item__detail__right--count
-                  0
+                  = product.favorites.count
       
 = render "layouts/footer"
