@@ -94,8 +94,13 @@
                       %li 
                         = product.price
                         円
-                      %li.icon 
-                        =icon('fa','star')
+                      - if !Favorite.exists?(user_id:current_user.id,product_id:product.id)
+                        %li.icon
+                          =icon('fa','star')
+                      - else
+                        %li.icon_like
+                          =icon('fa','star')
+
                     %p.tax (税込)
                 .productList__sold
                   .productList__sold__inner
@@ -113,8 +118,12 @@
                       %li 
                         = product.price
                         円
-                      %li.icon 
-                        =icon('fa','star')
+                      - if !Favorite.exists?(user_id:current_user.id,product_id:product.id)
+                        %li.icon
+                          =icon('fa','star')
+                      - else
+                        %li.icon_like
+                          =icon('fa','star')
                     %p.tax (税込)
   -# %section.pickupContainer
     -# %h2.head ピックアップブランド
