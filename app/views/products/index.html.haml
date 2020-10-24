@@ -94,12 +94,19 @@
                       %li 
                         = product.price
                         円
-                      - if !Favorite.exists?(user_id:current_user.id,product_id:product.id)
+                      - if current_user
+                        - if !Favorite.exists?(user_id:current_user.id,product_id:product.id)
+                          %li.icon
+                            =icon('fa','star')
+                            = product.favorites.count
+                        - else
+                          %li.icon_like
+                            =icon('fa','star')
+                            = product.favorites.count
+                      - else
                         %li.icon
                           =icon('fa','star')
-                      - else
-                        %li.icon_like
-                          =icon('fa','star')
+                          = product.favorites.count
 
                     %p.tax (税込)
                 .productList__sold
@@ -118,15 +125,17 @@
                       %li 
                         = product.price
                         円
-
-                     
-
-                      - if !Favorite.exists?(user_id:current_user.id,product_id:product.id)
-                        %li.icon
-                          =icon('fa','star')
-                          = product.favorites.count
+                      - if current_user
+                        - if !Favorite.exists?(user_id:current_user.id,product_id:product.id)
+                          %li.icon
+                            =icon('fa','star')
+                            = product.favorites.count
+                        - else
+                          %li.icon_like
+                            =icon('fa','star')
+                            = product.favorites.count
                       - else
-                        %li.icon_like
+                        %li.icon
                           =icon('fa','star')
                           = product.favorites.count
 
