@@ -327,6 +327,14 @@
                       text-rendering: auto;
                       -webkit-font-smoothing: antialiased;
                     }
+                    .icon_like {
+                      display: inline-block;
+                      font: normal;
+                      font-size: inherit;
+                      text-rendering: auto;
+                      -webkit-font-smoothing: antialiased;
+                      color: gold;
+                    }
                   }
                   .tax {
                     font-size: 10px;
