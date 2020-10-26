@@ -26,7 +26,7 @@
               - if image.persisted?
                 -# 商品出品時にjsで生成されるクラスを予め表示させる
                 .previewimg
-                  = image_tag image.url.url, data: { index:i }, width: "100", height: '100'
+                  = image_tag image.url.url, data: { index:i }, width: '100', height: '100'
                   %hr.border-style
                   .js-remove 削除
             .images__upload-box
@@ -38,7 +38,10 @@
               -# 複数の別のリソースを同時に保存させる
               = f.fields_for :product_images do |image|
                 .js-file_group{data: {index: image.index}} 
-                  = image.file_field :url, class: 'js-file'
+                  = image.file_field :url, data:{ index: image.index }, class: 'js-file'
+                  -# 画像が保存されていた場合にチェックボックスをつける
+                  - if image.object.persisted?
+                    = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
       .hr    
       .product
         .name
@@ -64,12 +67,12 @@
             %span.required 必須
           .category__list_box
             .category__list_box--parent
-              -# ancestryのメソッドのsiblingsを使って同じ階層に入っている配列の要素を取得　collection_selectの第二引数に記述
-              = f.collection_select :category_id, @category.parent.parent.siblings, :id, :name, {prompt: ""}, class:"text"
+              -# ancestryのメソッドのsiblingsを使って同じ階層に入っている配列の要素を取得 collection_selectの第二引数に記述 selecteで第二引数で取得した@categoryの要素を取得
+              = f.collection_select :category_id, @category.root.siblings, :id, :name, {include_blank: "",selected: @category.root.id}, class:"text"
             .category__list_box--child
-              = f.collection_select :category_id, @category.parent.siblings, :id, :name, {prompt: ""}, class:"text"
+              = f.collection_select :category_id, @category.parent.siblings, :id, :name, {include_blank: "", selected: @category.parent.id}, class:"text"
             .category__list_box--gc
-              = f.collection_select :category_id, @category.siblings, :id, :name, {prompt: ""}, class:"text"
+              = f.collection_select :category_id, @category.siblings, :id, :name, {include_blank: ""}, class:"text"
         .brand
           .brand__text
             ブランド
@@ -138,12 +141,13 @@
       .exhibition
         .exhibition__wrapper
           .exhibition_btn
-            = f.submit "出品する"
+            = f.submit "編集する"
           = link_to '#' do
             .draft_btn
               下書きに保存
         .return
-          = link_to 'もどる', '#'
+          = link_to product_path(@product.id) do
+            もどる
 
       .precautions
         .precautions__text

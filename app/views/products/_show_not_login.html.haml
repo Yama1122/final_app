@@ -9,7 +9,7 @@
             .itemBox__body--top
               = image_tag @product .product_images[0].url.url,class:"itemBox__body--top--image"
             .itemBox__body--bottom
-              - if @images.count >= 2
+              - if @product.product_images.count >= 2
                 %ul
                   - @product.product_images.each do |image|
                     %li

@@ -19,11 +19,18 @@
                 = product.price 
               .itemBox__price--detail
                 (税込) 送料込み
+            -# 出品者には購入ボタンを表示させない
+            - unless current_user.id == product.seller_id
               .itemBox__purchace
                 -# buyer_idがある場合、売り切れ表示
                 - if product.buyer_id.present?
                   .itemBox__purchace__btn#soldout-btn
                     売り切れました
+                - else  
+                  -# link_toで二つのパスにidを渡すためにURI Patternにしました
+                  = link_to "/products/#{product.id}/purchases/#{product.id}/confirmation" do
+                    .itemBox__purchace__btn
+                      購入画面に進む
             .itemBox__itemDetail 
               %p 
                 = product.profile
@@ -42,7 +49,7 @@
                       = link_to category_path(product.category.ancestors),class:"itemBox__table--category" do
                         -# 孫カテゴリが存在しない場合
                         - if product.category.ancestors != nil  
-                          = product.category.parent.parent.name
+                          = product.category.root.name
                       = link_to category_path(product.category.parent),class:"itemBox__table--category" do
                         = product.category.parent.name
                       = link_to category_path(product.category),class:"itemBox__table--category" do
