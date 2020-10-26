@@ -2,7 +2,6 @@ class PurchasesController < ApplicationController
   require 'payjp'
   before_action :set_product
   before_action :set_adress
-  before_action :set_product_image
   
   # 購入確認
   def confirmation
@@ -117,7 +116,4 @@ class PurchasesController < ApplicationController
     @adress = SendingAddress.find_by(user_id:current_user.id)
   end
 
-  def set_product_image
-    @image = ProductImage.find_by(params[:id])
-  end
 end
