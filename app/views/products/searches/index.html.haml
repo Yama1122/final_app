@@ -75,6 +75,25 @@
                       発送日の目安
                     %td
                       = product.sendingday.name
+            .itemBox__optionalArea
+              .change_area
+                = render partial: 'favorites/favorite.html.haml', locals: { product: product}
+              = link_to "#" do   
+                .itemBox__optionalArea--alert
+                  .itemBox__optionalArea--alert--logo
+                    = icon("fas","flag")
+                  .itemBox__optionalArea--alert--content
+                    %p
+                      不適切な商品の通報
+          -# - if current_user.id == @products.seller_id
+          -#   .itemBox__editArea
+          -#     = link_to edit_product_path(params[:id]) do
+          -#       .itemBox__editArea__editBtn
+          -#         編集
+          -#     = link_to delete_product_path(params[:id]) do
+          -#       .itemBox__editArea__editBtn
+          -#         削除    
+          
           -# インスタンス変数に値がない場合
         - else
           .serch-result 

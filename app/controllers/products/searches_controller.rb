@@ -4,7 +4,7 @@ class Products::SearchesController < ApplicationController
     if params[:keyword] == "" 
       redirect_to root_path, notice: 'キーワードを入力してください'
     else 
-      # 変数@productsに検索結果を渡す　searchメソッドの呼び出し
+      # 変数@productsに検索結果を渡す searchメソッドの呼び出し
       @products = Product.search(params[:keyword])
     end
   end
