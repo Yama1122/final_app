@@ -25,8 +25,8 @@
             - if @product.buyer_id.present?
               .itemBox__purchace__btn#soldout-btn
                 売り切れました
-            - else  
-              = link_to confirmation_product_purchase_path(params[:id]) do
+            - else
+              = link_to new_user_session_path do
                 .itemBox__purchace__btn
                   購入画面に進む
           .itemBox__itemDetail
