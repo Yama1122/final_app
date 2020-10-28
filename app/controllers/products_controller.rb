@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
       redirect_to root_path, notice: '商品が出品されました。'
     else
       flash.now[:alert]= '必須項目を入力してください。'
+      @product.product_images.new
       render :new
     end
   end
